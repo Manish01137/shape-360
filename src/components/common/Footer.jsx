@@ -74,17 +74,17 @@ const Footer = () => {
 
           <div className="footer-contact">
             <Mail size={18} />
-            <span>hello@shape-360.com</span>
+            <span>Shape360official@gmail.com</span>
           </div>
 
           <div className="footer-contact">
             <Phone size={18} />
-            <span>+1 (555) 123-4567</span>
+            <span>+91 8209978891</span>
           </div>
 
           <div className="footer-contact">
             <MapPin size={18} />
-            <span>New York, NY</span>
+            <span>Bangalore,India</span>
           </div>
         </div>
 

@@ -1,21 +1,33 @@
+/* ================= RESET HELPERS ================= */
+
 a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-  }
-  .main-content {
-    padding-top: 120px;
-  }
-  
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ================= LAYOUT ================= */
+
+/* Main wrapper – NO navbar spacing here */
+.app-main {
+  min-height: 100vh;
+  padding-top: 0;
+}
+
+/* Standard container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Prevent horizontal scroll bugs */
+body {
+  overflow-x: hidden;
+}

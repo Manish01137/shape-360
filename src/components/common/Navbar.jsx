@@ -8,24 +8,22 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container navbar-inner">
 
-        {/* Logo */}
+        {/* LOGO */}
         <div className="logo">
-          <img src={logo} alt="Shape-360 Logo" />
+          <img src={logo} alt="Shape-360" />
           <span className="logo-text">Shape-360</span>
         </div>
 
-        {/* Navigation */}
+        {/* LINKS */}
         <nav className={`nav-links ${open ? "open" : ""}`}>
           <NavLink to="/" end onClick={() => setOpen(false)}>Home</NavLink>
           <NavLink to="/services" onClick={() => setOpen(false)}>Services</NavLink>
@@ -37,11 +35,14 @@ const Navbar = () => {
 
         <button className="nav-btn desktop-btn">Get Started</button>
 
-        {/* Hamburger */}
-        <div className={`hamburger ${open ? "active" : ""}`} onClick={() => setOpen(!open)}>
-          <span></span>
-          <span></span>
-          <span></span>
+        {/* HAMBURGER */}
+        <div
+          className={`hamburger ${open ? "active" : ""}`}
+          onClick={() => setOpen(!open)}
+        >
+          <span />
+          <span />
+          <span />
         </div>
 
       </div>
