@@ -4,17 +4,21 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 
 import Home from "./pages/Home/Home";
+import Services from "./pages/Services/Services";
+import About from "./pages/About/About"; // ✅ ADD ABOUT PAGE
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
 
-      <div className="app-main">
+      <main className="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} /> {/* ✅ ABOUT ROUTE */}
         </Routes>
-      </div>
+      </main>
 
       <Footer />
     </BrowserRouter>

@@ -1,0 +1,139 @@
+.about-page {
+    overflow-x: hidden;
+  }
+  
+  /* HERO */
+  .about-hero {
+    padding: 140px 0;
+    background: radial-gradient(circle at top, #eef2ff, #ffffff 70%);
+  }
+  
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  
+  .about-hero h1 {
+    font-size: clamp(42px, 6vw, 64px);
+    margin: 18px 0;
+  }
+  
+  .about-hero h1 span {
+    color: #2563eb;
+  }
+  
+  .about-hero p {
+    color: #64748b;
+    margin-top: 14px;
+  }
+  
+  /* STATS */
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .stat-card {
+    background: #fff;
+    padding: 36px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+    transition: all 0.4s ease;
+  }
+  
+  .stat-card:hover {
+    box-shadow: 0 40px 80px rgba(37,99,235,0.25);
+  }
+  
+  .stat-card .icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    background: linear-gradient(135deg,#2563eb,#1e40af);
+    color: white;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+  }
+  
+  /* MISSION */
+  .about-mission {
+    padding: 140px 0;
+    text-align: center;
+  }
+  
+  .mission-icon {
+    width: 70px;
+    height: 70px;
+    background: #2563eb;
+    color: white;
+    margin: 0 auto 22px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+  }
+  
+  /* VALUES */
+  .about-values {
+    padding: 140px 0;
+    background: #f8fafc;
+    text-align: center;
+  }
+  
+  .values-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .value-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    transition: all 0.4s ease;
+  }
+  
+  .value-card:hover {
+    box-shadow: 0 35px 80px rgba(37,99,235,0.22);
+  }
+  
+  .value-card .icon {
+    width: 56px;
+    height: 56px;
+    background: #2563eb;
+    color: white;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+  }
+  
+  /* CTA */
+  .about-cta {
+    padding: 140px 0;
+    background: linear-gradient(135deg,#2563eb,#1e40af);
+    color: white;
+    text-align: center;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .about-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  
+    .about-stats {
+      grid-template-columns: 1fr;
+    }
+  
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
