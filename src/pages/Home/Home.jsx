@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import "./Home.css";
+import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
@@ -88,7 +90,8 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            ✨ Premium Digital Agency
+            ✨ Trusted Digital Growth Partner
+
           </motion.span>
 
           <motion.h1
@@ -115,11 +118,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65 }}
           >
-            <button className="primary-btn">Get Free Consultation →</button>
-            <button className="secondary-btn">
+          <Link to="/contact" className="primary-btn">
+  Get Free Consultation →
+</Link>
+
+            {/* <button className="secondary-btn">
               <span className="play-icon">▶</span>
               See Our Work
-            </button>
+            </button> */}
           </motion.div>
 
           <motion.div

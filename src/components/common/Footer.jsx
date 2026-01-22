@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <img src="src/assets/images/shape-360-from.png" alt="Shape-360 Logo" />
+            <img src="src/assets/images/shapee360.png" alt="Shape-360 Logo" />
             <h3>Shape-360</h3>
           </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1AmwEewBMn/"
               target="_blank"
               aria-label="Facebook"
             >

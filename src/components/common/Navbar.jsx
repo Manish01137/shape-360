@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/images/shape-360-from.png";
+import logo from "../../assets/images/shapee360.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* LOGO */}
         <div className="logo">
           <img src={logo} alt="Shape-360" />
-          <span className="logo-text">Shape-360</span>
+        
         </div>
 
         {/* LINKS */}
