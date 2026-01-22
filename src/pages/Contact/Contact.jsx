@@ -117,7 +117,8 @@ const Contact = () => {
               <a href="mailto:shape360official@gmail.com">
                 shape360official@gmail.com
               </a>
-              <span>Response within 24 hours</span>
+              <br />
+              <span>Response within 2 hours</span>
             </div>
           </div>
 
@@ -130,8 +131,8 @@ const Contact = () => {
             </div>
             <div>
               <h4>Call Us</h4>
-              <a href="tel:+15551234567">+1 (555) 123-4567</a>
-              <span>Mon–Fri · 9am to 6pm</span>
+              <a href="tel:+15551234567">+91 8209978891</a>
+              <span>24*7</span>
             </div>
           </div>
 
@@ -145,8 +146,8 @@ const Contact = () => {
             </div>
             <div>
               <h4>Visit Us</h4>
-              <span>New York, NY</span>
-              <span>By appointment only</span>
+              <span>Bangalore India</span>
+              
             </div>
           </div>
 

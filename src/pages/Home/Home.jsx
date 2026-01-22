@@ -128,10 +128,10 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <Counter value="150" label="Projects Delivered" />
+            <Counter value="70" label="Projects Delivered" />
             <Counter value="98" label="Client Satisfaction" />
-            <Counter value="5" label="Years Experience" />
-            <Counter value="50" label="Active Clients" />
+            <Counter value="2" label="Years Experience" />
+            <Counter value="20" label="Active Clients" />
           </motion.div>
         </div>
 

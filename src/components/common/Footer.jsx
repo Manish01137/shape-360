@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <img src="/logo.png" alt="Shape-360 Logo" />
+            <img src="src/assets/images/shape-360-from.png" alt="Shape-360 Logo" />
             <h3>Shape-360</h3>
           </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="footer-socials">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/shape360official?igsh=MTd0cWZvcWdxMXBo"
               target="_blank"
               aria-label="Instagram"
             >

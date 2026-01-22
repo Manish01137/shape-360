@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/images/shapelogo.jpeg";
+import logo from "../../assets/images/shape-360-from.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
