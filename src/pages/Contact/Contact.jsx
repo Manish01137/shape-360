@@ -132,6 +132,7 @@ const Contact = () => {
             <div>
               <h4>Call Us</h4>
               <a href="tel:+15551234567">+91 8209978891</a>
+              <br />
               <span>24*7</span>
             </div>
           </div>

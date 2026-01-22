@@ -30,10 +30,10 @@ const Navbar = () => {
           <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
           <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
 
-          <button className="nav-btn mobile-btn">Get Started</button>
+         
         </nav>
 
-        <button className="nav-btn desktop-btn">Get Started</button>
+      
 
         {/* HAMBURGER */}
         <div
