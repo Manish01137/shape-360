@@ -90,7 +90,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            ✨ Trusted Digital Growth Partner
+            ✨ Your End-to-End Digital Growth Partner
 
           </motion.span>
 
@@ -100,7 +100,7 @@ const Home = () => {
             transition={{ delay: 0.35 }}
           >
             360° Digital Solutions <br />
-            <span className="gradient-text">That Shape Your Growth</span>
+            <span className="gradient-text">That Drive Real Business Growth</span>
           </motion.h1>
 
           <motion.p
@@ -108,8 +108,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            Websites, Ads, Design & Ongoing Digital Growth — all crafted
-            to elevate your business and drive measurable results.
+            Websites, design, advertising, and digital support — everything you need to build, grow, and scale your online presence.
           </motion.p>
 
           <motion.div
@@ -119,7 +118,7 @@ const Home = () => {
             transition={{ delay: 0.65 }}
           >
           <Link to="/contact" className="primary-btn">
-  Get Free Consultation →
+          Book a Free Consultation →
 </Link>
 
             {/* <button className="secondary-btn">
