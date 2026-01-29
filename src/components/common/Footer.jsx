@@ -7,6 +7,8 @@ import {
   Facebook,
 } from "lucide-react";
 
+import logo from "../../assets/images/shapee360.png";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -15,8 +17,8 @@ const Footer = () => {
         {/* Brand */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <img src="src/assets/images/shapee360.png" alt="Shape-360 Logo" />
-            <h3>Shape-360</h3>
+            {/* ✅ LOGO ONLY */}
+            <img src={logo} alt="Shape-360 Logo" />
           </div>
 
           <p>
@@ -29,6 +31,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/shape360official?igsh=MTd0cWZvcWdxMXBo"
               target="_blank"
+              rel="noreferrer"
               aria-label="Instagram"
             >
               <Instagram size={18} />
@@ -37,6 +40,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/share/1AmwEewBMn/"
               target="_blank"
+              rel="noreferrer"
               aria-label="Facebook"
             >
               <Facebook size={18} />
@@ -84,7 +88,7 @@ const Footer = () => {
 
           <div className="footer-contact">
             <MapPin size={18} />
-            <span>Bangalore,India</span>
+            <span>Bangalore, India</span>
           </div>
         </div>
 

@@ -239,4 +239,32 @@
     font-size: 13px;
   }
 }
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* TRANSPARENT LOGO – NO WHITE BACKGROUND */
+.footer-logo img {
+  width: 120px;          /* Big logo */
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;      /* PNG looks better without rounding */
+  background: none;      /* ❌ no white bg */
+  padding: 0;            /* ❌ no padding */
+  box-shadow: none;      /* optional – clean look */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo img {
+    width: 90px;
+  }
+}
  
