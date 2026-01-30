@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import "./About.css";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Zap,
   Users,
@@ -11,7 +12,7 @@ import {
   Heart,
 } from "lucide-react";
 
-/* ANIMATION VARIANTS */
+/* ================= ANIMATIONS ================= */
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
@@ -37,27 +38,33 @@ const About = () => {
         >
           <motion.div variants={fadeUp}>
             <span className="section-badge">ABOUT SHAPE-360</span>
+
             <h1>
               We Shape Digital <br />
               <span>Success Stories</span>
             </h1>
+
             <p>
-              Shape-360 is a premium digital agency dedicated to helping
-              businesses thrive in the digital landscape through strategy,
-              performance, and creativity.
+              Shape-360 is a premium digital agency helping ambitious brands
+              grow through strategy, performance, and creativity.
             </p>
+
             <p>
-              Our mission is simple — to become a trusted growth partner for
-              ambitious brands worldwide.
+              Our mission is simple — to become a trusted growth partner
+              for businesses worldwide.
             </p>
           </motion.div>
 
           {/* STATS */}
           <motion.div className="about-stats" variants={stagger}>
-            <StatCard icon={<Zap />} value="150+" label="Projects Completed" />
-            <StatCard icon={<Users />} value="50+" label="Happy Clients" />
-            <StatCard icon={<Award />} value="5+" label="Years Experience" />
-            <StatCard icon={<ShieldCheck />} value="98%" label="Client Retention" />
+            <StatCard icon={<Zap />} value="70+" label="Projects Completed" />
+            <StatCard icon={<Users />} value="20+" label="Happy Clients" />
+            <StatCard icon={<Award />} value="2+" label="Years Experience" />
+            <StatCard
+              icon={<ShieldCheck />}
+              value="98%"
+              label="Client Retention"
+            />
           </motion.div>
         </motion.div>
       </section>
@@ -74,11 +81,12 @@ const About = () => {
           <div className="mission-icon">
             <TrendingUp />
           </div>
+
           <h2>Our Mission</h2>
+
           <p>
-            “To empower businesses with comprehensive digital solutions that
-            drive growth, build lasting connections, and create measurable
-            impact in their industries.”
+            “To empower businesses with digital solutions that drive
+            growth, build trust, and deliver measurable impact.”
           </p>
         </motion.div>
       </section>
@@ -97,57 +105,68 @@ const About = () => {
           </motion.span>
 
           <motion.h2 variants={fadeUp}>What We Stand For</motion.h2>
+
           <motion.p variants={fadeUp}>
-            These principles guide everything we do and define who we are as a team.
+            These principles guide everything we do and define how we work.
           </motion.p>
 
           <div className="values-grid">
             <ValueCard
               icon={<Target />}
               title="Results-Driven"
-              desc="Every decision is backed by data and focused on measurable outcomes."
+              desc="Every decision is backed by data and focused on real outcomes."
             />
             <ValueCard
               icon={<Award />}
               title="Quality First"
-              desc="We never compromise on quality. Every project gets full attention."
+              desc="We never compromise on quality. Every project gets full focus."
             />
             <ValueCard
               icon={<Users />}
-              title="Partnership"
-              desc="We work as an extension of your team, invested in long-term success."
+              title="True Partnership"
+              desc="We work as an extension of your team, not just a vendor."
             />
             <ValueCard
               icon={<Heart />}
               title="Passion"
-              desc="We genuinely love what we do, and it shows in every project."
+              desc="We genuinely love what we do — and it shows in our work."
             />
           </div>
         </motion.div>
       </section>
 
-      {/* ================= CTA ================= */}
-      <section className="about-cta">
-        <motion.div
-          className="container"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2>Let’s Work Together</h2>
-          <p>
-            Ready to take your digital presence to the next level?
-            We’d love to hear from you.
-          </p>
-          <button className="cta-btn">Get In Touch →</button>
-        </motion.div>
-      </section>
+      {/* ================= PREMIUM CTA ================= */}
+     {/* ================= CTA ================= */}
+<section className="about-cta">
+  <motion.div
+    className="container"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+  >
+    <h2>Let’s Work Together</h2>
+
+    <p>
+      Ready to elevate your digital presence?
+      Let’s talk strategy, growth, and results.
+    </p>
+
+    <Link to="/contact" className="cta-btn">
+      Get In Touch →
+    </Link>
+
+    <small className="cta-note">
+      Free consultation • No obligation • Fast response
+    </small>
+  </motion.div>
+</section>
+
 
     </main>
   );
 };
 
-/* COMPONENTS */
+/* ================= COMPONENTS ================= */
 const StatCard = ({ icon, value, label }) => (
   <motion.div
     className="stat-card"
