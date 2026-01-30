@@ -60,11 +60,7 @@ const About = () => {
             <StatCard icon={<Zap />} value="70+" label="Projects Completed" />
             <StatCard icon={<Users />} value="20+" label="Happy Clients" />
             <StatCard icon={<Award />} value="2+" label="Years Experience" />
-            <StatCard
-              icon={<ShieldCheck />}
-              value="98%"
-              label="Client Retention"
-            />
+            <StatCard icon={<ShieldCheck />} value="98%" label="Client Retention" />
           </motion.div>
         </motion.div>
       </section>
@@ -100,10 +96,6 @@ const About = () => {
           viewport={{ once: true }}
           variants={stagger}
         >
-          <motion.span className="section-badge" variants={fadeUp}>
-            OUR VALUES
-          </motion.span>
-
           <motion.h2 variants={fadeUp}>What We Stand For</motion.h2>
 
           <motion.p variants={fadeUp}>
@@ -135,32 +127,30 @@ const About = () => {
         </motion.div>
       </section>
 
-      {/* ================= PREMIUM CTA ================= */}
-     {/* ================= CTA ================= */}
-<section className="about-cta">
-  <motion.div
-    className="container"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-  >
-    <h2>Let’s Work Together</h2>
+      {/* ================= CTA ================= */}
+      <section className="about-cta">
+        <motion.div
+          className="container"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2>Let’s Work Together</h2>
 
-    <p>
-      Ready to elevate your digital presence?
-      Let’s talk strategy, growth, and results.
-    </p>
+          <p>
+            Ready to elevate your digital presence?
+            Let’s talk strategy, growth, and results.
+          </p>
 
-    <Link to="/contact" className="cta-btn">
-      Get In Touch →
-    </Link>
+          <Link to="/contact" className="cta-btn">
+            Get In Touch →
+          </Link>
 
-    <small className="cta-note">
-      Free consultation • No obligation • Fast response
-    </small>
-  </motion.div>
-</section>
-
+          <small className="cta-note">
+            Free consultation • No obligation • Fast response
+          </small>
+        </motion.div>
+      </section>
 
     </main>
   );
@@ -168,11 +158,7 @@ const About = () => {
 
 /* ================= COMPONENTS ================= */
 const StatCard = ({ icon, value, label }) => (
-  <motion.div
-    className="stat-card"
-    variants={fadeUp}
-    whileHover={{ y: -8 }}
-  >
+  <motion.div className="stat-card" variants={fadeUp} whileHover={{ y: -8 }}>
     <div className="icon">{icon}</div>
     <h3>{value}</h3>
     <p>{label}</p>
@@ -180,11 +166,7 @@ const StatCard = ({ icon, value, label }) => (
 );
 
 const ValueCard = ({ icon, title, desc }) => (
-  <motion.div
-    className="value-card"
-    variants={fadeUp}
-    whileHover={{ y: -10 }}
-  >
+  <motion.div className="value-card" variants={fadeUp} whileHover={{ y: -10 }}>
     <div className="icon">{icon}</div>
     <h4>{title}</h4>
     <p>{desc}</p>
