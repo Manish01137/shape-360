@@ -23,6 +23,7 @@ const Navbar = () => {
       <div className="container navbar-inner">
         <Link to="/" className="logo" onClick={() => setOpen(false)}>
           <img src={logo} alt="Shape-360" />
+          <span className="logo-text">Shape<span>-360</span></span>
         </Link>
 
         <nav className={`nav-links ${open ? "open" : ""}`}>
