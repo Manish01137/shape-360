@@ -1,7 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/images/shapee360.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -22,7 +21,6 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container navbar-inner">
         <Link to="/" className="logo" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Shape-360" />
           <span className="logo-text">Shape<span>-360</span></span>
         </Link>
 
