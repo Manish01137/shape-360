@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { gsap } from "gsap";
+import { Helmet } from "react-helmet-async";
 import "./Contact.css";
 
 const Contact = () => {
@@ -29,7 +30,12 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_nl03ehg", "template_odit2uo", formRef.current, "oKwS_r9WGNcTvsRrC")
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
       .then(() => {
         alert("Message sent successfully!");
         formRef.current.reset();
@@ -42,6 +48,10 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact Us | Shape-360</title>
+        <meta name="description" content="Get in touch with Shape-360. Free consultation for web development, digital marketing, and design services." />
+      </Helmet>
 
       {/* HERO */}
       <section className="contact-hero">
@@ -84,14 +94,42 @@ const Contact = () => {
                 </div>
               </div>
 
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Phone</label>
+                  <input type="text" name="phone" placeholder="+91 00000 00000" />
+                </div>
+                <div className="form-group">
+                  <label>Service Interested In</label>
+                  <select name="service" defaultValue="">
+                    <option value="" disabled>Select a service</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Shopify Store">Shopify Store</option>
+                    <option value="WordPress Development">WordPress Development</option>
+                    <option value="Meta Ads">Meta Ads</option>
+                    <option value="Google Ads">Google Ads</option>
+                    <option value="Branding & Design">Branding & Design</option>
+                    <option value="Account Management">Account Management</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
               <div className="form-group">
-                <label>Phone</label>
-                <input type="text" name="phone" placeholder="+91 00000 00000" />
+                <label>Budget Range</label>
+                <select name="budget" defaultValue="">
+                  <option value="" disabled>Select your budget</option>
+                  <option value="Under ₹15,000">Under ₹15,000</option>
+                  <option value="₹15,000 - ₹35,000">₹15,000 - ₹35,000</option>
+                  <option value="₹35,000 - ₹75,000">₹35,000 - ₹75,000</option>
+                  <option value="₹75,000 - ₹1,50,000">₹75,000 - ₹1,50,000</option>
+                  <option value="₹1,50,000+">₹1,50,000+</option>
+                </select>
               </div>
 
               <div className="form-group">
                 <label>Message *</label>
-                <textarea name="message" placeholder="Tell us about your project..." rows="5" required />
+                <textarea name="message" placeholder="Tell us about your project, goals, and timeline..." rows="5" required />
               </div>
 
               <button type="submit" className="thm-btn send-btn">
@@ -146,6 +184,20 @@ const Contact = () => {
                 <a href="https://www.instagram.com/shape360official" target="_blank" rel="noreferrer">Instagram</a>
                 <a href="https://www.facebook.com/share/1AmwEewBMn/" target="_blank" rel="noreferrer">Facebook</a>
               </div>
+            </div>
+
+            {/* GOOGLE MAP */}
+            <div className="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497699.9973874144!2d77.35074!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000"
+                width="100%"
+                height="200"
+                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Shape-360 Location"
+              ></iframe>
             </div>
           </div>
         </div>

@@ -339,6 +339,30 @@ input, textarea, select {
 .text-center { text-align: center; }
 .text-accent { color: var(--color-accent); }
 
+/* ================= LENIS SMOOTH SCROLL ================= */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ================= TEXT REVEAL ================= */
+.text-reveal {
+  will-change: clip-path, opacity;
+}
+
+/* ================= IMAGE REVEAL ================= */
+.img-reveal {
+  will-change: clip-path, transform;
+  overflow: hidden;
+}
+
 /* ================= SELECTION ================= */
 ::selection {
   background: var(--color-accent);

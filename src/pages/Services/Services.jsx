@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet-async";
 import "./Services.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -85,6 +86,10 @@ const Services = () => {
 
   return (
     <div className="services-page">
+      <Helmet>
+        <title>Our Services | Shape-360</title>
+        <meta name="description" content="Web development, Shopify stores, Meta Ads, Google Ads, and more — complete digital solutions from Shape-360." />
+      </Helmet>
 
       {/* HERO */}
       <section className="svc-hero">

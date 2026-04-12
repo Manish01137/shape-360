@@ -5,6 +5,18 @@ import logo from "../../assets/images/shapee360.png";
 const Footer = () => {
   return (
     <footer className="footer">
+      {/* Footer Marquee */}
+      <div className="footer-marquee">
+        <div className="footer-marquee-track">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <a key={i} href="mailto:shape360official@gmail.com" className="footer-marquee-item">
+              shape360official@gmail.com
+              <span className="footer-marquee-dot">&#10038;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div className="container">
         <div className="footer-grid">
           {/* Brand */}
@@ -45,7 +57,12 @@ const Footer = () => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
+              <li><Link to="/case-studies">Portfolio</Link></li>
+              <li><Link to="/pricing">Pricing</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/team">Our Team</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>

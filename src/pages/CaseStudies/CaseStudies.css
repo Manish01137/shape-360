@@ -1,0 +1,327 @@
+/* ================= CASE STUDIES PAGE ================= */
+.case-studies-page {
+  background: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* HERO */
+.cs-hero {
+  position: relative;
+  padding: 200px 0 140px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cs-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top, rgba(201,168,76,0.06), transparent 60%);
+  pointer-events: none;
+}
+
+.cs-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cs-hero-desc {
+  max-width: 640px;
+  margin: 24px auto 0;
+  color: var(--color-text-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* GRID */
+.cs-list {
+  padding: 0 0 140px;
+}
+
+.cs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.cs-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.cs-card:nth-child(even) {
+  direction: rtl;
+}
+
+.cs-card:nth-child(even) > * {
+  direction: ltr;
+}
+
+.cs-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* Card Image */
+.cs-card-img {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.cs-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: all 0.7s ease;
+}
+
+.cs-card:hover .cs-card-img img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.cs-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.cs-card-results {
+  display: flex;
+  gap: 30px;
+}
+
+.cs-mini-result {
+  text-align: center;
+}
+
+.cs-mini-result strong {
+  display: block;
+  font-size: 28px;
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.cs-mini-result span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.05em;
+}
+
+/* Card Body */
+.cs-card-body {
+  padding: 45px 40px;
+}
+
+.cs-card-category {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.cs-card-body h3 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.cs-card-desc {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Detail Sections */
+.cs-card-detail {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+}
+
+.cs-detail-section {
+  margin-bottom: 20px;
+}
+
+.cs-detail-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.cs-detail-section p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Results Grid */
+.cs-results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.cs-result-item {
+  background: var(--color-bg);
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.cs-result-item strong {
+  display: block;
+  font-size: 22px;
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  line-height: 1.2;
+}
+
+.cs-result-item span {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* Tech Tags */
+.cs-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.cs-tech-tag {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  letter-spacing: 0.03em;
+}
+
+/* Testimonial */
+.cs-testimonial {
+  padding: 20px;
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-accent);
+  margin-bottom: 24px;
+}
+
+.cs-testimonial p {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.cs-testimonial-author strong {
+  color: var(--color-white);
+  font-size: 14px;
+  display: block;
+}
+
+.cs-testimonial-author span {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* CTA Link */
+.cs-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.cs-card-cta span {
+  transition: transform 0.3s ease;
+}
+
+.cs-card-cta:hover span {
+  transform: translateX(5px);
+}
+
+/* CTA Section */
+.cs-cta {
+  padding: 160px 0;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+}
+
+.cs-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.05), transparent 60%);
+  pointer-events: none;
+}
+
+.cs-cta-desc {
+  color: var(--color-text-muted);
+  font-size: 18px;
+  margin: 24px auto 40px;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cs-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-card:nth-child(even) {
+    direction: ltr;
+  }
+
+  .cs-card-img {
+    min-height: 280px;
+  }
+
+  .cs-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-hero {
+    padding: 160px 0 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cs-card-body {
+    padding: 30px 24px;
+  }
+
+  .cs-list {
+    padding-bottom: 100px;
+  }
+
+  .cs-cta {
+    padding: 100px 0;
+  }
+}

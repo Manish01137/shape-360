@@ -1,0 +1,113 @@
+/* ================= 404 PAGE ================= */
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 120px 0;
+}
+
+.notfound-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(200px, 30vw, 500px);
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  opacity: 0.03;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.notfound-content {
+  position: relative;
+  z-index: 1;
+}
+
+.notfound-title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.notfound-title span {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.notfound-desc {
+  color: var(--color-text-muted);
+  font-size: 18px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.notfound-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.notfound-link {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.notfound-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.notfound-link span {
+  transition: transform 0.3s ease;
+}
+
+.notfound-link:hover span {
+  transform: translateX(4px);
+}
+
+.notfound-links p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.notfound-quick-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.notfound-quick-links a {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.notfound-quick-links a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}

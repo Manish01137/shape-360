@@ -7,6 +7,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet-async";
 import "./Home.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -57,8 +58,11 @@ const Counter = ({ value, label, suffix = "+" }) => {
 
 /* ================= HOME ================= */
 const Home = () => {
+  const horizontalRef = useRef(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
+      /* About big text parallax */
       gsap.fromTo(".about-big-text-left",
         { x: "-100%", opacity: 0 },
         { x: "0%", opacity: 0.06, duration: 1.5, ease: "power2.out",
@@ -71,42 +75,115 @@ const Home = () => {
           scrollTrigger: { trigger: ".about-section", start: "top 80%" }
         }
       );
+
+      /* Text reveal animations */
+      document.querySelectorAll(".text-reveal").forEach((el) => {
+        gsap.fromTo(el,
+          { clipPath: "inset(0 100% 0 0)", opacity: 0 },
+          { clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 1, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%" }
+          }
+        );
+      });
+
+      /* Image reveal animations */
+      document.querySelectorAll(".img-reveal").forEach((el) => {
+        gsap.fromTo(el,
+          { clipPath: "inset(100% 0 0 0)", scale: 1.2 },
+          { clipPath: "inset(0% 0 0 0)", scale: 1, duration: 1.2, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 80%" }
+          }
+        );
+      });
+
+      /* Service items */
       gsap.fromTo(".service-item",
         { opacity: 0, x: 60 },
         { opacity: 1, x: 0, duration: 0.8, stagger: 0.15, ease: "power2.out",
           scrollTrigger: { trigger: ".services-section", start: "top 70%" }
         }
       );
+
+      /* Horizontal scroll portfolio */
+      if (horizontalRef.current) {
+        const scrollContainer = horizontalRef.current;
+        const scrollWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        gsap.to(scrollContainer, {
+          scrollLeft: scrollWidth,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hscroll-section",
+            start: "top top",
+            end: () => `+=${scrollWidth}`,
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+          },
+        });
+      }
+
+      /* Process cards */
       gsap.fromTo(".process-card",
         { opacity: 0, y: 60 },
         { opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power2.out",
           scrollTrigger: { trigger: ".process-section", start: "top 70%" }
         }
       );
-      gsap.fromTo(".project-card",
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power2.out",
-          scrollTrigger: { trigger: ".projects-section", start: "top 70%" }
-        }
-      );
+
+      /* Why cards */
       gsap.fromTo(".why-card",
         { opacity: 0, y: 40 },
         { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out",
           scrollTrigger: { trigger: ".why-section", start: "top 70%" }
         }
       );
+
+      /* Testimonials */
       gsap.fromTo(".testimonial-card",
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 0.7, stagger: 0.2, ease: "power2.out",
           scrollTrigger: { trigger: ".testimonials-section", start: "top 70%" }
         }
       );
+
+      /* CTA */
       gsap.fromTo(".cta-inner > *",
         { opacity: 0, y: 40 },
         { opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power2.out",
           scrollTrigger: { trigger: ".cta-section", start: "top 75%" }
         }
       );
+
+      /* Parallax background elements */
+      gsap.to(".counter-big-text", {
+        y: -80,
+        scrollTrigger: {
+          trigger: ".counter-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.to(".about-big-text-left", {
+        y: -60,
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.to(".about-big-text-right", {
+        y: 60,
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
     });
     return () => ctx.revert();
   }, []);
@@ -175,6 +252,10 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Shape-360 | Premium Digital Agency</title>
+        <meta name="description" content="Shape-360 — 360° Digital Solutions That Drive Real Business Growth. Websites, design, advertising, and digital support." />
+      </Helmet>
 
       {/* ================= HERO SLIDER ================= */}
       <section className="hero-section">
@@ -256,12 +337,12 @@ const Home = () => {
                 <p>About Us</p>
                 <div className="line"></div>
               </div>
-              <h2 className="sec-title">
+              <h2 className="sec-title text-reveal">
                 We create premium digital <br />
                 solutions & bold strategies for <br />
                 your business <span>growth</span>
               </h2>
-              <p className="about-desc">
+              <p className="about-desc text-reveal">
                 Shape-360 is a premium digital agency helping ambitious brands grow through
                 strategy, performance, and creativity. We don't just build websites or run ads —
                 we engineer digital experiences that convert visitors into loyal customers.
@@ -330,32 +411,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= PROJECTS / PORTFOLIO ================= */}
-      <section className="projects-section">
-        <div className="container">
-          <div className="projects-top">
-            <div>
-              <div className="sec-tagline">
-                <p>Our Portfolio</p>
-                <div className="line"></div>
+      {/* ================= HORIZONTAL SCROLL PORTFOLIO ================= */}
+      <section className="hscroll-section">
+        <div className="hscroll-header">
+          <div className="container">
+            <div className="projects-top">
+              <div>
+                <div className="sec-tagline">
+                  <p>Our Portfolio</p>
+                  <div className="line"></div>
+                </div>
+                <h2 className="sec-title">Latest <span>Showcase</span></h2>
               </div>
-              <h2 className="sec-title">Latest <span>Showcase</span></h2>
+              <Link to="/case-studies" className="thm-btn">
+                View All Projects <span>&#8594;</span>
+              </Link>
             </div>
-            <Link to="/contact" className="thm-btn">
-              Start Your Project <span>&#8594;</span>
-            </Link>
           </div>
-
-          <div className="projects-grid">
+        </div>
+        <div className="hscroll-track" ref={horizontalRef}>
+          <div className="hscroll-cards">
             {projects.map((project, i) => (
-              <Link to="/contact" className="project-card" key={i}>
-                <div className="project-img">
+              <Link to="/case-studies" className="hscroll-card" key={i}>
+                <div className="hscroll-card-img">
                   <img src={project.img} alt={project.title} />
-                  <div className="project-overlay">
+                  <div className="hscroll-card-overlay">
                     <span className="project-view">View Project &#8594;</span>
                   </div>
                 </div>
-                <div className="project-info">
+                <div className="hscroll-card-info">
                   <span className="project-category">{project.category}</span>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>

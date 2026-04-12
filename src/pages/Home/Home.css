@@ -534,29 +534,49 @@
 }
 
 /* ===============================================================
-   PROJECTS / PORTFOLIO SECTION
+   HORIZONTAL SCROLL PORTFOLIO
 =============================================================== */
-.projects-section {
-  padding: 160px 0;
+.hscroll-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hscroll-header {
+  padding: 60px 0 40px;
 }
 
 .projects-top {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 70px;
   flex-wrap: wrap;
   gap: 30px;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.hscroll-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.project-card {
-  display: block;
+.hscroll-cards {
+  display: flex;
+  gap: 30px;
+  padding: 180px 40px 60px;
+  height: 100%;
+  width: max-content;
+}
+
+.hscroll-card {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  flex-shrink: 0;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   overflow: hidden;
@@ -564,30 +584,30 @@
   color: inherit;
 }
 
-.project-card:hover {
+.hscroll-card:hover {
   border-color: rgba(201,168,76,0.3);
   transform: translateY(-8px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.4);
 }
 
-.project-img {
+.hscroll-card-img {
   position: relative;
-  height: 240px;
+  height: 260px;
   overflow: hidden;
 }
 
-.project-img img {
+.hscroll-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.project-card:hover .project-img img {
+.hscroll-card:hover .hscroll-card-img img {
   transform: scale(1.08);
 }
 
-.project-overlay {
+.hscroll-card-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.6);
@@ -598,8 +618,25 @@
   transition: opacity 0.4s ease;
 }
 
-.project-card:hover .project-overlay {
+.hscroll-card:hover .hscroll-card-overlay {
   opacity: 1;
+}
+
+.hscroll-card-info {
+  padding: 28px 24px;
+  flex: 1;
+}
+
+.hscroll-card-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.hscroll-card-info p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 .project-view {
@@ -1095,13 +1132,13 @@
     display: none;
   }
 
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .why-top {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  .hscroll-card {
+    width: 350px;
   }
 }
 
@@ -1173,9 +1210,28 @@
     display: none;
   }
 
+  /* Disable horizontal scroll on mobile — stack vertically */
+  .hscroll-section {
+    height: auto;
+  }
+
+  .hscroll-track {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hscroll-cards {
+    padding: 20px 24px 40px;
+  }
+
+  .hscroll-card {
+    width: 300px;
+  }
+
   .process-grid,
-  .counter-grid,
-  .projects-grid {
+  .counter-grid {
     grid-template-columns: 1fr;
   }
 
