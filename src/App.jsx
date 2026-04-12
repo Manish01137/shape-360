@@ -8,7 +8,7 @@ import Footer from "./components/common/Footer";
 import Preloader from "./components/common/Preloader";
 import CustomCursor from "./components/common/CustomCursor";
 import SmoothScroll from "./components/common/SmoothScroll";
-import WhatsAppWidget from "./components/common/WhatsAppWidget";
+import AIChatbot from "./components/common/AIChatbot";
 import PageTransition from "./components/common/PageTransition";
 
 /* Lazy load pages for code-splitting */
@@ -76,7 +76,7 @@ function App() {
             <AnimatedRoutes />
           </main>
           <Footer />
-          <WhatsAppWidget />
+          <AIChatbot />
         </SmoothScroll>
       </BrowserRouter>
     </HelmetProvider>
