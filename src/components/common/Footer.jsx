@@ -94,8 +94,8 @@ const Footer = () => {
         <div className="footer-bottom">
           <span>&copy; {new Date().getFullYear()} Shape-360. All rights reserved.</span>
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-of-service">Terms of Service</Link>
           </div>
           <a href="#" className="back-to-top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             Back to Top &#8593;

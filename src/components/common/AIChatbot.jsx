@@ -49,13 +49,13 @@ PROCESS:
 3. Launch — Testing & optimization for peak performance
 4. Scale — Continuous improvement & growth strategies
 
-CASE STUDIES / PORTFOLIO:
-• UrbanKart — Shopify store, 40% conversion increase
-• FinEdge Solutions — Custom financial dashboard, 99.9% uptime
-• StyleNest Fashion — Meta Ads, 3x ROAS in first month
-• BloomWell Wellness — WordPress + SEO, page 1 Google in 90 days
-• TechPulse SaaS — Google Ads, 200+ leads/month at $12 CPA
-• GreenLeaf Organics — Branding + website, 25% order increase
+CASE STUDIES / PORTFOLIO (REAL PROJECTS):
+• KVS Academy (kvsacademy.org) — Educational platform, 3x student inquiries, 1.8s load time, mobile-first
+• Veloura Jewels (velourajewels.in) — Premium jewelry e-commerce, 55% sales increase, BIS hallmarked 925 silver & moissanite jewelry store
+• Kedar Shakti (kedarshakti.com) — Spiritual e-commerce Shopify store for incense, crystals & puja essentials, 3x online orders, corporate bulk ordering
+• Zeqon (zeqon.co) — Modern SaaS website with animations, 5x lead generation, 180% traffic growth
+• Staylia DXB (stayliadxb.com) — Dubai short-term rental management platform, 85%+ occupancy rates, investor dashboards, multi-platform booking
+• JaldiRide Connect (jaldirideconnect.com) — Smart local transport platform for autos/cars/buses, 10K+ monthly visits, 50+ cities targeted
 
 TIMELINES:
 • Standard Website: 2-4 weeks

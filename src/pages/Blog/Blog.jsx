@@ -10,59 +10,65 @@ gsap.registerPlugin(ScrollTrigger);
 const blogPosts = [
   {
     id: 1,
-    title: "How to Choose the Right Shopify Theme for Your Business",
-    excerpt: "Selecting the perfect Shopify theme can make or break your online store. Here's our comprehensive guide to picking the right one based on your business needs.",
+    slug: "veloura-jewels-ecommerce-store",
+    title: "How We Built a Premium Jewelry E-Commerce Store for Veloura Jewels",
+    excerpt: "From elegant product photography layouts to secure payment gateways — here's how we created a luxury online shopping experience for a sterling silver jewelry brand that drove 55% more sales.",
     category: "E-Commerce",
-    date: "March 15, 2025",
-    readTime: "6 min read",
-    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    date: "March 28, 2025",
+    readTime: "7 min read",
+    img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=800&q=80",
     featured: true,
   },
   {
     id: 2,
-    title: "Meta Ads vs Google Ads: Which One is Right for You?",
-    excerpt: "Both platforms offer powerful advertising capabilities, but the right choice depends on your goals, audience, and budget. Let's break it down.",
-    category: "Digital Marketing",
-    date: "March 8, 2025",
-    readTime: "8 min read",
-    img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+    slug: "kedar-shakti-shopify-store",
+    title: "Scaling a Spiritual Brand Online: The Kedar Shakti Shopify Story",
+    excerpt: "How we helped a spiritual wellness brand launch on Shopify with product bundling, corporate bulk ordering, and a culturally authentic design that tripled their online orders.",
+    category: "Shopify",
+    date: "March 18, 2025",
+    readTime: "6 min read",
+    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     featured: true,
   },
   {
     id: 3,
-    title: "10 Website Design Trends That Will Dominate 2025",
-    excerpt: "From AI-powered personalization to immersive 3D experiences, here are the design trends shaping the future of web development.",
-    category: "Design",
-    date: "February 28, 2025",
-    readTime: "5 min read",
-    img: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+    slug: "staylia-dxb-dubai-rental-platform",
+    title: "Why Dubai Rental Investors Need a Professional Web Presence",
+    excerpt: "Lessons from building Staylia DXB's investor-focused platform — how the right website can attract high-net-worth property investors and boost occupancy rates to 85%+.",
+    category: "Web Development",
+    date: "March 8, 2025",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80",
   },
   {
     id: 4,
-    title: "Why Your Business Needs a Performance-Focused Website",
-    excerpt: "A slow website costs you customers. Learn why performance optimization should be your top priority and how to achieve it.",
-    category: "Web Development",
-    date: "February 20, 2025",
-    readTime: "7 min read",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+    slug: "kvs-academy-education-platform",
+    title: "Building an EdTech Website That Converts: Lessons from KVS Academy",
+    excerpt: "How we designed an education platform that tripled student inquiries — with mobile-first design, fast load times, and SEO-optimized course pages for a coaching academy.",
+    category: "Education",
+    date: "February 26, 2025",
+    readTime: "5 min read",
+    img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
   },
   {
     id: 5,
-    title: "The Complete Guide to SEO for Small Businesses",
-    excerpt: "SEO doesn't have to be complicated. Here's a practical, step-by-step guide to getting your small business found on Google.",
-    category: "SEO",
-    date: "February 12, 2025",
-    readTime: "10 min read",
+    slug: "zeqon-saas-website",
+    title: "How to Design a SaaS Website That Generates 5x More Leads",
+    excerpt: "Our approach to building Zeqon's conversion-focused SaaS website — from animated feature sections and interactive demos to CRM-integrated lead capture that drove 180% traffic growth.",
+    category: "SaaS",
+    date: "February 14, 2025",
+    readTime: "9 min read",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
   },
   {
     id: 6,
-    title: "Building Trust Through Transparent Communication with Clients",
-    excerpt: "How we maintain transparent communication with every client and why it's the foundation of long-term partnerships.",
-    category: "Business",
-    date: "February 5, 2025",
-    readTime: "4 min read",
-    img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
+    slug: "jaldiride-connect-transport-platform",
+    title: "Building Smart Transport Platforms: Inside the JaldiRide Connect Project",
+    excerpt: "How we developed a multi-modal transport web app connecting riders with autos, cars, and buses — designed for tier-2 cities with mobile-first UX and driver onboarding flows.",
+    category: "Web App",
+    date: "February 3, 2025",
+    readTime: "6 min read",
+    img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
   },
 ];
 
@@ -120,7 +126,7 @@ const Blog = () => {
         <div className="container">
           <div className="blog-featured-grid">
             {featured.map((post) => (
-              <Link to="/contact" className="blog-featured-card" key={post.id}>
+              <Link to={`/blog/${post.slug}`} className="blog-featured-card" key={post.id}>
                 <div className="blog-featured-img">
                   <img src={post.img} alt={post.title} />
                   <div className="blog-featured-overlay">
@@ -152,7 +158,7 @@ const Blog = () => {
           </div>
           <div className="blog-grid">
             {regular.map((post) => (
-              <Link to="/contact" className="blog-card" key={post.id}>
+              <Link to={`/blog/${post.slug}`} className="blog-card" key={post.id}>
                 <div className="blog-card-img">
                   <img src={post.img} alt={post.title} />
                 </div>

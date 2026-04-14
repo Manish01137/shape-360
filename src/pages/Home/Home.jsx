@@ -226,12 +226,12 @@ const Home = () => {
   ];
 
   const projects = [
-    { title: "UrbanKart E-Commerce", category: "Shopify Development", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80", desc: "Complete Shopify store with custom theme, payment integration and 40% conversion boost." },
-    { title: "FinEdge Solutions", category: "Web Development", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", desc: "Custom financial dashboard with real-time data visualization and secure user portal." },
-    { title: "StyleNest Fashion", category: "Meta Ads Campaign", img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80", desc: "Instagram & Facebook ad campaign that drove 3x ROAS in the first month." },
-    { title: "BloomWell Wellness", category: "WordPress + SEO", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80", desc: "Complete WordPress website with SEO optimization, ranking page 1 in 90 days." },
-    { title: "TechPulse SaaS", category: "Google Ads", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80", desc: "Performance max campaign generating 200+ qualified leads per month at $12 CPA." },
-    { title: "GreenLeaf Organics", category: "Branding + Website", img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80", desc: "Full brand identity and e-commerce website with 25% increase in online orders." },
+    { title: "KVS Academy", category: "Web Development", link: "https://www.kvsacademy.org", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80", desc: "Complete educational platform with course listings, student portal, and responsive design for a leading academy." },
+    { title: "Veloura Jewels", category: "E-Commerce Website", link: "https://velourajewels.in", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80", desc: "Premium e-commerce store for handcrafted jewelry with elegant UI, product catalog, and secure payments." },
+    { title: "Kedar Shakti", category: "Shopify Store", link: "https://kedarshakti.com", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", desc: "Spiritual e-commerce brand with Shopify store, product categorization, and optimized checkout flow." },
+    { title: "Zeqon", category: "SaaS Website", link: "https://zeqon.co", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", desc: "Modern SaaS company website with sleek design, feature showcases, and lead generation funnel." },
+    { title: "Staylia DXB", category: "Web Development", link: "https://stayliadxb.com", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80", desc: "Dubai-based rental management platform with property listings, investor dashboards, and booking system." },
+    { title: "JaldiRide Connect", category: "Web App", link: "https://www.jaldirideconnect.com", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", desc: "Smart local transport platform connecting riders with autos, cars, and buses across cities." },
   ];
 
   const whyUs = [
@@ -242,13 +242,13 @@ const Home = () => {
   ];
 
   const testimonials = [
-    { text: "Shape-360 has been a game-changer for our business. Their Google Ads strategy consistently delivers quality leads and strong ROI.", name: "Rohit Sharma", role: "Founder, UrbanKart", stars: 5 },
-    { text: "Their conversion-focused design approach significantly improved our website performance. Results were visible within weeks.", name: "Neha Gupta", role: "Marketing Head, StyleNest", stars: 5 },
-    { text: "Weekly reports, clear communication, and strong execution made Shape-360 a reliable long-term partner for us.", name: "Aman Verma", role: "Co-Founder, FinEdge Solutions", stars: 5 },
-    { text: "We wanted a digital partner, not just an agency. Shape-360 delivered beyond expectations and continues to support our growth.", name: "Pooja Mehta", role: "Owner, BloomWell Wellness", stars: 5 },
+    { text: "Shape-360 built a stunning e-commerce store that truly reflects our brand's elegance. Our online sales jumped 55% within the first quarter.", name: "Veloura Team", role: "Founders, Veloura Jewels", stars: 5 },
+    { text: "The Shopify store they built for us handles everything — from individual orders to corporate bulk gifting. Our online orders have tripled.", name: "Kedar Shakti Team", role: "Founders, Kedar Shakti", stars: 5 },
+    { text: "Shape-360 delivered a premium website that speaks directly to property investors. The quality and professionalism helped us onboard high-value clients.", name: "Staylia Team", role: "Founders, Staylia DXB", stars: 5 },
+    { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["UrbanKart", "StyleNest", "FinEdge", "BloomWell", "TechPulse", "GreenLeaf", "UrbanKart", "StyleNest", "FinEdge", "BloomWell", "TechPulse", "GreenLeaf"];
+  const brands = ["KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide"];
 
   return (
     <div className="home">
@@ -432,11 +432,11 @@ const Home = () => {
         <div className="hscroll-track" ref={horizontalRef}>
           <div className="hscroll-cards">
             {projects.map((project, i) => (
-              <Link to="/case-studies" className="hscroll-card" key={i}>
+              <a href={project.link} target="_blank" rel="noreferrer" className="hscroll-card" key={i}>
                 <div className="hscroll-card-img">
                   <img src={project.img} alt={project.title} />
                   <div className="hscroll-card-overlay">
-                    <span className="project-view">View Project &#8594;</span>
+                    <span className="project-view">View Live &#8594;</span>
                   </div>
                 </div>
                 <div className="hscroll-card-info">
@@ -444,7 +444,7 @@ const Home = () => {
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

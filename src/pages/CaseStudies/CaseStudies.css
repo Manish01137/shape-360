@@ -245,6 +245,41 @@
   color: var(--color-text-muted);
 }
 
+/* Card Actions */
+.cs-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cs-card-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.cs-card-live:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201,168,76,0.3);
+}
+
+.cs-card-live span {
+  transition: transform 0.3s ease;
+}
+
+.cs-card-live:hover span {
+  transform: translateX(4px);
+}
+
 /* CTA Link */
 .cs-card-cta {
   display: inline-flex;

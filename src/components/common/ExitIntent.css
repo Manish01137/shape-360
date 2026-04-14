@@ -1,0 +1,123 @@
+.exit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: exitFadeIn 0.3s ease;
+}
+
+@keyframes exitFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.exit-modal {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  max-width: 520px;
+  width: 100%;
+  padding: 50px 45px;
+  position: relative;
+  text-align: center;
+  animation: exitSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes exitSlide {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.exit-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+}
+
+.exit-close:hover {
+  color: var(--color-white);
+}
+
+.exit-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.exit-content h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.exit-content h2 span {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.exit-content p {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.exit-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.exit-actions .thm-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.exit-dismiss {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.exit-dismiss:hover {
+  color: var(--color-white);
+}
+
+@media (max-width: 500px) {
+  .exit-modal {
+    padding: 40px 28px;
+  }
+
+  .exit-content h2 {
+    font-size: 26px;
+  }
+}
