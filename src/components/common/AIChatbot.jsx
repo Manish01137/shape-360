@@ -1,36 +1,97 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import "./AIChatbot.css";
 
 const BOT_NAME = "Shape AI";
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
-const knowledgeBase = [
-  { keywords: ["hi", "hello", "hey", "hii"], response: "Hello! Welcome to Shape-360. I'm your AI assistant. How can I help you today? You can ask about our services, pricing, process, or anything else!" },
-  { keywords: ["service", "services", "what do you do", "offer", "provide"], response: "We offer a full suite of digital services:\n\n• Website Development (Custom, Shopify, WordPress)\n• Meta Ads (Facebook & Instagram)\n• Google Ads Management\n• SEO Optimization\n• Branding & Graphic Design\n• Video Editing\n• Account Management\n\nWhich service interests you most?" },
-  { keywords: ["price", "pricing", "cost", "how much", "budget", "rate", "charges", "fee"], response: "Our pricing is transparent and competitive:\n\n🌐 Web Development:\n• Starter — $499\n• Professional — $999\n• Enterprise — $2,499\n\n📈 Ad Management:\n• Meta Ads — $349/mo\n• Google Ads — $449/mo\n• Full Marketing — $899/mo\n\nAll packages are customizable. Want a personalized quote?" },
-  { keywords: ["shopify", "ecommerce", "e-commerce", "store", "online store"], response: "We build high-converting Shopify stores with:\n\n• Custom theme development\n• Product catalog setup\n• Payment & shipping configuration\n• Apps integration & automation\n• Mobile-optimized design\n\nOur Shopify stores have achieved up to 40% conversion boosts! Want to get started?" },
-  { keywords: ["wordpress", "cms", "blog"], response: "Our WordPress solutions include:\n\n• Custom theme development\n• Plugin integration\n• Security hardening\n• Performance optimization\n• SEO-friendly structure\n\nPerfect for business websites, blogs, and content-driven sites." },
-  { keywords: ["meta ads", "facebook ads", "instagram ads", "facebook", "instagram", "social media"], response: "Our Meta Ads service delivers results:\n\n• Campaign strategy & planning\n• Creative design & copywriting\n• Audience targeting & retargeting\n• A/B testing & optimization\n• Weekly performance reports\n\nWe've achieved up to 3x ROAS for our clients!" },
-  { keywords: ["google ads", "search ads", "ppc", "sem"], response: "Our Google Ads management includes:\n\n• Keyword research & strategy\n• Search & display campaigns\n• Performance Max campaigns\n• Conversion tracking setup\n• Bid management & optimization\n\nOne client generated 200+ leads/month at just $12 CPA!" },
-  { keywords: ["seo", "search engine", "ranking", "organic"], response: "We offer comprehensive SEO services:\n\n• Technical SEO audit\n• On-page optimization\n• Schema markup implementation\n• Content strategy\n• Link building\n\nWe've helped clients reach Google's page 1 in as little as 90 days!" },
-  { keywords: ["process", "how do you work", "workflow", "steps"], response: "Our proven 4-step process:\n\n1️⃣ Discover — Deep dive into your goals & competition\n2️⃣ Build — Meticulous development & design\n3️⃣ Launch — Comprehensive testing & optimization\n4️⃣ Scale — Continuous growth & improvement\n\nWe keep you informed at every step with weekly reports." },
-  { keywords: ["time", "timeline", "how long", "duration", "deadline"], response: "Typical project timelines:\n\n• Standard Website — 2-4 weeks\n• Shopify Store — 2-3 weeks\n• WordPress Site — 1-3 weeks\n• Ad Campaign Setup — 1 week\n• Branding Package — 2-3 weeks\n\nTimelines vary based on complexity. We'll provide a detailed schedule during consultation." },
-  { keywords: ["contact", "reach", "call", "email", "phone", "talk"], response: "You can reach us through:\n\n📧 Email: shape360official@gmail.com\n📞 Phone: +91 8209978891\n📍 Location: Bangalore, India\n\nOr fill out our contact form and we'll respond within 2 hours!\n\nWant me to take you to the contact page?" },
-  { keywords: ["portfolio", "work", "projects", "case study", "case studies", "examples"], response: "We've delivered 70+ successful projects including:\n\n• UrbanKart — 40% conversion boost (Shopify)\n• FinEdge — Custom financial dashboard\n• StyleNest — 3x ROAS on Meta Ads\n• BloomWell — Page 1 Google in 90 days\n• TechPulse — 200+ leads/month at $12 CPA\n\nCheck our Case Studies page for detailed results!" },
-  { keywords: ["team", "who", "people", "about"], response: "Shape-360 was founded in 2024 in Bangalore. We're a team of passionate developers, designers, and marketers dedicated to helping businesses grow digitally.\n\nWith 70+ projects delivered and a 98% client satisfaction rate, we're committed to being your long-term growth partner." },
-  { keywords: ["refund", "guarantee", "satisfaction"], response: "We offer a satisfaction guarantee! If you're not happy with initial concepts, we'll revise until you are. We believe in building trust through quality work and transparent communication.\n\nNo long-term contracts required for web development projects." },
-  { keywords: ["thank", "thanks", "bye", "goodbye"], response: "You're welcome! If you have more questions later, I'm always here. Have a great day! 🙌\n\nFeel free to reach us at shape360official@gmail.com or call +91 8209978891." },
+const SYSTEM_PROMPT = `You are "Shape AI", the intelligent AI assistant for Shape-360, a premium digital agency based in Bangalore, India. You are embedded on their website as a live chat widget.
+
+YOUR PERSONALITY:
+- Friendly, professional, and confident
+- Speak concisely — this is a chat widget, not an essay. Keep responses under 150 words.
+- Use line breaks for readability. Use bullet points (•) for lists.
+- Be helpful and proactive — suggest next steps, offer to connect them with the team
+- You can use emojis sparingly for warmth
+
+COMPANY INFORMATION:
+- Name: Shape-360
+- Founded: 2024, Bangalore, India
+- Mission: "To empower businesses with digital solutions that drive growth, build trust, and deliver measurable impact."
+- Team: 6+ members including developers, designers, marketers
+- Stats: 70+ projects delivered, 20+ happy clients, 2+ years experience, 98% client satisfaction
+- Contact: Email: shape360official@gmail.com | Phone: +91 8209978891 | Location: Bangalore, India
+- Social: Instagram @shape360official, Facebook
+
+SERVICES OFFERED:
+1. Website Development (Custom React/Next.js, fast & scalable) — from $499
+2. Shopify Store Development (custom themes, payment setup, 40% conversion boost) — from $499
+3. WordPress Development (CMS, blogs, security, SEO-friendly) — from $499
+4. Meta Ads - Facebook & Instagram (campaign strategy, targeting, A/B testing) — from $349/mo
+5. Google Ads Management (Search, Display, Performance Max) — from $449/mo
+6. Account Management (dedicated manager, weekly reports, 24/7 support)
+7. Additional: Website Maintenance, Analytics Setup, Conversion Optimization, Video Editing, Graphic Design, Branding & Creatives
+
+PRICING - WEB DEVELOPMENT:
+• Starter — $499 (5-page responsive site, basic SEO, contact form, 1 month support)
+• Professional — $999 (10-page custom site, advanced UI/UX, full SEO, CMS, analytics, 3 months support)
+• Enterprise — $2,499 (unlimited pages, custom web app, e-commerce, API integrations, 6 months support, priority support)
+
+PRICING - ADVERTISING:
+• Meta Ads Starter — $349/month
+• Google Ads Starter — $449/month
+• Full Digital Marketing — $899/month (Meta + Google, unlimited creatives, dedicated account manager)
+
+All prices in USD. Ad spend billed separately. Custom packages available.
+
+PROCESS:
+1. Discover — Deep dive into business goals & competition
+2. Build — Design & develop with meticulous attention
+3. Launch — Testing & optimization for peak performance
+4. Scale — Continuous improvement & growth strategies
+
+CASE STUDIES / PORTFOLIO:
+• UrbanKart — Shopify store, 40% conversion increase
+• FinEdge Solutions — Custom financial dashboard, 99.9% uptime
+• StyleNest Fashion — Meta Ads, 3x ROAS in first month
+• BloomWell Wellness — WordPress + SEO, page 1 Google in 90 days
+• TechPulse SaaS — Google Ads, 200+ leads/month at $12 CPA
+• GreenLeaf Organics — Branding + website, 25% order increase
+
+TIMELINES:
+• Standard Website: 2-4 weeks
+• Shopify Store: 2-3 weeks
+• WordPress: 1-3 weeks
+• Ad Campaign Setup: 1 week
+• Branding: 2-3 weeks
+
+POLICIES:
+• Payment: 50% upfront, 50% on completion. Milestone-based for large projects.
+• No long-term contracts for web dev. Month-to-month for ad management.
+• Satisfaction guarantee — revisions until happy.
+• Clients own all accounts and data.
+
+RULES:
+- NEVER make up information. If unsure, say you'll connect them with the team.
+- If someone asks something unrelated to Shape-360 or digital services, politely redirect.
+- Always try to guide the conversation toward booking a free consultation.
+- If they seem ready to buy, suggest visiting the Contact page or calling +91 8209978891.
+- Never share competitor information or pricing.
+- You cannot book meetings, access calendars, or process payments — direct them to contact the team for that.`;
+
+/* Fallback keyword responses when API is unavailable */
+const fallbackResponses = [
+  { keywords: ["hi", "hello", "hey", "hii"], response: "Hello! 👋 Welcome to Shape-360. I'm Shape AI, your digital assistant. How can I help you today?\n\nYou can ask about our services, pricing, portfolio, or anything else!" },
+  { keywords: ["service", "services", "what do you do", "offer"], response: "We offer a full suite of digital services:\n\n• Website Development (Custom, Shopify, WordPress)\n• Meta Ads (Facebook & Instagram)\n• Google Ads Management\n• SEO Optimization\n• Branding & Graphic Design\n• Video Editing\n• Account Management\n\nWhich service interests you?" },
+  { keywords: ["price", "pricing", "cost", "how much", "budget"], response: "Our pricing:\n\n🌐 Web Development:\n• Starter — $499\n• Professional — $999\n• Enterprise — $2,499\n\n📈 Ad Management:\n• Meta Ads — $349/mo\n• Google Ads — $449/mo\n• Full Marketing — $899/mo\n\nAll packages are customizable. Want a personalized quote?" },
+  { keywords: ["contact", "reach", "call", "email", "phone"], response: "You can reach us:\n\n📧 shape360official@gmail.com\n📞 +91 8209978891\n📍 Bangalore, India\n\nOr visit our Contact page — we respond within 2 hours!" },
 ];
 
-const getResponse = (input) => {
+const getFallbackResponse = (input) => {
   const lower = input.toLowerCase().trim();
-
-  for (const item of knowledgeBase) {
-    if (item.keywords.some((kw) => lower.includes(kw))) {
-      return item.response;
-    }
+  for (const item of fallbackResponses) {
+    if (item.keywords.some((kw) => lower.includes(kw))) return item.response;
   }
-
-  return "That's a great question! I'd love to help you with that. For detailed information, I'd recommend speaking with our team directly.\n\n📧 shape360official@gmail.com\n📞 +91 8209978891\n\nOr you can visit our Contact page to send a message. Is there anything else I can help with?";
+  return "Thanks for your message! For the best assistance, please reach out to our team directly:\n\n📧 shape360official@gmail.com\n📞 +91 8209978891\n\nOr visit our Contact page. We'd love to help!";
 };
 
 const AIChatbot = () => {
@@ -38,7 +99,7 @@ const AIChatbot = () => {
   const [messages, setMessages] = useState([
     {
       from: "bot",
-      text: "Hi there! 👋 I'm Shape AI, your intelligent assistant. How can I help you today?\n\nYou can ask me about:\n• Our services\n• Pricing & packages\n• Our process\n• Portfolio & case studies",
+      text: "Hi there! 👋 I'm Shape AI, powered by advanced AI. I know everything about Shape-360's services, pricing, and portfolio.\n\nHow can I help you today?",
       time: new Date(),
     },
   ]);
@@ -46,6 +107,7 @@ const AIChatbot = () => {
   const [typing, setTyping] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const conversationRef = useRef([]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -61,22 +123,92 @@ const AIChatbot = () => {
     }
   }, [open]);
 
-  const handleSend = () => {
+  const callGeminiAPI = useCallback(async (userMessage) => {
+    if (!GEMINI_API_KEY) {
+      return getFallbackResponse(userMessage);
+    }
+
+    conversationRef.current.push({
+      role: "user",
+      parts: [{ text: userMessage }],
+    });
+
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            system_instruction: {
+              parts: [{ text: SYSTEM_PROMPT }],
+            },
+            contents: conversationRef.current,
+            generationConfig: {
+              temperature: 0.7,
+              topP: 0.9,
+              topK: 40,
+              maxOutputTokens: 400,
+            },
+            safetySettings: [
+              { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_ONLY_HIGH" },
+              { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_ONLY_HIGH" },
+              { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_ONLY_HIGH" },
+              { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" },
+            ],
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const botText =
+        data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        getFallbackResponse(userMessage);
+
+      conversationRef.current.push({
+        role: "model",
+        parts: [{ text: botText }],
+      });
+
+      return botText;
+    } catch (error) {
+      console.error("Gemini API error:", error);
+      conversationRef.current.pop();
+      return getFallbackResponse(userMessage);
+    }
+  }, []);
+
+  const handleSend = useCallback(async () => {
     const trimmed = input.trim();
-    if (!trimmed) return;
+    if (!trimmed || typing) return;
 
     const userMsg = { from: "user", text: trimmed, time: new Date() };
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setTyping(true);
 
-    const delay = 800 + Math.random() * 1200;
-    setTimeout(() => {
-      const botReply = { from: "bot", text: getResponse(trimmed), time: new Date() };
-      setMessages((prev) => [...prev, botReply]);
-      setTyping(false);
-    }, delay);
-  };
+    const botText = await callGeminiAPI(trimmed);
+    const botReply = { from: "bot", text: botText, time: new Date() };
+    setMessages((prev) => [...prev, botReply]);
+    setTyping(false);
+  }, [input, typing, callGeminiAPI]);
+
+  const handleQuickQuestion = useCallback(async (q) => {
+    if (typing) return;
+
+    const userMsg = { from: "user", text: q, time: new Date() };
+    setMessages((prev) => [...prev, userMsg]);
+    setTyping(true);
+
+    const botText = await callGeminiAPI(q);
+    const botReply = { from: "bot", text: botText, time: new Date() };
+    setMessages((prev) => [...prev, botReply]);
+    setTyping(false);
+  }, [typing, callGeminiAPI]);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -98,7 +230,6 @@ const AIChatbot = () => {
 
   return (
     <div className="ai-chatbot">
-      {/* Chat Window */}
       {open && (
         <div className="chatbot-window">
           {/* Header */}
@@ -119,7 +250,7 @@ const AIChatbot = () => {
                 <strong>{BOT_NAME}</strong>
                 <span className="chatbot-status">
                   <span className="chatbot-status-dot"></span>
-                  Online
+                  {GEMINI_API_KEY ? "AI Powered" : "Online"}
                 </span>
               </div>
             </div>
@@ -195,20 +326,7 @@ const AIChatbot = () => {
                 <button
                   key={i}
                   className="chatbot-quick-btn"
-                  onClick={() => {
-                    setInput(q);
-                    setTimeout(() => {
-                      const userMsg = { from: "user", text: q, time: new Date() };
-                      setMessages((prev) => [...prev, userMsg]);
-                      setInput("");
-                      setTyping(true);
-                      setTimeout(() => {
-                        const botReply = { from: "bot", text: getResponse(q), time: new Date() };
-                        setMessages((prev) => [...prev, botReply]);
-                        setTyping(false);
-                      }, 800 + Math.random() * 1200);
-                    }, 100);
-                  }}
+                  onClick={() => handleQuickQuestion(q)}
                 >
                   {q}
                 </button>
@@ -221,15 +339,16 @@ const AIChatbot = () => {
             <input
               ref={inputRef}
               type="text"
-              placeholder="Type your message..."
+              placeholder="Ask me anything about Shape-360..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
+              disabled={typing}
             />
             <button
               className="chatbot-send"
               onClick={handleSend}
-              disabled={!input.trim()}
+              disabled={!input.trim() || typing}
               aria-label="Send message"
             >
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
