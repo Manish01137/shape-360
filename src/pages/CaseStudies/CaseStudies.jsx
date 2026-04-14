@@ -286,6 +286,7 @@ const CaseStudies = () => {
               { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean, modern landing page for an online learning platform with course highlights, testimonials, and signup flow." },
               { title: "FolkLane", category: "Creative Agency", link: "https://www.folklane.in", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80", desc: "Full-service creative agency page with tiered pricing, portfolio showcase, and brand identity — based in Prayagraj." },
               { title: "Pawan Hardu", category: "Video Editor Portfolio", link: "https://pawanhardu.org", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80", desc: "Cinematic portfolio for a video editor with 70M+ views — featuring showreel, services, and client testimonials." },
+              { title: "Krishi Global Industries", category: "Agri Export Company", link: "https://krishiglobalindustries.com", img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80", desc: "Gujarat-based agricultural export company — farm-direct coriander, chillies, and rice with FSSAI & APMC certifications for global buyers." },
             ].map((lp, i) => (
               <a href={lp.link} target="_blank" rel="noreferrer" className="cs-landing-card" key={i}>
                 <div className="cs-landing-card-img">

@@ -256,7 +256,7 @@ const Home = () => {
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon"];
+  const brands = ["KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon"];
 
   return (
     <div className="home">
@@ -479,6 +479,7 @@ const Home = () => {
               { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean educational platform landing page with course highlights and CTAs." },
               { title: "FolkLane", category: "Creative Agency", link: "https://www.folklane.in", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80", desc: "Full-service agency page with pricing tiers, portfolio, and brand identity." },
               { title: "Pawan Hardu", category: "Video Editor Portfolio", link: "https://pawanhardu.org", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80", desc: "Cinematic portfolio for a video editor with 70M+ views and 300+ projects." },
+              { title: "Krishi Global Industries", category: "Agri Export Company", link: "https://krishiglobalindustries.com", img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80", desc: "Premium agricultural export landing page showcasing farm-direct spices, rice, and global trade services." },
             ].map((lp, i) => (
               <a href={lp.link} target="_blank" rel="noreferrer" className="landing-card" key={i}>
                 <div className="landing-card-img">

@@ -62,6 +62,7 @@ LANDING PAGE PROJECTS:
 • SkillOwl (skillowl.in) — EdTech platform landing page with course highlights and signup flow
 • FolkLane (folklane.in) — Full-service creative agency page with tiered pricing and portfolio, based in Prayagraj
 • Pawan Hardu (pawanhardu.org) — Cinematic video editor portfolio with 70M+ views, 300+ projects, showreel and testimonials
+• Krishi Global Industries (krishiglobalindustries.com) — Agricultural export company landing page, farm-direct spices & rice, FSSAI certified, Gujarat-based
 
 TIMELINES:
 • Standard Website: 2-4 weeks
@@ -129,7 +130,7 @@ const AIChatbot = () => {
     }
   }, [open]);
 
-  const callGeminiAPI = useCallback(async (userMessage) => {
+  const callAI = useCallback(async (userMessage) => {
     if (!GEMINI_API_KEY) {
       return getFallbackResponse(userMessage);
     }
@@ -197,11 +198,11 @@ const AIChatbot = () => {
     setInput("");
     setTyping(true);
 
-    const botText = await callGeminiAPI(trimmed);
+    const botText = await callAI(trimmed);
     const botReply = { from: "bot", text: botText, time: new Date() };
     setMessages((prev) => [...prev, botReply]);
     setTyping(false);
-  }, [input, typing, callGeminiAPI]);
+  }, [input, typing, callAI]);
 
   const handleQuickQuestion = useCallback(async (q) => {
     if (typing) return;
@@ -210,11 +211,11 @@ const AIChatbot = () => {
     setMessages((prev) => [...prev, userMsg]);
     setTyping(true);
 
-    const botText = await callGeminiAPI(q);
+    const botText = await callAI(q);
     const botReply = { from: "bot", text: botText, time: new Date() };
     setMessages((prev) => [...prev, botReply]);
     setTyping(false);
-  }, [typing, callGeminiAPI]);
+  }, [typing, callAI]);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
