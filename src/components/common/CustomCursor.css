@@ -1,74 +1,62 @@
-/* ================= CUSTOM CURSOR ================= */
-.cursor-dot,
-.cursor-circle {
+/* ================= ELECTRIC CURSOR ================= */
+
+.cc-canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 99998;
-  will-change: transform;
+  z-index: 99997;
+  transition: opacity 0.4s ease;
 }
 
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  margin-left: -4px;
-  margin-top: -4px;
+.cc-core {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  border-radius: 50%;
   background: var(--color-accent);
-  border-radius: 50%;
-  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+  box-shadow:
+    0 0 8px rgba(201, 168, 76, 0.8),
+    0 0 20px rgba(201, 168, 76, 0.4),
+    0 0 40px rgba(201, 168, 76, 0.15);
+  transition:
+    width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    margin 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-radius 0.3s ease;
 }
 
-.cursor-circle {
-  width: 40px;
-  height: 40px;
-  margin-left: -20px;
-  margin-top: -20px;
-  border: 1.5px solid rgba(201, 168, 76, 0.5);
-  border-radius: 50%;
-  transition: width 0.4s ease, height 0.4s ease, margin 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+.cc-core--hover {
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow:
+    0 0 14px rgba(255, 255, 255, 0.9),
+    0 0 35px rgba(201, 168, 76, 0.5),
+    0 0 60px rgba(201, 168, 76, 0.2);
 }
 
-/* Hovered State */
-.cursor-dot.hovered {
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
-  margin-top: -6px;
-  background: var(--color-white);
-  mix-blend-mode: difference;
+.cc-hidden {
+  opacity: 0 !important;
 }
 
-.cursor-circle.hovered {
-  width: 60px;
-  height: 60px;
-  margin-left: -30px;
-  margin-top: -30px;
-  border-color: rgba(201, 168, 76, 0.8);
-  background: rgba(201, 168, 76, 0.08);
-}
-
-/* Hidden */
-.cursor-dot.hidden,
-.cursor-circle.hidden {
-  opacity: 0;
-}
-
-/* Hide default cursor on desktop */
+/* ===== HIDE DEFAULT CURSOR ===== */
 @media (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
+  * { cursor: none !important; }
 }
 
-/* Don't show custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
-  .cursor-dot,
-  .cursor-circle {
-    display: none;
-  }
-
-  * {
-    cursor: auto !important;
-  }
+  .cc-canvas, .cc-core { display: none !important; }
+  * { cursor: auto !important; }
 }
