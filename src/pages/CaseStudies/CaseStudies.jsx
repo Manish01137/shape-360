@@ -266,6 +266,44 @@ const CaseStudies = () => {
         </div>
       </section>
 
+      {/* LANDING PAGES */}
+      <section className="cs-landing">
+        <div className="container">
+          <div className="text-center">
+            <div className="sec-tagline" style={{ justifyContent: "center" }}>
+              <div className="line"></div>
+              <p>Landing Pages</p>
+              <div className="line"></div>
+            </div>
+            <h2 className="sec-title">Single-Page <span>Builds</span></h2>
+            <p className="cs-landing-desc">
+              High-converting landing pages designed to tell a story, capture leads, and drive action — fast.
+            </p>
+          </div>
+          <div className="cs-landing-grid">
+            {[
+              { title: "MindMint Media", category: "Digital Marketing Agency", link: "https://mindmintmedia.in", img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=80", desc: "Bold agency landing page showcasing digital marketing services with strong lead capture and service breakdowns." },
+              { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean, modern landing page for an online learning platform with course highlights, testimonials, and signup flow." },
+              { title: "FolkLane", category: "Creative Agency", link: "https://www.folklane.in", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80", desc: "Full-service creative agency page with tiered pricing, portfolio showcase, and brand identity — based in Prayagraj." },
+              { title: "Pawan Hardu", category: "Video Editor Portfolio", link: "https://pawanhardu.org", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80", desc: "Cinematic portfolio for a video editor with 70M+ views — featuring showreel, services, and client testimonials." },
+            ].map((lp, i) => (
+              <a href={lp.link} target="_blank" rel="noreferrer" className="cs-landing-card" key={i}>
+                <div className="cs-landing-card-img">
+                  <img src={lp.img} alt={lp.title} loading="lazy" />
+                  <div className="cs-landing-badge">Landing Page</div>
+                </div>
+                <div className="cs-landing-card-body">
+                  <span className="cs-card-category">{lp.category}</span>
+                  <h3>{lp.title}</h3>
+                  <p>{lp.desc}</p>
+                  <span className="cs-card-cta">View Live <span>&#8594;</span></span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="cs-cta">
         <div className="container text-center">

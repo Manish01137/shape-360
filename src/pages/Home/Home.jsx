@@ -122,6 +122,14 @@ const Home = () => {
         });
       }
 
+      /* Landing page cards */
+      gsap.fromTo(".landing-card",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power2.out",
+          scrollTrigger: { trigger: ".landing-section", start: "top 70%" }
+        }
+      );
+
       /* Process cards */
       gsap.fromTo(".process-card",
         { opacity: 0, y: 60 },
@@ -248,7 +256,7 @@ const Home = () => {
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide"];
+  const brands = ["KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon"];
 
   return (
     <div className="home">
@@ -443,6 +451,46 @@ const Home = () => {
                   <span className="project-category">{project.category}</span>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= LANDING PAGES SHOWCASE ================= */}
+      <section className="landing-section">
+        <div className="container">
+          <div className="landing-header">
+            <div>
+              <div className="sec-tagline">
+                <p>Landing Pages</p>
+                <div className="line"></div>
+              </div>
+              <h2 className="sec-title">High-Converting <span>Landing Pages</span></h2>
+            </div>
+            <p className="landing-subtitle">
+              Single-page designs built to capture leads, tell stories, and drive action.
+            </p>
+          </div>
+          <div className="landing-grid">
+            {[
+              { title: "MindMint Media", category: "Digital Marketing Agency", link: "https://mindmintmedia.in", img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=80", desc: "Bold agency landing page with service showcases and lead capture." },
+              { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean educational platform landing page with course highlights and CTAs." },
+              { title: "FolkLane", category: "Creative Agency", link: "https://www.folklane.in", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80", desc: "Full-service agency page with pricing tiers, portfolio, and brand identity." },
+              { title: "Pawan Hardu", category: "Video Editor Portfolio", link: "https://pawanhardu.org", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80", desc: "Cinematic portfolio for a video editor with 70M+ views and 300+ projects." },
+            ].map((lp, i) => (
+              <a href={lp.link} target="_blank" rel="noreferrer" className="landing-card" key={i}>
+                <div className="landing-card-img">
+                  <img src={lp.img} alt={lp.title} loading="lazy" />
+                  <div className="landing-card-overlay">
+                    <span className="landing-card-view">View Live &#8594;</span>
+                  </div>
+                </div>
+                <div className="landing-card-info">
+                  <span className="landing-card-tag">{lp.category}</span>
+                  <h3>{lp.title}</h3>
+                  <p>{lp.desc}</p>
                 </div>
               </a>
             ))}

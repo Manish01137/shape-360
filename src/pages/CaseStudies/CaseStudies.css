@@ -301,6 +301,101 @@
   transform: translateX(5px);
 }
 
+/* ================= LANDING PAGES SECTION ================= */
+.cs-landing {
+  padding: 140px 0;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+}
+
+.cs-landing-desc {
+  color: var(--color-text-muted);
+  font-size: 17px;
+  max-width: 500px;
+  margin: 16px auto 60px;
+  line-height: 1.7;
+}
+
+.cs-landing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.cs-landing-card {
+  display: block;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all 0.5s ease;
+  color: inherit;
+}
+
+.cs-landing-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.cs-landing-card-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.cs-landing-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65);
+  transition: all 0.6s ease;
+}
+
+.cs-landing-card:hover .cs-landing-card-img img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.cs-landing-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 5px 14px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cs-landing-card-body {
+  padding: 28px 24px;
+}
+
+.cs-landing-card-body h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.cs-landing-card-body p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .cs-landing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-landing {
+    padding: 100px 0;
+  }
+}
+
 /* CTA Section */
 .cs-cta {
   padding: 160px 0;

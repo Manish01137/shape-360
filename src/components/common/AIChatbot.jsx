@@ -57,6 +57,12 @@ CASE STUDIES / PORTFOLIO (REAL PROJECTS):
 • Staylia DXB (stayliadxb.com) — Dubai short-term rental management platform, 85%+ occupancy rates, investor dashboards, multi-platform booking
 • JaldiRide Connect (jaldirideconnect.com) — Smart local transport platform for autos/cars/buses, 10K+ monthly visits, 50+ cities targeted
 
+LANDING PAGE PROJECTS:
+• MindMint Media (mindmintmedia.in) — Digital marketing agency landing page with service showcases and lead capture
+• SkillOwl (skillowl.in) — EdTech platform landing page with course highlights and signup flow
+• FolkLane (folklane.in) — Full-service creative agency page with tiered pricing and portfolio, based in Prayagraj
+• Pawan Hardu (pawanhardu.org) — Cinematic video editor portfolio with 70M+ views, 300+ projects, showreel and testimonials
+
 TIMELINES:
 • Standard Website: 2-4 weeks
 • Shopify Store: 2-3 weeks

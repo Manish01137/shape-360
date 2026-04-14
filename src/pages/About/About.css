@@ -134,6 +134,50 @@
   margin-top: 6px;
 }
 
+/* ================= CLIENTS STRIP ================= */
+.about-clients {
+  padding: 50px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-light);
+}
+
+.about-clients-header p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.client-logos-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.client-logo-item {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: rgba(255,255,255,0.3);
+  border: 1px solid var(--color-border);
+  letter-spacing: 0.03em;
+  transition: all 0.4s ease;
+}
+
+.client-logo-item:hover {
+  color: var(--color-accent);
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
 /* ================= OUR STORY ================= */
 .story-section {
   padding: 160px 0;
@@ -196,6 +240,73 @@
   font-size: 13px;
   color: var(--color-text-muted);
   letter-spacing: 0.03em;
+}
+
+/* ================= HOW WE THINK ================= */
+.approach-section {
+  padding: 160px 0;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+}
+
+.approach-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.approach-subtitle {
+  color: var(--color-text-muted);
+  font-size: 17px;
+  max-width: 520px;
+  margin: 16px auto 0;
+  line-height: 1.7;
+}
+
+.approach-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.approach-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: all 0.4s ease;
+}
+
+.approach-item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.approach-item:hover {
+  padding-left: 16px;
+}
+
+.approach-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.approach-text h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.approach-text p {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 /* ================= MISSION ================= */
