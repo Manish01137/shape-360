@@ -199,19 +199,19 @@ const Home = () => {
   const heroSlides = [
     {
       tagline: "Digital Growth Partner",
-      title: <>360° Solutions <br /><span className="italic">That Drive</span> Growth</>,
+      title: <>360° Solutions <br /><span className="italic text-gradient">That Drive</span> Growth</>,
       img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
       bgImg: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=85",
     },
     {
       tagline: "Premium Web Development",
-      title: <>We Build <br /><span className="italic">Digital</span> Experiences</>,
+      title: <>We Build <br /><span className="italic text-gradient">Digital</span> Experiences</>,
       img: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
       bgImg: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=85",
     },
     {
       tagline: "Performance Marketing",
-      title: <>Ads That <br /><span className="italic">Actually</span> Convert</>,
+      title: <>Ads That <br /><span className="italic text-gradient">Actually</span> Convert</>,
       img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80",
       bgImg: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1920&q=85",
     },
@@ -374,7 +374,7 @@ const Home = () => {
       </section>
 
       {/* ================= SERVICES SECTION ================= */}
-      <section className="services-section">
+      <section className="services-section dot-grid">
         <div className="container">
           <div className="services-top">
             <div className="services-left">
@@ -440,7 +440,7 @@ const Home = () => {
         <div className="hscroll-track" ref={horizontalRef}>
           <div className="hscroll-cards">
             {projects.map((project, i) => (
-              <a href={project.link} target="_blank" rel="noreferrer" className="hscroll-card" key={i}>
+              <a href={project.link} target="_blank" rel="noreferrer" className="hscroll-card tilt-card" key={i}>
                 <div className="hscroll-card-img">
                   <img src={project.img} alt={project.title} />
                   <div className="hscroll-card-overlay">
@@ -481,7 +481,7 @@ const Home = () => {
               { title: "Pawan Hardu", category: "Video Editor Portfolio", link: "https://pawanhardu.org", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80", desc: "Cinematic portfolio for a video editor with 70M+ views and 300+ projects." },
               { title: "Krishi Global Industries", category: "Agri Export Company", link: "https://krishiglobalindustries.com", img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80", desc: "Premium agricultural export landing page showcasing farm-direct spices, rice, and global trade services." },
             ].map((lp, i) => (
-              <a href={lp.link} target="_blank" rel="noreferrer" className="landing-card" key={i}>
+              <a href={lp.link} target="_blank" rel="noreferrer" className="landing-card tilt-card glow-border" key={i}>
                 <div className="landing-card-img">
                   <img src={lp.img} alt={lp.title} loading="lazy" />
                   <div className="landing-card-overlay">
@@ -556,7 +556,7 @@ const Home = () => {
       </section>
 
       {/* ================= PROCESS SECTION ================= */}
-      <section className="process-section">
+      <section className="process-section dot-grid">
         <div className="container">
           <div className="text-center">
             <div className="sec-tagline" style={{ justifyContent: "center" }}>

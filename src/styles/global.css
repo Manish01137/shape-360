@@ -175,10 +175,9 @@ input, textarea, select {
   z-index: 99999;
   background: var(--color-bg);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .preloader.loaded {
@@ -187,40 +186,57 @@ input, textarea, select {
   pointer-events: none;
 }
 
-.preloader-spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid var(--color-border);
-  border-top-color: var(--color-accent);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 30px;
-}
-
-.preloader-text {
+.preloader-inner {
   display: flex;
-  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
-.preloader-text .letter {
-  font-size: 32px;
+.preloader-count {
+  font-size: clamp(72px, 12vw, 140px);
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--color-white);
-  text-transform: uppercase;
-  opacity: 0;
-  animation: letterReveal 3s infinite;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  opacity: 0.12;
 }
 
-.preloader-text .letter:nth-child(1) { animation-delay: 0s; }
-.preloader-text .letter:nth-child(2) { animation-delay: 0.15s; }
-.preloader-text .letter:nth-child(3) { animation-delay: 0.3s; }
-.preloader-text .letter:nth-child(4) { animation-delay: 0.45s; }
-.preloader-text .letter:nth-child(5) { animation-delay: 0.6s; }
-.preloader-text .letter:nth-child(6) { animation-delay: 0.75s; }
-.preloader-text .letter:nth-child(7) { animation-delay: 0.9s; }
-.preloader-text .letter:nth-child(8) { animation-delay: 1.05s; }
-.preloader-text .letter:nth-child(9) { animation-delay: 1.2s; }
+.preloader-bar {
+  width: 200px;
+  height: 2px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.5);
+}
+
+.preloader-brand {
+  display: flex;
+  gap: 3px;
+}
+
+.preloader-brand .letter {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0;
+  animation: preloaderLetter 2s ease infinite;
+}
+
+@keyframes preloaderLetter {
+  0%, 70%, 100% { opacity: 0; transform: translateY(4px); }
+  20%, 50% { opacity: 1; transform: translateY(0); }
+}
 
 /* ================= MARQUEE ================= */
 .marquee-wrap {
@@ -361,6 +377,104 @@ html.lenis, html.lenis body {
 .img-reveal {
   will-change: clip-path, transform;
   overflow: hidden;
+}
+
+/* ================= FILM GRAIN OVERLAY ================= */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 99990;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ================= DOT GRID PATTERN ================= */
+.dot-grid {
+  position: relative;
+}
+
+.dot-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= TEXT GRADIENT ================= */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #e0c76f 40%, #fff 60%, var(--color-accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+/* ================= ANIMATED GRADIENT BORDER ================= */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.4), transparent, rgba(201,168,76,0.2), transparent, rgba(201,168,76,0.4));
+  background-size: 300% 300%;
+  animation: borderGlow 6s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.glow-border:hover::after {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ================= BUTTON RIPPLE EFFECT ================= */
+.thm-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: rippleAnim 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ================= 3D TILT CARDS ================= */
+.tilt-card {
+  transition: transform 0.2s ease !important;
+  transform-style: preserve-3d;
 }
 
 /* ================= SELECTION ================= */
