@@ -52,8 +52,8 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 60px;
+  grid-template-columns: 1.4fr 1fr 1fr 0.8fr 1.2fr;
+  gap: 50px;
 }
 
 /* BRAND */

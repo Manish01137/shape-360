@@ -61,9 +61,18 @@ const Footer = () => {
               <li><Link to="/pricing">Pricing</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/team">Our Team</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Free Tools */}
+          <div className="footer-col">
+            <h4>Free Tools</h4>
+            <ul>
+              <li><Link to="/project-calculator">Project Calculator</Link></li>
+              <li><Link to="/website-audit">Website Audit</Link></li>
+              <li><Link to="/roi-calculator">ROI Calculator</Link></li>
             </ul>
           </div>
 

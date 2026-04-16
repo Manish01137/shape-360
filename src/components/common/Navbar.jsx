@@ -59,6 +59,9 @@ const Navbar = () => {
             </button>
             <div className={`nav-dropdown-menu ${dropdownOpen ? "open" : ""}`}>
               <NavLink to="/pricing" onClick={closeAll}>Pricing</NavLink>
+              <NavLink to="/project-calculator" onClick={closeAll}>Project Calculator</NavLink>
+              <NavLink to="/website-audit" onClick={closeAll}>Free Website Audit</NavLink>
+              <NavLink to="/roi-calculator" onClick={closeAll}>ROI Calculator</NavLink>
               <NavLink to="/blog" onClick={closeAll}>Blog</NavLink>
               <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
               <NavLink to="/about" onClick={closeAll}>About</NavLink>
@@ -67,6 +70,7 @@ const Navbar = () => {
 
           {/* Mobile — show all links */}
           <NavLink to="/pricing" className="mobile-only" onClick={closeAll}>Pricing</NavLink>
+          <NavLink to="/website-audit" className="mobile-only" onClick={closeAll}>Free Audit</NavLink>
           <NavLink to="/about" className="mobile-only" onClick={closeAll}>About</NavLink>
           <NavLink to="/blog" className="mobile-only" onClick={closeAll}>Blog</NavLink>
           <NavLink to="/faq" className="mobile-only" onClick={closeAll}>FAQ</NavLink>
