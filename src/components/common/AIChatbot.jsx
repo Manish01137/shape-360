@@ -115,6 +115,14 @@ const AIChatbot = () => {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const conversationRef = useRef([]);
+  const recognitionRef = useRef(null);
+  const [listening, setListening] = useState(false);
+  const [voiceEnabled, setVoiceEnabled] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const stored = localStorage.getItem("shape360_voice_enabled");
+    return stored === "true";
+  });
+  const [speechSupported, setSpeechSupported] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -129,6 +137,83 @@ const AIChatbot = () => {
       inputRef.current.focus();
     }
   }, [open]);
+
+  // Initialize speech recognition
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return;
+
+    setSpeechSupported(true);
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "en-US";
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript);
+      setListening(false);
+      // Auto-send after voice input
+      setTimeout(() => {
+        const userMsg = { from: "user", text: transcript, time: new Date() };
+        setMessages((prev) => [...prev, userMsg]);
+        setInput("");
+        setTyping(true);
+        callAI(transcript).then((botText) => {
+          const botReply = { from: "bot", text: botText, time: new Date() };
+          setMessages((prev) => [...prev, botReply]);
+          setTyping(false);
+          if (voiceEnabled) speakText(botText);
+        });
+      }, 200);
+    };
+
+    recognition.onerror = () => setListening(false);
+    recognition.onend = () => setListening(false);
+
+    recognitionRef.current = recognition;
+  }, [voiceEnabled]);
+
+  const speakText = (text) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    // Strip emojis and markdown for cleaner TTS
+    const cleaned = text.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|\*/gu, "").trim();
+    const utterance = new SpeechSynthesisUtterance(cleaned);
+    utterance.rate = 1.05;
+    utterance.pitch = 1.0;
+    utterance.volume = 0.9;
+    // Try to pick a natural voice
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find((v) => /samantha|google us english|microsoft aria|natural/i.test(v.name));
+    if (preferred) utterance.voice = preferred;
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const toggleListening = () => {
+    if (!recognitionRef.current) return;
+    if (listening) {
+      recognitionRef.current.stop();
+      setListening(false);
+    } else {
+      try {
+        recognitionRef.current.start();
+        setListening(true);
+      } catch {
+        setListening(false);
+      }
+    }
+  };
+
+  const toggleVoice = () => {
+    setVoiceEnabled((prev) => {
+      const next = !prev;
+      localStorage.setItem("shape360_voice_enabled", next.toString());
+      if (!next && window.speechSynthesis) window.speechSynthesis.cancel();
+      return next;
+    });
+  };
 
   const callAI = useCallback(async (userMessage) => {
     if (!GEMINI_API_KEY) {
@@ -202,7 +287,8 @@ const AIChatbot = () => {
     const botReply = { from: "bot", text: botText, time: new Date() };
     setMessages((prev) => [...prev, botReply]);
     setTyping(false);
-  }, [input, typing, callAI]);
+    if (voiceEnabled) speakText(botText);
+  }, [input, typing, callAI, voiceEnabled]);
 
   const handleQuickQuestion = useCallback(async (q) => {
     if (typing) return;
@@ -215,7 +301,8 @@ const AIChatbot = () => {
     const botReply = { from: "bot", text: botText, time: new Date() };
     setMessages((prev) => [...prev, botReply]);
     setTyping(false);
-  }, [typing, callAI]);
+    if (voiceEnabled) speakText(botText);
+  }, [typing, callAI, voiceEnabled]);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -262,6 +349,29 @@ const AIChatbot = () => {
               </div>
             </div>
             <div className="chatbot-header-actions">
+              {speechSupported && (
+                <button
+                  className={`chatbot-voice-btn ${voiceEnabled ? "active" : ""}`}
+                  onClick={toggleVoice}
+                  aria-label="Toggle voice responses"
+                  title={voiceEnabled ? "Voice responses ON" : "Voice responses OFF"}
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+                    {voiceEnabled ? (
+                      <>
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+                      </>
+                    ) : (
+                      <>
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <line x1="23" y1="9" x2="17" y2="15"/>
+                        <line x1="17" y1="9" x2="23" y2="15"/>
+                      </>
+                    )}
+                  </svg>
+                </button>
+              )}
               <a
                 href="https://wa.me/918209978891?text=Hi%20Shape-360%2C%20I%27m%20interested%20in%20your%20services."
                 target="_blank"
@@ -346,12 +456,27 @@ const AIChatbot = () => {
             <input
               ref={inputRef}
               type="text"
-              placeholder="Ask me anything about Shape-360..."
+              placeholder={listening ? "Listening..." : "Ask me anything about Shape-360..."}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              disabled={typing}
+              disabled={typing || listening}
             />
+            {speechSupported && (
+              <button
+                className={`chatbot-mic ${listening ? "listening" : ""}`}
+                onClick={toggleListening}
+                disabled={typing}
+                aria-label={listening ? "Stop listening" : "Start voice input"}
+                title="Voice input"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+                  <path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/>
+                </svg>
+                {listening && <span className="mic-pulse"></span>}
+              </button>
+            )}
             <button
               className="chatbot-send"
               onClick={handleSend}

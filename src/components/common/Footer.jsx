@@ -73,6 +73,8 @@ const Footer = () => {
               <li><Link to="/project-calculator">Project Calculator</Link></li>
               <li><Link to="/website-audit">Website Audit</Link></li>
               <li><Link to="/roi-calculator">ROI Calculator</Link></li>
+              <li><Link to="/ai-design-generator">AI Design Generator</Link></li>
+              <li><Link to="/client-portal">Client Portal Demo</Link></li>
             </ul>
           </div>
 

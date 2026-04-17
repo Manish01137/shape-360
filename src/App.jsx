@@ -37,6 +37,9 @@ const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"));
 const ProjectCalculator = lazy(() => import("./pages/Tools/ProjectCalculator"));
 const WebsiteAudit = lazy(() => import("./pages/Tools/WebsiteAudit"));
 const ROICalculator = lazy(() => import("./pages/Tools/ROICalculator"));
+const AIDesignGenerator = lazy(() => import("./pages/Tools/AIDesignGenerator"));
+const ClientPortal = lazy(() => import("./pages/Tools/ClientPortal"));
+const DynamicLanding = lazy(() => import("./pages/Landing/DynamicLanding"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 /* Scroll to top on route change */
@@ -69,6 +72,9 @@ const AnimatedRoutes = () => {
           <Route path="/project-calculator" element={<PageTransition><ProjectCalculator /></PageTransition>} />
           <Route path="/website-audit" element={<PageTransition><WebsiteAudit /></PageTransition>} />
           <Route path="/roi-calculator" element={<PageTransition><ROICalculator /></PageTransition>} />
+          <Route path="/ai-design-generator" element={<PageTransition><AIDesignGenerator /></PageTransition>} />
+          <Route path="/client-portal" element={<PageTransition><ClientPortal /></PageTransition>} />
+          <Route path="/landing" element={<PageTransition><DynamicLanding /></PageTransition>} />
           <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
           <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
