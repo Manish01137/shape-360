@@ -194,7 +194,7 @@
   background: var(--design-bg);
   color: var(--design-text);
   padding: 0;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .aidg-nav {
@@ -250,7 +250,7 @@
   color: var(--design-text);
   line-height: 1.2;
   margin-bottom: 12px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
 }
 
 .aidg-hero p {
@@ -279,7 +279,7 @@
   font-size: 22px;
   color: var(--design-accent);
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
 }
 
 .aidg-stats span {
@@ -326,7 +326,7 @@
 .aidg-about h2 {
   font-size: 22px;
   color: var(--design-text);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
   margin-bottom: 12px;
 }
 

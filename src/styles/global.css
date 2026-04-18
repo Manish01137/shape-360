@@ -1,10 +1,10 @@
 /* ================= GOOGLE FONTS ================= */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ================= CSS VARIABLES ================= */
 :root {
-  --font-body: 'DM Sans', sans-serif;
-  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Fraunces', 'Times New Roman', serif;
   --color-bg: #000000;
   --color-bg-light: #0a0a0a;
   --color-bg-card: #111111;
@@ -43,6 +43,8 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.005em;
 }
 
 a {
@@ -70,9 +72,14 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--color-white);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
 }
+
+h1 { font-variation-settings: "opsz" 144, "SOFT" 30; }
+h2 { font-variation-settings: "opsz" 96, "SOFT" 50; }
 
 p {
   margin: 0;
