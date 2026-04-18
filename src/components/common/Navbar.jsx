@@ -60,6 +60,7 @@ const Navbar = () => {
               </button>
               <div className={`nav-dropdown-menu ${dropdownOpen ? "open" : ""}`}>
                 <NavLink to="/pricing" onClick={closeAll}>Pricing</NavLink>
+                <NavLink to="/project-brief" onClick={closeAll}>AI Project Brief</NavLink>
                 <NavLink to="/project-calculator" onClick={closeAll}>Project Calculator</NavLink>
                 <NavLink to="/website-audit" onClick={closeAll}>Free Website Audit</NavLink>
                 <NavLink to="/roi-calculator" onClick={closeAll}>ROI Calculator</NavLink>
@@ -136,21 +137,29 @@ const Navbar = () => {
           <div className="mobile-menu-section">
             <span className="mobile-menu-label">Free Tools</span>
             <div className="mobile-tools-grid">
-              <NavLink to="/website-audit" onClick={closeAll} className="mobile-tool">
-                <span className="mobile-tool-icon">📊</span>
-                <span>Website Audit</span>
+              <NavLink to="/project-brief" onClick={closeAll} className="mobile-tool">
+                <span className="mobile-tool-icon">📋</span>
+                <span>AI Brief</span>
               </NavLink>
               <NavLink to="/project-calculator" onClick={closeAll} className="mobile-tool">
                 <span className="mobile-tool-icon">💰</span>
-                <span>Price Calculator</span>
+                <span>Calculator</span>
               </NavLink>
-              <NavLink to="/roi-calculator" onClick={closeAll} className="mobile-tool">
-                <span className="mobile-tool-icon">📈</span>
-                <span>ROI Calculator</span>
+              <NavLink to="/website-audit" onClick={closeAll} className="mobile-tool">
+                <span className="mobile-tool-icon">📊</span>
+                <span>Site Audit</span>
               </NavLink>
               <NavLink to="/ai-design-generator" onClick={closeAll} className="mobile-tool">
                 <span className="mobile-tool-icon">✨</span>
                 <span>AI Design</span>
+              </NavLink>
+              <NavLink to="/roi-calculator" onClick={closeAll} className="mobile-tool">
+                <span className="mobile-tool-icon">📈</span>
+                <span>ROI Calc</span>
+              </NavLink>
+              <NavLink to="/client-portal" onClick={closeAll} className="mobile-tool">
+                <span className="mobile-tool-icon">🗂️</span>
+                <span>Portal Demo</span>
               </NavLink>
             </div>
           </div>

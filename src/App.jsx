@@ -20,6 +20,8 @@ import SocialProof from "./components/common/SocialProof";
 import RippleButton from "./components/common/RippleButton";
 import MagneticWrap from "./components/common/MagneticWrap";
 import TiltCards from "./components/common/TiltCards";
+import CapacityIndicator from "./components/common/CapacityIndicator";
+import GeoWelcome from "./components/common/GeoWelcome";
 
 /* Lazy load pages for code-splitting */
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -39,6 +41,7 @@ const WebsiteAudit = lazy(() => import("./pages/Tools/WebsiteAudit"));
 const ROICalculator = lazy(() => import("./pages/Tools/ROICalculator"));
 const AIDesignGenerator = lazy(() => import("./pages/Tools/AIDesignGenerator"));
 const ClientPortal = lazy(() => import("./pages/Tools/ClientPortal"));
+const ProjectBrief = lazy(() => import("./pages/Tools/ProjectBrief"));
 const DynamicLanding = lazy(() => import("./pages/Landing/DynamicLanding"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
@@ -74,6 +77,7 @@ const AnimatedRoutes = () => {
           <Route path="/roi-calculator" element={<PageTransition><ROICalculator /></PageTransition>} />
           <Route path="/ai-design-generator" element={<PageTransition><AIDesignGenerator /></PageTransition>} />
           <Route path="/client-portal" element={<PageTransition><ClientPortal /></PageTransition>} />
+          <Route path="/project-brief" element={<PageTransition><ProjectBrief /></PageTransition>} />
           <Route path="/landing" element={<PageTransition><DynamicLanding /></PageTransition>} />
           <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
           <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
@@ -114,6 +118,8 @@ function App() {
           <TiltCards />
           <CookieConsent />
           <ExitIntent />
+          <CapacityIndicator />
+          <GeoWelcome />
         </SmoothScroll>
       </BrowserRouter>
     </HelmetProvider>

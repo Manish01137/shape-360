@@ -22,6 +22,81 @@ const palettePresets = {
   techy: { primary: "#10b981", accent: "#3b82f6", bg: "#0a0e1a", text: "#e2e8f0", bgAlt: "#141b2e" },
 };
 
+const industryPresets = [
+  {
+    id: "jewelry",
+    icon: "💎",
+    label: "Jewelry & Luxury",
+    industry: "Luxury jewelry",
+    sampleName: "Aurum Atelier",
+    sampleDesc: "We handcraft premium sterling silver and 18k gold jewelry with ethically sourced lab-grown diamonds, shipped globally with white-glove concierge service.",
+    vibe: "elegant",
+  },
+  {
+    id: "saas",
+    icon: "⚡",
+    label: "SaaS / Tech",
+    industry: "B2B SaaS",
+    sampleName: "Nexaflow",
+    sampleDesc: "An AI-powered workflow automation platform that helps growing teams eliminate repetitive tasks, integrate tools, and ship faster — all without writing code.",
+    vibe: "techy",
+  },
+  {
+    id: "restaurant",
+    icon: "🍽️",
+    label: "Restaurant",
+    industry: "Fine dining restaurant",
+    sampleName: "Saffron & Oak",
+    sampleDesc: "A modern Mediterranean fine-dining restaurant in Dubai, known for seasonal tasting menus, natural wines, and intimate chef-led dining experiences.",
+    vibe: "elegant",
+  },
+  {
+    id: "fitness",
+    icon: "💪",
+    label: "Fitness",
+    industry: "Premium fitness studio",
+    sampleName: "Forged Athletics",
+    sampleDesc: "A boutique strength-training studio with certified coaches, data-driven programming, and small-group sessions designed for serious fitness progress.",
+    vibe: "bold",
+  },
+  {
+    id: "real-estate",
+    icon: "🏢",
+    label: "Real Estate",
+    industry: "Luxury real estate",
+    sampleName: "Meridian Properties",
+    sampleDesc: "A boutique luxury real estate firm specializing in waterfront penthouses and private estates for high-net-worth international buyers across Dubai and Monaco.",
+    vibe: "elegant",
+  },
+  {
+    id: "fashion",
+    icon: "👗",
+    label: "Fashion",
+    industry: "Fashion / Apparel",
+    sampleName: "Noor & Co",
+    sampleDesc: "A modern fashion label blending traditional Indian craftsmanship with contemporary silhouettes, producing small-batch seasonal collections for the modern woman.",
+    vibe: "playful",
+  },
+  {
+    id: "agency",
+    icon: "🎯",
+    label: "Agency",
+    industry: "Creative agency",
+    sampleName: "Northline Studio",
+    sampleDesc: "A strategic brand and design studio helping ambitious founders build category-defining identities, websites, and campaigns that compound over time.",
+    vibe: "modern",
+  },
+  {
+    id: "ecommerce",
+    icon: "🛍️",
+    label: "E-Commerce",
+    industry: "Consumer e-commerce",
+    sampleName: "Beldon Goods",
+    sampleDesc: "A direct-to-consumer lifestyle brand selling premium home goods made from reclaimed materials, with transparent sourcing and lifetime guarantees.",
+    vibe: "modern",
+  },
+];
+
 const AIDesignGenerator = () => {
   const [businessName, setBusinessName] = useState("");
   const [description, setDescription] = useState("");
@@ -152,6 +227,31 @@ Return JSON in this exact structure:
             <div className="aidg-form">
               <h3>Tell us about your business</h3>
 
+              <div className="aidg-field">
+                <label>Quick-start with an industry</label>
+                <p className="aidg-preset-hint">One click fills the form with a sample business. Edit it to match yours.</p>
+                <div className="aidg-presets">
+                  {industryPresets.map((p) => (
+                    <button
+                      type="button"
+                      key={p.id}
+                      className="aidg-preset"
+                      onClick={() => {
+                        setBusinessName(p.sampleName);
+                        setIndustry(p.industry);
+                        setDescription(p.sampleDesc);
+                        setVibe(p.vibe);
+                      }}
+                    >
+                      <span className="aidg-preset-icon">{p.icon}</span>
+                      <span>{p.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="aidg-form-divider"><span>or fill manually</span></div>
+
               <form onSubmit={generateDesign}>
                 <div className="aidg-field">
                   <label>Business Name *</label>
@@ -242,7 +342,10 @@ Return JSON in this exact structure:
                     <div className="aidg-site">
                       {/* Nav */}
                       <div className="aidg-nav">
-                        <strong>{businessName}</strong>
+                        <div className="aidg-brand">
+                          <div className="aidg-logo-mark">{businessName.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase()}</div>
+                          <strong>{businessName}</strong>
+                        </div>
                         <div className="aidg-nav-links">
                           {design.services.map((s, i) => <span key={i}>{s}</span>)}
                         </div>
@@ -304,7 +407,21 @@ Return JSON in this exact structure:
                   <div className="aidg-cta">
                     <h3>Love what you see?</h3>
                     <p>Let's turn this AI concept into a real, high-converting website for your business.</p>
-                    <Link to="/contact" className="thm-btn">Build This For Me <span>&#8594;</span></Link>
+                    <div className="aidg-cta-actions">
+                      <Link to="/contact" className="thm-btn">Build This For Me <span>&#8594;</span></Link>
+                      <button
+                        type="button"
+                        className="aidg-regenerate"
+                        onClick={(e) => generateDesign(e)}
+                        disabled={generating}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <polyline points="23 4 23 10 17 10" />
+                          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                        </svg>
+                        Regenerate
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}

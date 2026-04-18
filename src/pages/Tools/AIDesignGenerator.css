@@ -409,3 +409,138 @@
   .aidg-hero h1 { font-size: 22px; }
   .aidg-features { grid-template-columns: 1fr; }
 }
+
+/* ================= INDUSTRY PRESETS ================= */
+.aidg-preset-hint {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+  margin-top: -4px;
+}
+
+.aidg-presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.aidg-preset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.aidg-preset:hover {
+  border-color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.06);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.aidg-preset-icon {
+  font-size: 20px;
+}
+
+.aidg-form-divider {
+  position: relative;
+  text-align: center;
+  margin: 28px 0 20px;
+}
+
+.aidg-form-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.aidg-form-divider span {
+  position: relative;
+  background: var(--color-bg-card, #111);
+  padding: 0 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+}
+
+/* ================= LOGO MARK IN PREVIEW ================= */
+.aidg-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aidg-logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--design-primary);
+  color: var(--design-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-family: var(--font-heading);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= REGENERATE BUTTON ================= */
+.aidg-cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aidg-regenerate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  color: var(--color-text);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.aidg-regenerate:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: rotate(-3deg);
+}
+
+.aidg-regenerate:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .aidg-presets { grid-template-columns: repeat(3, 1fr); }
+  .aidg-preset { font-size: 10.5px; padding: 12px 6px; }
+}
+
+@media (max-width: 400px) {
+  .aidg-presets { grid-template-columns: repeat(2, 1fr); }
+}
