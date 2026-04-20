@@ -16,12 +16,9 @@ import MobileCTA from "./components/common/MobileCTA";
 import CookieConsent from "./components/common/CookieConsent";
 import ExitIntent from "./components/common/ExitIntent";
 import PageLoader from "./components/common/PageLoader";
-import SocialProof from "./components/common/SocialProof";
 import RippleButton from "./components/common/RippleButton";
 import MagneticWrap from "./components/common/MagneticWrap";
 import TiltCards from "./components/common/TiltCards";
-import CapacityIndicator from "./components/common/CapacityIndicator";
-import GeoWelcome from "./components/common/GeoWelcome";
 
 /* Lazy load pages for code-splitting */
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -112,14 +109,11 @@ function App() {
           <ScrollToTopBtn />
           <AIChatbot />
           <MobileCTA />
-          <SocialProof />
           <RippleButton />
           <MagneticWrap />
           <TiltCards />
           <CookieConsent />
           <ExitIntent />
-          <CapacityIndicator />
-          <GeoWelcome />
         </SmoothScroll>
       </BrowserRouter>
     </HelmetProvider>
