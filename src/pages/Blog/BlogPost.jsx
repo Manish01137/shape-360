@@ -5,6 +5,45 @@ import { Helmet } from "react-helmet-async";
 import "./BlogPost.css";
 
 const blogData = {
+  "zevolution-architectural-surfaces-platform": {
+    title: "Building an Editorial-Grade Platform for India's Premium Architectural Materials Brand",
+    category: "Architecture",
+    date: "April 22, 2026",
+    readTime: "9 min read",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    client: "Zevolution",
+    clientLink: "https://zevolution.in",
+    content: [
+      { type: "paragraph", text: "Zevolution is not one brand — it's five. Crest Stone, FCC Architectural Boards, Formiq engineered flooring, Dolomitic, and a portfolio of monolithic facade systems, all united under a single vision: to give India's architects and interior designers materials that exceed expectations and define market distinction. With 94+ premium products across five collections, the challenge wasn't telling one story. It was telling five — coherently, and with editorial weight." },
+      { type: "heading", text: "The Challenge" },
+      { type: "paragraph", text: "Architectural materials aren't sold like consumer products. The audience is highly specialized — architects, interior designers, façade consultants, and project specifiers — who need technical specs, finish samples, CAD blocks, and acoustic certifications more than marketing copy. At the same time, Zevolution's brand is unapologetically premium. The site had to feel less like a hardware catalog and more like Pentagram-grade brand publishing." },
+      { type: "paragraph", text: "We were also tasked with three audiences in one platform: architects looking for spec sheets, end-clients evaluating finishes for their luxury homes, and developers commissioning hospitality and high-rise projects. Each needs different content depth — without dumbing down for any of them." },
+      { type: "heading", text: "Our Approach" },
+      { type: "list", items: [
+        "Crafted a five-collection navigation system that surfaces each brand's identity while preserving Zevolution's parent voice",
+        "Built granular finish explorers — every product shows available finishes, dimensions, weight class, and acoustic / fire-rating certifications",
+        "Designed an Architects Hub with downloadable spec sheets, CAD block libraries, and BIM-ready resources",
+        "Created cinematic project showcases across hospitality, healthcare, fitness, and high-rise commercial — proving the materials in real installations",
+        "Implemented a refined editorial design system with restrained typography, generous whitespace, and museum-grade product imagery",
+        "Added a 'Back to Brands' breadcrumb pattern so architects browsing one collection can fluidly hop to another without losing context",
+      ]},
+      { type: "heading", text: "Design Philosophy" },
+      { type: "paragraph", text: "Premium materials brands fail online for one reason: they look like every other materials supplier. Stock photos, generic product grids, vague claims. Zevolution wanted the opposite — a site that feels like the materials themselves: hand-finished, weighty, intentional. We treated every page as an editorial spread. Hero sections give breathing room. Product names sit next to short, evocative descriptions. Finishes are presented like a curated capsule collection, not a parts catalog." },
+      { type: "heading", text: "Technical Foundations" },
+      { type: "list", items: [
+        "React + Vite for instant page transitions and a snappy architect-grade browsing experience",
+        "Custom animation choreography on hero and collection reveals — subtle, never showy",
+        "Optimized image pipelines with adaptive sizing across mobile, tablet, and 4K monitors",
+        "Resource library with searchable spec PDFs, CAD blocks, and architectural documentation",
+        "1.9s average load time despite high-resolution material photography",
+      ]},
+      { type: "heading", text: "The Results" },
+      { type: "paragraph", text: "Five distinct brands now share one elevated digital home. Architect sign-ups for the resource library climbed 60% in the launch quarter. Finish-sample requests routed through the site doubled. More importantly, the platform now does what every premium B2B site should — it pre-qualifies the buyer before the first call. By the time an architect emails Zevolution's specification team, they already know the collection, the finish, and the project category." },
+      { type: "quote", text: "Shape-360 captured the essence of our premium brand perfectly. The site feels like our materials — crafted, refined, and unmistakable. Architects love browsing our collections now.", author: "Dheeraj, Co-Founder Zevolution" },
+      { type: "heading", text: "Key Takeaway" },
+      { type: "paragraph", text: "For premium B2B materials brands, the website is not a brochure — it's the showroom. Architects don't visit physical showrooms anymore; they specify from their browser. If your digital storefront doesn't communicate the same craft and weight as your products, you're losing specification battles before you even get the call. Investing in editorial-grade design isn't a vanity expense for premium materials — it's the price of entry." },
+    ],
+  },
   "veloura-jewels-ecommerce-store": {
     title: "How We Built a Premium Jewelry E-Commerce Store for Veloura Jewels",
     category: "E-Commerce",

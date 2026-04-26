@@ -9,6 +9,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const blogPosts = [
   {
+    id: 0,
+    slug: "zevolution-architectural-surfaces-platform",
+    title: "Building an Editorial-Grade Platform for India's Premium Architectural Materials Brand",
+    excerpt: "How we unified five luxury surface collections — Crest Stone, FCC Boards, Formiq, Dolomitic and more — into one museum-grade digital experience for architects and interior designers.",
+    category: "Architecture",
+    date: "April 22, 2026",
+    readTime: "9 min read",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    featured: true,
+  },
+  {
     id: 1,
     slug: "veloura-jewels-ecommerce-store",
     title: "How We Built a Premium Jewelry E-Commerce Store for Veloura Jewels",
@@ -17,7 +28,7 @@ const blogPosts = [
     date: "March 28, 2025",
     readTime: "7 min read",
     img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=800&q=80",
-    featured: true,
+    featured: false,
   },
   {
     id: 2,

@@ -9,6 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const caseStudies = [
   {
+    id: "zevolution",
+    title: "Zevolution",
+    category: "Architectural Surfaces Platform",
+    link: "https://zevolution.in",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    desc: "Premium digital experience for India's leading architectural materials brand — uniting five luxury surface collections into one editorial-grade platform built for architects and interior designers.",
+    challenge: "Zevolution houses five distinct premium material brands — Crest Stone, FCC Architectural Boards, Formiq engineered flooring, Dolomitic and more — across 94+ products. They needed a single, editorial-grade digital home that elevated each collection while making technical specs, finishes, and CAD resources easily accessible to architects.",
+    solution: "We built a sophisticated, museum-grade website with cinematic brand storytelling, a five-collection navigation system, granular finish explorers, downloadable spec sheets and CAD libraries, an Architects Hub with technical resources, and a portfolio of completed projects across hospitality, healthcare, and high-rise commercial spaces.",
+    results: [
+      { metric: "5", label: "Brands Unified" },
+      { metric: "94+", label: "Premium Products" },
+      { metric: "60%", label: "Architect Sign-ups" },
+      { metric: "1.9s", label: "Load Time" },
+    ],
+    tech: ["React", "Custom Animations", "CAD Library", "Architect Portal"],
+    testimonial: {
+      text: "Shape-360 captured the essence of our premium brand perfectly. The site feels like our materials — crafted, refined, and unmistakable. Architects love browsing our collections now.",
+      name: "Dheeraj",
+      role: "Co-Founder, Zevolution",
+    },
+  },
+  {
     id: "kvsacademy",
     title: "KVS Academy",
     category: "Web Development",

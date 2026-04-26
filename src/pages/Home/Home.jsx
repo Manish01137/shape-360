@@ -234,6 +234,7 @@ const Home = () => {
   ];
 
   const projects = [
+    { title: "Zevolution", category: "Architectural Surfaces Platform", link: "https://zevolution.in", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", desc: "Premium architectural materials brand uniting five luxury surface collections — Crest Stone, FCC Boards, Formiq, Dolomitic and more — for India's top architects." },
     { title: "KVS Academy", category: "Web Development", link: "https://www.kvsacademy.org", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80", desc: "Complete educational platform with course listings, student portal, and responsive design for a leading academy." },
     { title: "Veloura Jewels", category: "E-Commerce Website", link: "https://velourajewels.in", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80", desc: "Premium e-commerce store for handcrafted jewelry with elegant UI, product catalog, and secure payments." },
     { title: "Kedar Shakti", category: "Shopify Store", link: "https://kedarshakti.com", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", desc: "Spiritual e-commerce brand with Shopify store, product categorization, and optimized checkout flow." },
@@ -250,13 +251,14 @@ const Home = () => {
   ];
 
   const testimonials = [
+    { text: "Shape-360 captured the essence of our premium brand perfectly. The site feels like our materials — crafted, refined, and unmistakable. Architects love browsing our collections now.", name: "Dheeraj", role: "Co-Founder, Zevolution", stars: 5 },
     { text: "Shape-360 built a stunning e-commerce store that truly reflects our brand's elegance. Our online sales jumped 55% within the first quarter.", name: "Veloura Team", role: "Founders, Veloura Jewels", stars: 5 },
     { text: "The Shopify store they built for us handles everything — from individual orders to corporate bulk gifting. Our online orders have tripled.", name: "Kedar Shakti Team", role: "Founders, Kedar Shakti", stars: 5 },
     { text: "Shape-360 delivered a premium website that speaks directly to property investors. The quality and professionalism helped us onboard high-value clients.", name: "Staylia Team", role: "Founders, Staylia DXB", stars: 5 },
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon"];
+  const brands = ["Zevolution", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Zevolution", "KVS Academy", "Veloura Jewels", "Kedar Shakti"];
 
   return (
     <div className="home">

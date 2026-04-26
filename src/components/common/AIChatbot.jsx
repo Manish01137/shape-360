@@ -50,6 +50,7 @@ PROCESS:
 4. Scale — Continuous improvement & growth strategies
 
 CASE STUDIES / PORTFOLIO (REAL PROJECTS):
+• Zevolution (zevolution.in) — Premium architectural materials platform uniting 5 luxury surface brands (Crest Stone, FCC Boards, Formiq, Dolomitic, etc.) with 94+ products. Editorial-grade B2B platform for architects with CAD library, spec sheets, and finish explorers
 • KVS Academy (kvsacademy.org) — Educational platform, 3x student inquiries, 1.8s load time, mobile-first
 • Veloura Jewels (velourajewels.in) — Premium jewelry e-commerce, 55% sales increase, BIS hallmarked 925 silver & moissanite jewelry store
 • Kedar Shakti (kedarshakti.com) — Spiritual e-commerce Shopify store for incense, crystals & puja essentials, 3x online orders, corporate bulk ordering
