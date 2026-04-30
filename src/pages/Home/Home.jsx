@@ -235,12 +235,12 @@ const Home = () => {
 
   const projects = [
     { title: "Zevolution", category: "Architectural Surfaces Platform", link: "https://zevolution.in", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", desc: "Premium architectural materials brand uniting five luxury surface collections — Crest Stone, FCC Boards, Formiq, Dolomitic and more — for India's top architects." },
+    { title: "MershilTech", category: "AI Agency Platform · 🇦🇺 Australia", link: "https://mershiltech.com", img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80", desc: "International client from Australia. Enterprise AI-powered agency platform serving 500+ clients across 70+ countries — featuring AI services, mobile apps, web platforms, and 2-week sprint deliveries." },
     { title: "KVS Academy", category: "Web Development", link: "https://www.kvsacademy.org", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80", desc: "Complete educational platform with course listings, student portal, and responsive design for a leading academy." },
     { title: "Veloura Jewels", category: "E-Commerce Website", link: "https://velourajewels.in", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80", desc: "Premium e-commerce store for handcrafted jewelry with elegant UI, product catalog, and secure payments." },
     { title: "Kedar Shakti", category: "Shopify Store", link: "https://kedarshakti.com", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", desc: "Spiritual e-commerce brand with Shopify store, product categorization, and optimized checkout flow." },
     { title: "Zeqon", category: "SaaS Website", link: "https://zeqon.co", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", desc: "Modern SaaS company website with sleek design, feature showcases, and lead generation funnel." },
     { title: "Staylia DXB", category: "Web Development", link: "https://stayliadxb.com", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80", desc: "Dubai-based rental management platform with property listings, investor dashboards, and booking system." },
-    { title: "JaldiRide Connect", category: "Web App", link: "https://www.jaldirideconnect.com", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", desc: "Smart local transport platform connecting riders with autos, cars, and buses across cities." },
   ];
 
   const whyUs = [
@@ -252,13 +252,14 @@ const Home = () => {
 
   const testimonials = [
     { text: "Shape-360 captured the essence of our premium brand perfectly. The site feels like our materials — crafted, refined, and unmistakable. Architects love browsing our collections now.", name: "Dheeraj", role: "Co-Founder, Zevolution", stars: 5 },
+    { text: "Working with Shape-360 from Australia was seamless. They delivered an enterprise-grade platform that handles 500+ clients across 70+ countries. The performance, design, and AI-ready architecture exceeded everything we'd seen — from any agency, anywhere.", name: "Mershil Team", role: "Founders, MershilTech · Australia 🇦🇺", stars: 5 },
     { text: "Shape-360 built a stunning e-commerce store that truly reflects our brand's elegance. Our online sales jumped 55% within the first quarter.", name: "Veloura Team", role: "Founders, Veloura Jewels", stars: 5 },
     { text: "The Shopify store they built for us handles everything — from individual orders to corporate bulk gifting. Our online orders have tripled.", name: "Kedar Shakti Team", role: "Founders, Kedar Shakti", stars: 5 },
     { text: "Shape-360 delivered a premium website that speaks directly to property investors. The quality and professionalism helped us onboard high-value clients.", name: "Staylia Team", role: "Founders, Staylia DXB", stars: 5 },
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["Zevolution", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Zevolution", "KVS Academy", "Veloura Jewels", "Kedar Shakti"];
+  const brands = ["Zevolution", "MershilTech", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Zevolution", "MershilTech", "Veloura Jewels"];
 
   return (
     <div className="home">
@@ -477,6 +478,7 @@ const Home = () => {
           </div>
           <div className="landing-grid">
             {[
+              { title: "JaldiRide Connect", category: "Smart Transport Platform", link: "https://www.jaldirideconnect.com", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", desc: "Smart local transport landing page connecting riders with autos, cars, and buses across 50+ cities." },
               { title: "MindMint Media", category: "Digital Marketing Agency", link: "https://mindmintmedia.in", img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=80", desc: "Bold agency landing page with service showcases and lead capture." },
               { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean educational platform landing page with course highlights and CTAs." },
               { title: "FolkLane", category: "Creative Agency", link: "https://www.folklane.in", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80", desc: "Full-service agency page with pricing tiers, portfolio, and brand identity." },

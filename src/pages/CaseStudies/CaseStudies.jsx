@@ -31,6 +31,31 @@ const caseStudies = [
     },
   },
   {
+    id: "mershiltech",
+    title: "MershilTech",
+    category: "AI-Powered Agency Platform · 🇦🇺 International (Australia)",
+    link: "https://mershiltech.com",
+    img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80",
+    location: "Australia",
+    flag: "🇦🇺",
+    international: true,
+    desc: "International engagement from Australia. Enterprise-grade digital agency platform serving 500+ clients across 70+ countries — combining AI services, mobile apps, web platforms, and 24/7 global delivery into a single high-converting site.",
+    challenge: "MershilTech is an Australian-headquartered global delivery agency. They came to Shape-360 needing a digital presence worthy of their ambitions: 500+ clients across 70+ countries, AU and global delivery centers, and a service portfolio spanning AI, web, mobile, AR/VR, cybersecurity, and cloud. The challenge was presenting massive service depth without overwhelming visitors, while signaling enterprise-grade trust to CTOs and founders evaluating multi-million-dollar engagements — all while collaborating across a 4.5-hour timezone gap between Bangalore and Sydney.",
+    solution: "We engineered a sophisticated multi-page architecture with dedicated service detail pages, sub-service breakdowns, flexible hiring model showcases, project portfolios, an AI-powered chatbot, and dark-mode-first design optimized for technical decision-makers. We worked async-first with daily Loom updates, adapted our sprints to Australian business hours, and delivered the entire platform without ever needing a video call to overlap timezones uncomfortably.",
+    results: [
+      { metric: "500+", label: "Global Clients" },
+      { metric: "70+", label: "Countries Served" },
+      { metric: "2-week", label: "Sprint Delivery" },
+      { metric: "100%", label: "Async Delivery" },
+    ],
+    tech: ["React", "Vite", "AI Chatbot", "Multi-Page Architecture", "SEO Optimized"],
+    testimonial: {
+      text: "Working with Shape-360 from Australia was seamless. They delivered an enterprise-grade platform that handles 500+ clients across 70+ countries. The performance, design, and AI-ready architecture exceeded everything we'd seen — from any agency, anywhere.",
+      name: "Mershil Team",
+      role: "Founders, MershilTech · Sydney, Australia 🇦🇺",
+    },
+  },
+  {
     id: "kvsacademy",
     title: "KVS Academy",
     category: "Web Development",
@@ -138,28 +163,6 @@ const caseStudies = [
       text: "Shape-360 built a website that speaks directly to investors. The quality and professionalism have helped us onboard premium properties in Dubai Marina and Palm Jumeirah.",
       name: "Staylia Team",
       role: "Founders, Staylia DXB",
-    },
-  },
-  {
-    id: "jaldirideconnect",
-    title: "JaldiRide Connect",
-    category: "Web App",
-    link: "https://www.jaldirideconnect.com",
-    img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
-    desc: "Smart local transport solutions platform connecting riders with autos, cars, and buses for seamless city commuting.",
-    challenge: "JaldiRide Connect needed a clean, fast platform to present their multi-modal transport service — autos, cars, and buses — with a focus on user trust, ease of use, and local market penetration.",
-    solution: "We developed a modern web application with vehicle category showcases, route planning UI, driver onboarding flows, and a responsive design optimized for users booking rides on mobile devices in tier-2 and tier-3 cities.",
-    results: [
-      { metric: "10K+", label: "App Visits/Month" },
-      { metric: "3", label: "Vehicle Categories" },
-      { metric: "50+", label: "Cities Targeted" },
-      { metric: "2x", label: "Driver Signups" },
-    ],
-    tech: ["React", "Node.js", "Maps API", "Responsive Design"],
-    testimonial: {
-      text: "Shape-360 brought our transport vision to life. The platform is fast, clean, and exactly what our users needed.",
-      name: "JaldiRide Team",
-      role: "Founders, JaldiRide Connect",
     },
   },
 ];
@@ -304,6 +307,7 @@ const CaseStudies = () => {
           </div>
           <div className="cs-landing-grid">
             {[
+              { title: "JaldiRide Connect", category: "Smart Transport Platform", link: "https://www.jaldirideconnect.com", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", desc: "Smart local transport landing page connecting riders with autos, cars, and buses across 50+ cities — with route planner and driver onboarding flows." },
               { title: "MindMint Media", category: "Digital Marketing Agency", link: "https://mindmintmedia.in", img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=80", desc: "Bold agency landing page showcasing digital marketing services with strong lead capture and service breakdowns." },
               { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean, modern landing page for an online learning platform with course highlights, testimonials, and signup flow." },
               { title: "FolkLane", category: "Creative Agency", link: "https://www.folklane.in", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80", desc: "Full-service creative agency page with tiered pricing, portfolio showcase, and brand identity — based in Prayagraj." },

@@ -20,6 +20,17 @@ const blogPosts = [
     featured: true,
   },
   {
+    id: 7,
+    slug: "mershiltech-ai-agency-platform",
+    title: "Engineering an Enterprise Platform for an AI-Powered Australian Agency",
+    excerpt: "Our first major international engagement — building MershilTech's digital presence from Bangalore to Sydney. A multi-page, multi-service platform serving 500+ clients across 70+ countries, delivered async across a 4.5-hour timezone gap.",
+    category: "International",
+    date: "April 12, 2026",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80",
+    featured: false,
+  },
+  {
     id: 1,
     slug: "veloura-jewels-ecommerce-store",
     title: "How We Built a Premium Jewelry E-Commerce Store for Veloura Jewels",

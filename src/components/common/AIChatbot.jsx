@@ -51,14 +51,15 @@ PROCESS:
 
 CASE STUDIES / PORTFOLIO (REAL PROJECTS):
 • Zevolution (zevolution.in) — Premium architectural materials platform uniting 5 luxury surface brands (Crest Stone, FCC Boards, Formiq, Dolomitic, etc.) with 94+ products. Editorial-grade B2B platform for architects with CAD library, spec sheets, and finish explorers
+• MershilTech (mershiltech.com) — 🇦🇺 INTERNATIONAL CLIENT FROM AUSTRALIA. Enterprise AI-powered agency platform serving 500+ clients across 70+ countries. Multi-page architecture covering AI services, mobile apps, web platforms, AR/VR, cybersecurity, cloud — built for global scale with 2-week sprint delivery and 24/7 operations. Shape-360's first major international engagement — delivered async-first across a 4.5-hour timezone gap from Bangalore to Sydney
 • KVS Academy (kvsacademy.org) — Educational platform, 3x student inquiries, 1.8s load time, mobile-first
 • Veloura Jewels (velourajewels.in) — Premium jewelry e-commerce, 55% sales increase, BIS hallmarked 925 silver & moissanite jewelry store
 • Kedar Shakti (kedarshakti.com) — Spiritual e-commerce Shopify store for incense, crystals & puja essentials, 3x online orders, corporate bulk ordering
 • Zeqon (zeqon.co) — Modern SaaS website with animations, 5x lead generation, 180% traffic growth
 • Staylia DXB (stayliadxb.com) — Dubai short-term rental management platform, 85%+ occupancy rates, investor dashboards, multi-platform booking
-• JaldiRide Connect (jaldirideconnect.com) — Smart local transport platform for autos/cars/buses, 10K+ monthly visits, 50+ cities targeted
 
 LANDING PAGE PROJECTS:
+• JaldiRide Connect (jaldirideconnect.com) — Smart local transport landing page for autos/cars/buses, 10K+ monthly visits, 50+ cities targeted, 3 vehicle categories
 • MindMint Media (mindmintmedia.in) — Digital marketing agency landing page with service showcases and lead capture
 • SkillOwl (skillowl.in) — EdTech platform landing page with course highlights and signup flow
 • FolkLane (folklane.in) — Full-service creative agency page with tiered pricing and portfolio, based in Prayagraj

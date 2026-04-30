@@ -102,12 +102,12 @@ const About = () => {
 
   const clients = [
     { name: "Zevolution", link: "https://zevolution.in" },
+    { name: "MershilTech 🇦🇺", link: "https://mershiltech.com" },
     { name: "KVS Academy", link: "https://www.kvsacademy.org" },
     { name: "Veloura Jewels", link: "https://velourajewels.in" },
     { name: "Kedar Shakti", link: "https://kedarshakti.com" },
     { name: "Zeqon", link: "https://zeqon.co" },
-    { name: "Staylia DXB", link: "https://stayliadxb.com" },
-    { name: "JaldiRide Connect", link: "https://www.jaldirideconnect.com" },
+    { name: "Staylia DXB 🇦🇪", link: "https://stayliadxb.com" },
   ];
 
   return (
@@ -137,7 +137,7 @@ const About = () => {
                 customers. We run ads that generate real ROI — not just clicks.
               </p>
               <p className="about-hero-desc">
-                Based in Bangalore. Working with brands across India, Dubai, and beyond.
+                Based in Bangalore. Working with brands across India, Dubai, Australia, and beyond.
               </p>
               <div className="about-hero-actions">
                 <Link to="/contact" className="thm-btn">
@@ -205,8 +205,9 @@ const About = () => {
               <p className="story-desc">
                 We knew we could do better. So we did. We started picking up projects,
                 delivering results that clients didn't expect from a small team, and
-                word spread. From a jewelry brand in India to a rental management
-                company in Dubai — each project pushed us to get sharper.
+                word spread. From a jewelry brand in India, to a rental management
+                company in Dubai, to an AI-powered enterprise agency in Australia —
+                each project pushed us to get sharper.
               </p>
               <p className="story-desc">
                 Two years in, 70+ projects shipped, and we still operate the same

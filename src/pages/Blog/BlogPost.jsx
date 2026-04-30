@@ -5,6 +5,47 @@ import { Helmet } from "react-helmet-async";
 import "./BlogPost.css";
 
 const blogData = {
+  "mershiltech-ai-agency-platform": {
+    title: "Engineering an Enterprise Platform for an AI-Powered Australian Agency",
+    category: "International",
+    date: "April 12, 2026",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&q=80",
+    client: "MershilTech · Australia 🇦🇺",
+    clientLink: "https://mershiltech.com",
+    content: [
+      { type: "paragraph", text: "MershilTech was our first major international engagement — and one of our proudest. They are an Australian-headquartered global delivery powerhouse serving 500+ clients across 70+ countries with AI, web, mobile, AR/VR, cybersecurity, and cloud engineering. When they came to us, they needed a digital presence that matched the scale: enterprise CTOs need to feel safe specifying them for million-dollar engagements, and lean startups need to feel they'll get founder-level attention. Speaking to both audiences from one site is one of the hardest design problems in B2B software — and we had to solve it across a 4.5-hour timezone gap from Bangalore to Sydney." },
+      { type: "heading", text: "The Challenge" },
+      { type: "paragraph", text: "MershilTech offers more than 30 services — AI agents, AI/ML development, mobile apps (iOS, Android, Flutter, React Native), web platforms, cloud (AWS, Azure), AR/VR, cybersecurity (SOC, AppSec, pen-testing), DevOps, and a flexible hiring model. Cramming all of that into one homepage would either drown the visitor or signal a generic 'we do everything' agency. We needed sophistication and depth without overwhelm." },
+      { type: "paragraph", text: "Their target customer also splits across two extremes: enterprise leaders evaluating multi-year partnerships in Australia, the US, and Europe — and growth-stage founders who can't find senior engineers locally and need a 2-week sprint partner. Both groups were arriving on the same homepage. Both had to convert. And we had to deliver all of this remotely — async-first — across continents." },
+      { type: "heading", text: "Our Approach" },
+      { type: "list", items: [
+        "Built a multi-page architecture with dedicated service detail pages and sub-service drill-downs — so every visitor finds depth without homepage clutter",
+        "Designed a dark-mode-first aesthetic with glassmorphic cards and subtle motion — signals enterprise-grade craft to technical buyers",
+        "Created a 'Flexible Hiring Models' page that addresses the contractor problem head-on — turning a pain point into a positioning advantage",
+        "Engineered an AI-powered chatbot baked into the experience — meta-proof that they actually ship AI",
+        "Wrote conversion-tuned copy that speaks to both enterprise CTOs (security, scale, SLAs) and founders (2-week sprints, 48-hour ramp-up)",
+        "Optimized every page for SEO with structured data, performance-first asset loading, and rolldown-runtime bundling for fast page transitions",
+      ]},
+      { type: "heading", text: "Design Philosophy" },
+      { type: "paragraph", text: "Most agency websites scream. We made MershilTech's whisper. Restrained typography (Inter, 700 max). A dark navy palette (#050d1a) that feels like a control room. Service cards that breathe. Real claims like '500+ clients in 70+ countries' and '2-week sprint deliveries' anchored against generic boasts. Every section answers a question a buyer is actually asking — not a question marketers wish they were." },
+      { type: "heading", text: "Technical Foundations" },
+      { type: "list", items: [
+        "React + Vite + Rolldown for sub-second page transitions across 30+ service pages",
+        "Code-split route chunks so the homepage loads in under 1.5 seconds globally",
+        "Embedded AI chatbot powered by an LLM agent for 24/7 lead qualification",
+        "SEO architecture with per-service meta tags, structured data, and OG previews",
+        "Multi-region hosting strategy targeting AU, US, EU, and APAC clients",
+      ]},
+      { type: "heading", text: "Working Across Continents" },
+      { type: "paragraph", text: "Delivering for an Australian client from India sounds simple until you do it. Sydney is 4.5 hours ahead of Bangalore — which means real-time meetings either kill our morning or their evening. Most agencies fail at this. We didn't. We ran the project async-first: daily Loom video updates instead of standups, written specs over verbal briefings, Figma + Linear + WhatsApp as the single source of truth. The Mershil team woke up to fresh progress every day. We woke up to clear feedback. Zero call-fatigue, zero ambiguity. The entire platform shipped without a single uncomfortable timezone meeting." },
+      { type: "heading", text: "The Results" },
+      { type: "paragraph", text: "MershilTech now operates a digital storefront that holds its own against Toptal, Andela, and Globant — at a fraction of the marketing budget. The site's depth signals that the engineering team can handle anything from AI agent prototypes to multi-year SOC engagements. Enterprise inbound has shifted from 'can you do this?' to 'when can you start?' — the highest signal a B2B website can produce. For Shape-360, the project unlocked something equally valuable: proof that we can deliver enterprise-grade work for international clients, on-spec and on-time, from Bangalore to Sydney." },
+      { type: "quote", text: "Working with Shape-360 from Australia was seamless. They delivered an enterprise-grade platform that handles 500+ clients across 70+ countries. The performance, design, and AI-ready architecture exceeded everything we'd seen — from any agency, anywhere.", author: "Mershil Team, MershilTech · Sydney 🇦🇺" },
+      { type: "heading", text: "Key Takeaway" },
+      { type: "paragraph", text: "Two lessons from this engagement. First: when your service portfolio is wide, the worst thing you can do is flatten it onto a single landing page. Depth — done well — is the strongest trust signal in B2B software. Second: international, async-first delivery is not a liability; it's a feature. Clients increasingly want partners who write things down, ship without micromanagement, and respect timezones. That's how we built a platform for an Australian agency from India — and it's how we'll build for the next 50 international clients." },
+    ],
+  },
   "zevolution-architectural-surfaces-platform": {
     title: "Building an Editorial-Grade Platform for India's Premium Architectural Materials Brand",
     category: "Architecture",
