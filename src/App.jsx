@@ -39,6 +39,7 @@ const ROICalculator = lazy(() => import("./pages/Tools/ROICalculator"));
 const AIDesignGenerator = lazy(() => import("./pages/Tools/AIDesignGenerator"));
 const ClientPortal = lazy(() => import("./pages/Tools/ClientPortal"));
 const ProjectBrief = lazy(() => import("./pages/Tools/ProjectBrief"));
+const Automate = lazy(() => import("./pages/Automate/Automate"));
 const DynamicLanding = lazy(() => import("./pages/Landing/DynamicLanding"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
@@ -75,6 +76,7 @@ const AnimatedRoutes = () => {
           <Route path="/ai-design-generator" element={<PageTransition><AIDesignGenerator /></PageTransition>} />
           <Route path="/client-portal" element={<PageTransition><ClientPortal /></PageTransition>} />
           <Route path="/project-brief" element={<PageTransition><ProjectBrief /></PageTransition>} />
+          <Route path="/automate" element={<PageTransition><Automate /></PageTransition>} />
           <Route path="/landing" element={<PageTransition><DynamicLanding /></PageTransition>} />
           <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
           <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />

@@ -573,3 +573,176 @@
     gap: 28px;
   }
 }
+
+/* ================= AUTOFLOW DESKTOP NAV ITEM ================= */
+.nav-automate {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px 7px 12px !important;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.04));
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nav-automate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(201, 168, 76, 0.18), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.nav-automate:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-automate:hover {
+  border-color: rgba(201, 168, 76, 0.6);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.08));
+  color: var(--color-accent) !important;
+  transform: translateY(-1px);
+}
+
+.nav-automate.active {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  color: #0a0a0a !important;
+  border-color: var(--color-accent);
+}
+
+.nav-automate-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.nav-automate:hover .nav-automate-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.nav-automate.active .nav-automate-icon {
+  color: #0a0a0a;
+}
+
+.nav-new-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  border-radius: 100px;
+  margin-left: 2px;
+  position: relative;
+  animation: navBadgePulse 2s ease-in-out infinite;
+}
+
+.nav-automate.active .nav-new-badge {
+  background: #0a0a0a;
+  color: var(--color-accent);
+}
+
+@keyframes navBadgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  50% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+}
+
+/* ================= AUTOFLOW MOBILE CARD ================= */
+.mobile-automate-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.04));
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-automate-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.7), transparent);
+}
+
+.mobile-automate-card.active,
+.mobile-automate-card:hover {
+  border-color: rgba(201, 168, 76, 0.7);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.06));
+}
+
+.mobile-automate-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.mobile-automate-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-automate-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.mobile-automate-head span:first-child {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.mobile-automate-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  border-radius: 100px;
+  animation: navBadgePulse 2s ease-in-out infinite;
+}
+
+.mobile-automate-body p {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.mobile-automate-arrow {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+
+.mobile-automate-card:hover .mobile-automate-arrow {
+  transform: translateX(4px);
+}
