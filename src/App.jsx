@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
@@ -40,6 +41,8 @@ const AIDesignGenerator = lazy(() => import("./pages/Tools/AIDesignGenerator"));
 const ClientPortal = lazy(() => import("./pages/Tools/ClientPortal"));
 const ProjectBrief = lazy(() => import("./pages/Tools/ProjectBrief"));
 const Automate = lazy(() => import("./pages/Automate/Automate"));
+const Trust = lazy(() => import("./pages/Trust/Trust"));
+const Roadmap = lazy(() => import("./pages/Roadmap/Roadmap"));
 const DynamicLanding = lazy(() => import("./pages/Landing/DynamicLanding"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
@@ -77,6 +80,8 @@ const AnimatedRoutes = () => {
           <Route path="/client-portal" element={<PageTransition><ClientPortal /></PageTransition>} />
           <Route path="/project-brief" element={<PageTransition><ProjectBrief /></PageTransition>} />
           <Route path="/automate" element={<PageTransition><Automate /></PageTransition>} />
+          <Route path="/trust" element={<PageTransition><Trust /></PageTransition>} />
+          <Route path="/roadmap" element={<PageTransition><Roadmap /></PageTransition>} />
           <Route path="/landing" element={<PageTransition><DynamicLanding /></PageTransition>} />
           <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
           <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
@@ -97,6 +102,7 @@ function App() {
 
   return (
     <HelmetProvider>
+      <LanguageProvider>
       <BrowserRouter>
         <SmoothScroll>
           <ScrollToTop />
@@ -118,6 +124,7 @@ function App() {
           <ExitIntent />
         </SmoothScroll>
       </BrowserRouter>
+      </LanguageProvider>
     </HelmetProvider>
   );
 }

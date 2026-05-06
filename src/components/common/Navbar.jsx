@@ -1,8 +1,11 @@
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -44,9 +47,9 @@ const Navbar = () => {
 
           {/* DESKTOP NAV */}
           <nav className="nav-links-desktop desktop-only">
-            <NavLink to="/" end>Home</NavLink>
-            <NavLink to="/services">Services</NavLink>
-            <NavLink to="/case-studies">Portfolio</NavLink>
+            <NavLink to="/" end>{t("nav.home")}</NavLink>
+            <NavLink to="/services">{t("nav.services")}</NavLink>
+            <NavLink to="/case-studies">{t("nav.portfolio")}</NavLink>
             <NavLink to="/automate" className="nav-automate">
               <svg className="nav-automate-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
@@ -55,8 +58,8 @@ const Navbar = () => {
                 <path d="M4 17v2"/>
                 <path d="M5 18H3"/>
               </svg>
-              AutoFlow
-              <span className="nav-new-badge">NEW</span>
+              {t("nav.automate")}
+              <span className="nav-new-badge">{t("nav.newBadge")}</span>
             </NavLink>
 
             <div className="nav-dropdown" ref={dropdownRef}>
@@ -64,13 +67,15 @@ const Navbar = () => {
                 className="nav-dropdown-trigger"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
-                More
+                {t("nav.moreLabel")}
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               </button>
               <div className={`nav-dropdown-menu ${dropdownOpen ? "open" : ""}`}>
                 <NavLink to="/pricing" onClick={closeAll}>Pricing</NavLink>
+                <NavLink to="/trust" onClick={closeAll}>Why Trust Us</NavLink>
+                <NavLink to="/roadmap" onClick={closeAll}>Public Roadmap</NavLink>
                 <NavLink to="/project-brief" onClick={closeAll}>AI Project Brief</NavLink>
                 <NavLink to="/project-calculator" onClick={closeAll}>Project Calculator</NavLink>
                 <NavLink to="/website-audit" onClick={closeAll}>Free Website Audit</NavLink>
@@ -83,13 +88,16 @@ const Navbar = () => {
               </div>
             </div>
 
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact">{t("nav.contact")}</NavLink>
           </nav>
 
-          <Link to="/contact" className="nav-cta desktop-only">
-            Get a Quote
-            <span className="cta-arrow">&#8594;</span>
-          </Link>
+          <div className="nav-actions desktop-only">
+            <LanguageSwitcher />
+            <Link to="/contact" className="nav-cta">
+              {t("nav.ctaQuote")}
+              <span className="cta-arrow">&#8594;</span>
+            </Link>
+          </div>
 
           {/* HAMBURGER */}
           <button
@@ -202,8 +210,16 @@ const Navbar = () => {
             <div className="mobile-resources">
               <NavLink to="/blog" onClick={closeAll}>Blog</NavLink>
               <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
+              <NavLink to="/trust" onClick={closeAll}>Why Trust Us</NavLink>
+              <NavLink to="/roadmap" onClick={closeAll}>Roadmap</NavLink>
               <NavLink to="/client-portal" onClick={closeAll}>Client Portal</NavLink>
             </div>
+          </div>
+
+          {/* Language Switcher */}
+          <div className="mobile-menu-section mobile-lang-section">
+            <span className="mobile-menu-label">Language</span>
+            <LanguageSwitcher />
           </div>
 
           {/* Bottom CTA + Contact */}

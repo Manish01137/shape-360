@@ -1,0 +1,133 @@
+.lang-switch {
+  position: relative;
+}
+
+.lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  color: var(--color-text);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.lang-trigger:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  color: var(--color-accent);
+}
+
+.lang-trigger svg {
+  flex-shrink: 0;
+}
+
+.lang-current {
+  white-space: nowrap;
+}
+
+.lang-chev {
+  transition: transform 0.3s ease;
+}
+
+.lang-chev.up {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 180px;
+  padding: 6px;
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.98), rgba(8, 8, 8, 0.98));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.25s ease;
+  z-index: 10000;
+}
+
+.lang-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.lang-option:hover {
+  background: rgba(201, 168, 76, 0.08);
+  color: var(--color-white);
+}
+
+.lang-option.active {
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--color-accent);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.lang-flag {
+  font-size: 16px;
+}
+
+.lang-name {
+  flex: 1;
+}
+
+.lang-code {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 7px;
+  border-radius: 100px;
+}
+
+.lang-option.active .lang-code {
+  background: var(--color-accent);
+  color: #0a0a0a;
+}
+
+/* RTL adjustments — when html dir="rtl", flip icon-text order */
+html[dir="rtl"] .lang-menu {
+  left: 0;
+  right: auto;
+}
+
+html[dir="rtl"] .lang-option {
+  text-align: right;
+}
+
+@media (max-width: 1100px) {
+  .lang-trigger {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+}
