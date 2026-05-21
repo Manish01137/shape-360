@@ -8,7 +8,33 @@ import "swiper/css/pagination";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet-async";
+import { useGeoPersonalization } from "../../hooks/useGeoPersonalization";
+import Hero3DScene from "../../components/common/Hero3DScene";
 import "./Home.css";
+
+/* Country flag + greeting by local time-of-day */
+const COUNTRY_FLAGS = {
+  IN: "🇮🇳", AE: "🇦🇪", GB: "🇬🇧", US: "🇺🇸", CA: "🇨🇦",
+  AU: "🇦🇺", SA: "🇸🇦", SG: "🇸🇬", DE: "🇩🇪", FR: "🇫🇷",
+};
+
+const greetingFor = (hour) => {
+  if (hour < 5) return "Working late";
+  if (hour < 12) return "Good morning";
+  if (hour < 17) return "Good afternoon";
+  if (hour < 21) return "Good evening";
+  return "Working late";
+};
+
+/* Country-specific value props that auto-swap into the hero */
+const REGION_HOOKS = {
+  IN: { line: "Bangalore-based · in your timezone · WhatsApp same-day", cta: "+91 8209978891" },
+  AE: { line: "Serving Dubai & UAE — async-first delivery across the 1.5h gap", cta: "WhatsApp Now" },
+  GB: { line: "Delivering to UK clients — overnight progress, daily Loom updates", cta: "Book a Call" },
+  US: { line: "Working overnight from Bangalore — your morning, our evening", cta: "Book a Call" },
+  CA: { line: "Async-first delivery for Canadian founders · 10.5h timezone gap, handled", cta: "Book a Call" },
+  AU: { line: "Already delivering for Australia 🇦🇺 — we know the 4.5h gap", cta: "Book a Call" },
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +85,20 @@ const Counter = ({ value, label, suffix = "+" }) => {
 /* ================= HOME ================= */
 const Home = () => {
   const horizontalRef = useRef(null);
+  const { countryCode, region, city, loading: geoLoading } = useGeoPersonalization();
+
+  /* Live local clock for the visitor — updates every minute */
+  const [localTime, setLocalTime] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setLocalTime(new Date()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+
+  const flag = COUNTRY_FLAGS[countryCode] || "🌍";
+  const greeting = greetingFor(localTime.getHours());
+  const placeLabel = !geoLoading && (city || region !== "Global" ? (city || region) : null);
+  const regionHook = REGION_HOOKS[countryCode];
+  const timeStr = localTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -272,6 +312,7 @@ const Home = () => {
 
       {/* ================= HERO SLIDER ================= */}
       <section className="hero-section">
+        <Hero3DScene />
         <Swiper
           modules={[Autoplay, EffectFade, Pagination]}
           effect="fade"
@@ -292,11 +333,31 @@ const Home = () => {
                       <a href="https://www.instagram.com/shape360official" target="_blank" rel="noreferrer">Ig.</a>
                       <a href="https://www.facebook.com/share/1AmwEewBMn/" target="_blank" rel="noreferrer">Fb.</a>
                     </div>
+
+                    {/* Live geo + time personalized greeting */}
+                    {!geoLoading && placeLabel && (
+                      <div className="hero-geo-greeting" aria-live="polite">
+                        <span className="hgg-flag" aria-hidden="true">{flag}</span>
+                        <span className="hgg-text">
+                          <strong>{greeting}</strong>, visitor from <strong>{placeLabel}</strong>
+                          <span className="hgg-sep">·</span>
+                          <span className="hgg-time">{timeStr} your time</span>
+                        </span>
+                        <span className="hgg-pulse" aria-hidden="true"></span>
+                      </div>
+                    )}
+
                     <div className="sec-tagline">
                       <div className="line"></div>
                       <p>{slide.tagline}</p>
                     </div>
                     <h1 className="hero-title">{slide.title}</h1>
+
+                    {/* Region-specific value hook — auto-swaps by visitor country */}
+                    {regionHook && (
+                      <p className="hero-region-hook">{regionHook.line}</p>
+                    )}
+
                     <div className="hero-actions">
                       <Link to="/contact" className="thm-btn">
                         Get Started <span>&#8594;</span>

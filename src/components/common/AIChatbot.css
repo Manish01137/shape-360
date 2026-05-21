@@ -6,6 +6,111 @@
   z-index: 9998;
 }
 
+/* ================= PROACTIVE NUDGE ================= */
+.chatbot-nudge {
+  position: absolute;
+  bottom: 86px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 38px 12px 16px;
+  max-width: 320px;
+  background: linear-gradient(135deg, #131927 0%, #0b0f17 100%);
+  color: #e8ecf3;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.02);
+  animation: nudge-rise 0.55s cubic-bezier(0.25, 0.8, 0.3, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chatbot-nudge::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 26px;
+  width: 14px;
+  height: 14px;
+  background: #0b0f17;
+  border-right: 1px solid rgba(201, 168, 76, 0.35);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  transform: rotate(45deg);
+}
+
+.chatbot-nudge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 168, 76, 0.2);
+}
+
+.chatbot-nudge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5);
+  animation: nudge-pulse 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+
+.chatbot-nudge-text {
+  flex: 1;
+}
+
+.chatbot-nudge-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: rgba(232, 236, 243, 0.5);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.chatbot-nudge-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+@keyframes nudge-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nudge-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-nudge {
+    max-width: calc(100vw - 50px);
+    font-size: 12.5px;
+  }
+}
+
 /* ================= FAB BUTTON ================= */
 .chatbot-fab {
   width: 68px;

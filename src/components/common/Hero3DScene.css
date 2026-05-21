@@ -1,0 +1,23 @@
+/* 3D scene layer — sits in the hero, behind text, on top of bg image */
+.hero-3d-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+.hero-3d-scene canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .hero-3d-scene {
+    opacity: 0.55;
+  }
+}

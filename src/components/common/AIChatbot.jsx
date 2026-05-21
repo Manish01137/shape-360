@@ -1,4 +1,6 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { useLocation } from "react-router-dom";
+import { useGeoPersonalization } from "../../hooks/useGeoPersonalization";
 import "./AIChatbot.css";
 
 const BOT_NAME = "Shape AI";
@@ -96,6 +98,64 @@ const fallbackResponses = [
   { keywords: ["contact", "reach", "call", "email", "phone"], response: "You can reach us:\n\n📧 shape360official@gmail.com\n📞 +91 8209978891\n📍 Bangalore, India\n\nOr visit our Contact page — we respond within 2 hours!" },
 ];
 
+/* Route-aware proactive nudges + starter prompts */
+const PAGE_CONTEXT = {
+  "/pricing": {
+    nudge: "Need a custom quote? I can build one in under a minute.",
+    starters: ["Compare your packages", "Custom quote please", "What's included in Enterprise?", "Show me payment terms"],
+  },
+  "/case-studies": {
+    nudge: "Want results like these for your brand? Ask me how.",
+    starters: ["Show me a similar project", "How long would mine take?", "What was your hardest project?", "Get me a quote"],
+  },
+  "/services": {
+    nudge: "Not sure which service fits? I'll help you decide in 30s.",
+    starters: ["Which service fits my goal?", "Web dev vs Shopify?", "Do you run Google Ads?", "Show me your portfolio"],
+  },
+  "/contact": {
+    nudge: "Quicker than the form — ask me anything live.",
+    starters: ["What do I need to share?", "Typical response time?", "Can we hop on a call?", "Show me pricing"],
+  },
+  "/blog": {
+    nudge: "Reading our case studies? I can summarize any of them.",
+    starters: ["Summarize the latest post", "Show me Aksharam case study", "How was MershilTech built?", "Pricing for similar work"],
+  },
+  "/automate": {
+    nudge: "Curious about AutoFlow? I can walk you through it.",
+    starters: ["What does AutoFlow do?", "How much does AutoFlow cost?", "When does it launch?", "Can I join the waitlist?"],
+  },
+  "/about": {
+    nudge: "Want to know who you'd be working with? Just ask.",
+    starters: ["Who founded Shape-360?", "Where is the team based?", "How big is the team?", "What's your process?"],
+  },
+  default: {
+    nudge: "Have a question? I'm Shape AI — ask me anything.",
+    starters: ["What services do you offer?", "Show me pricing", "How does your process work?", "Show me your portfolio"],
+  },
+};
+
+const getPageContext = (pathname) => {
+  if (pathname === "/") return PAGE_CONTEXT.default;
+  /* Match longest prefix */
+  const match = Object.keys(PAGE_CONTEXT)
+    .filter((k) => k !== "default" && pathname.startsWith(k))
+    .sort((a, b) => b.length - a.length)[0];
+  return match ? PAGE_CONTEXT[match] : PAGE_CONTEXT.default;
+};
+
+/* Build geo + time aware welcome message */
+const buildWelcome = ({ region, city, countryCode }) => {
+  const hour = new Date().getHours();
+  const greet =
+    hour < 5 ? "Working late" : hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : hour < 21 ? "Good evening" : "Working late";
+  const place = city || (region && region !== "Global" ? region : null);
+  const placeLine = place ? `Spotted you visiting from ${place}${countryCode ? "" : ""}.` : "";
+  const intro = place
+    ? `${greet}! 👋 ${placeLine} I'm Shape AI, the live concierge for Shape-360.`
+    : `Hi there! 👋 I'm Shape AI, the live concierge for Shape-360.`;
+  return `${intro}\n\nI can quote pricing, walk you through case studies, or book your kickoff call. What brings you in today?`;
+};
+
 const getFallbackResponse = (input) => {
   const lower = input.toLowerCase().trim();
   for (const item of fallbackResponses) {
@@ -105,14 +165,58 @@ const getFallbackResponse = (input) => {
 };
 
 const AIChatbot = () => {
+  const location = useLocation();
+  const { region, city, countryCode, loading: geoLoading } = useGeoPersonalization();
+
   const [open, setOpen] = useState(false);
+  const [nudgeVisible, setNudgeVisible] = useState(false);
+  const [nudgeDismissed, setNudgeDismissed] = useState(
+    () => typeof window !== "undefined" && sessionStorage.getItem("shape360_chat_nudge_dismissed") === "1"
+  );
+
+  const pageCtx = useMemo(() => getPageContext(location.pathname), [location.pathname]);
+
   const [messages, setMessages] = useState([
     {
       from: "bot",
-      text: "Hi there! 👋 I'm Shape AI, powered by advanced AI. I know everything about Shape-360's services, pricing, and portfolio.\n\nHow can I help you today?",
+      text: "Hi there! 👋 I'm Shape AI, the live concierge for Shape-360.\n\nI can quote pricing, walk you through case studies, or book your kickoff call. What brings you in today?",
       time: new Date(),
     },
   ]);
+
+  /* Replace the welcome with a geo-personalized one once geo resolves — only if user hasn't sent anything */
+  useEffect(() => {
+    if (geoLoading) return;
+    setMessages((prev) => {
+      if (prev.length !== 1 || prev[0].from !== "bot") return prev;
+      return [
+        {
+          from: "bot",
+          text: buildWelcome({ region, city, countryCode }),
+          time: new Date(),
+        },
+      ];
+    });
+  }, [geoLoading, region, city, countryCode]);
+
+  /* Proactive nudge — surface after 22s if user hasn't opened chat or dismissed it */
+  useEffect(() => {
+    if (open || nudgeDismissed) return;
+    const timer = setTimeout(() => setNudgeVisible(true), 22_000);
+    return () => clearTimeout(timer);
+  }, [open, nudgeDismissed]);
+
+  /* Hide nudge when chat opens or route changes (re-fires per page after delay) */
+  useEffect(() => {
+    setNudgeVisible(false);
+  }, [location.pathname, open]);
+
+  const dismissNudge = (e) => {
+    e?.stopPropagation();
+    setNudgeVisible(false);
+    setNudgeDismissed(true);
+    sessionStorage.setItem("shape360_chat_nudge_dismissed", "1");
+  };
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const messagesEndRef = useRef(null);
@@ -318,12 +422,7 @@ const AIChatbot = () => {
     return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
-  const quickQuestions = [
-    "What services do you offer?",
-    "Show me pricing",
-    "How does your process work?",
-    "Show me your portfolio",
-  ];
+  const quickQuestions = pageCtx.starters;
 
   return (
     <div className="ai-chatbot">
@@ -496,6 +595,35 @@ const AIChatbot = () => {
           <div className="chatbot-powered">
             Powered by <strong>Shape AI</strong>
           </div>
+        </div>
+      )}
+
+      {/* Proactive Nudge — page + delay aware */}
+      {!open && nudgeVisible && (
+        <div
+          className="chatbot-nudge"
+          role="button"
+          tabIndex={0}
+          onClick={() => {
+            setOpen(true);
+            setNudgeVisible(false);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              setOpen(true);
+              setNudgeVisible(false);
+            }
+          }}
+        >
+          <span className="chatbot-nudge-dot" aria-hidden="true"></span>
+          <span className="chatbot-nudge-text">{pageCtx.nudge}</span>
+          <button
+            className="chatbot-nudge-close"
+            onClick={dismissNudge}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
         </div>
       )}
 
