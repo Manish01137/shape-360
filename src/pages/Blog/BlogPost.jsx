@@ -5,6 +5,49 @@ import { Helmet } from "react-helmet-async";
 import "./BlogPost.css";
 
 const blogData = {
+  "aksharam-ayurved-healthcare-platform": {
+    title: "Designing a Digital Home for Authentic Ayurveda: The Aksharam Ayurved Story",
+    category: "Healthcare",
+    date: "May 18, 2026",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80",
+    client: "Aksharam Ayurved · Ahmedabad",
+    clientLink: "https://aksharamayurved.com",
+    content: [
+      { type: "paragraph", text: "Aksharam Ayurved is an authentic Ayurvedic clinic in Shahibaug, Ahmedabad, led by Vaidya Dolly — a practitioner with 9+ years of clinical experience, 5000+ patients treated across India and abroad, and over 2000 successful Panchakarma therapies on record. Their work spans classical Ayurveda in its purest form: Vamana, Virechana, Basti, Nasya, and Raktamokshana for systemic detoxification, Beij Shuddhi and Garbhadhana Sanskar for fertility, seasonal therapies that follow the rhythm of the year, and personalized chronic-care plans for PCOD, hypertension, diabetes, and obesity. When they approached Shape-360, the brief was deceptively simple: build a website that feels as authentic as the clinic — and converts." },
+      { type: "heading", text: "The Challenge" },
+      { type: "paragraph", text: "Ayurveda websites tend to fail in two opposite directions. Some try to look ultra-modern and end up feeling like generic SaaS — stripped of the cultural weight that makes Ayurveda credible. Others lean so hard into traditional imagery that they look like brochures from the 1990s. Aksharam needed neither. The brand had to feel sacred, serene, and clinically trustworthy — the visual equivalent of stepping into a calm consultation room with Vaidya Dolly herself." },
+      { type: "paragraph", text: "Their patient base was also unusually wide. Local Ahmedabad walk-ins, returning patients across India, and an international diaspora in the UK, USA, Canada, and UAE who book tele-consultations and receive medicine deliveries globally. The same homepage had to comfort an anxious chronic-condition patient, inform a couple researching fertility programs, and pre-qualify an international visitor evaluating whether a Bangalore-time Zoom call with an Indian Vaidya was worth their evening. Healthcare trust signals had to be uncompromising — practitioner credibility, real patient outcomes, and unambiguous appointment booking." },
+      { type: "heading", text: "Our Approach" },
+      { type: "list", items: [
+        "Opened the homepage with Vaidya Dolly's authority front-loaded — 9+ years of practice, 2000+ Panchakarma therapies, 170+ five-star reviews, 5000+ patients — anchored against the tagline 'Healing Body, Mind & Soul Through Authentic Ayurveda'",
+        "Built dedicated specialty sections for Panchakarma Programs, Beij Shuddhi & Garbhadhana Sanskar (fertility), and Preventive Healthcare — each with the depth a researching patient actually needs",
+        "Designed a Seasonal Therapies section that surfaces Sharadiya Virechan, Vasantik Vaman, Kati Basti, Shirodhara, and monsoon-specific treatments — so the site stays alive across the calendar",
+        "Curated a patient testimonials carousel using real outcomes from Gujarat, Maharashtra, and the USA — natural pregnancy after two years of trying, 25-pound weight loss with normalized cholesterol, controlled PCOD and hypertension",
+        "Surfaced a 'Global Reach' module for international patients — tele-consultations across time zones, climate-adapted treatment plans, worldwide medicine delivery",
+        "Integrated WhatsApp deep-linking into the booking flow so patients can confirm appointments in one tap from any device",
+      ]},
+      { type: "heading", text: "Design Philosophy" },
+      { type: "paragraph", text: "We anchored the visual language on warmth — earthy tones drawn from turmeric, sandalwood, and copper, balanced against generous whitespace and clean typography. Photography mixes the clinic's own interior shots with serene therapy imagery: the moment a Shirodhara stream meets the forehead, the texture of hand-mixed herbs, a steam-room view that signals authentic Panchakarma rather than a spa. Every visual decision was filtered through one question — 'would this make a patient trust the medicine?' If the answer was no, it was cut." },
+      { type: "paragraph", text: "Restraint was the hardest part. Ayurveda is rich in symbolism, and the temptation to layer mandalas, Sanskrit accents, and ornamental flourishes is real. We resisted. The site whispers tradition rather than shouting it. The result feels closer to a contemporary boutique health clinic than a tourist Ayurveda spa — which is exactly the positioning Aksharam earned through 9+ years of clinical work." },
+      { type: "heading", text: "Technical Foundations" },
+      { type: "list", items: [
+        "Lightweight, performance-first build optimized for mobile patients across slow 3G networks in tier-2 Indian cities and international rural areas",
+        "WhatsApp Business deep-link integration on every primary CTA — bypasses the email anxiety most healthcare patients feel",
+        "Structured FAQ section answering the four most common pre-booking questions — pulled directly from the clinic's actual inbox",
+        "SEO architecture targeting both intent keywords ('panchakarma Ahmedabad', 'ayurvedic fertility treatment') and condition-led keywords ('PCOD ayurvedic treatment', 'natural detoxification')",
+        "Image optimization pipeline so the gallery loads quickly without sacrificing the warmth of clinic photography",
+        "Tele-consultation funnel that captures time zone, country, and condition upfront — so Vaidya Dolly's team can prepare before the call",
+      ]},
+      { type: "heading", text: "Building Trust in a Sensitive Vertical" },
+      { type: "paragraph", text: "Healthcare conversion is fundamentally different from e-commerce or SaaS. A patient researching a Panchakarma program is often anxious, often skeptical, and almost always comparing across three or four practitioners. Generic agency tactics — urgency banners, exit-intent popups, trial offers — would have actively damaged trust here. We did the opposite. The site reads slowly. Sections breathe. The testimonials section names the patient, the city, and the actual outcome — Hardik Mehta in Gujarat, Payal Tank in Maharashtra, Dipak Jaiswal in the USA — because specificity is the strongest trust signal in healthcare. Stock-photo smiles and anonymous five-star quotes would have undone the credibility Vaidya Dolly spent a decade building." },
+      { type: "heading", text: "The Results" },
+      { type: "paragraph", text: "Aksharam Ayurved now operates a digital storefront that mirrors the clinic itself — warm, authentic, and clinically grounded. Seasonal therapy enrollments have grown materially since launch, with patients increasingly self-selecting into Sharadiya Virechan and Vasantik Vaman programs after reading the on-site explainers. International tele-consultation requests now route in through a structured form rather than scattered DMs, giving the clinic operational clarity it didn't have before. WhatsApp-led bookings have become the dominant conversion path — proof that the simplest tap-to-talk path, when integrated thoughtfully, outperforms every clever form a designer can invent." },
+      { type: "quote", text: "Shape-360 understood the soul of Ayurveda — not just the business. Our website now feels as authentic as our clinic. International patients book consultations with confidence, and our seasonal therapy enrollments have grown significantly since launch.", author: "Vaidya Dolly, Founder · Aksharam Ayurved · Ahmedabad" },
+      { type: "heading", text: "Key Takeaway" },
+      { type: "paragraph", text: "For traditional healthcare brands — Ayurveda, homeopathy, naturopathy, integrative clinics — the website is no longer a brochure. It's where credibility is decided. The instinct is to either over-modernize and lose the soul, or over-traditionalize and lose the conversion. The winning move is restraint. Honor the heritage. Foreground the practitioner. Let real patient outcomes do the selling. And make the booking path so frictionless that a patient on a slow phone in a small town can finish what they started. Authentic doesn't have to mean slow or unsophisticated — and modern doesn't have to mean cold. Aksharam Ayurved is the proof." },
+    ],
+  },
   "mershiltech-ai-agency-platform": {
     title: "Engineering an Enterprise Platform for an AI-Powered Australian Agency",
     category: "International",
@@ -288,11 +331,48 @@ const BlogPost = () => {
     );
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "image": [post.img],
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Shape-360",
+      "url": "https://shape-360.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shape-360",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shape-360.com/logo.png"
+      }
+    },
+    "description": post.content[0]?.text?.substring(0, 160),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://shape-360.com/blog/${slug}`
+    },
+    "articleSection": post.category,
+    "about": post.client,
+  };
+
   return (
     <div className="blog-post-page">
       <Helmet>
         <title>{post.title} | Shape-360 Blog</title>
         <meta name="description" content={post.content[0]?.text?.substring(0, 160)} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.content[0]?.text?.substring(0, 160)} />
+        <meta property="og:image" content={post.img} />
+        <meta property="og:url" content={`https://shape-360.com/blog/${slug}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href={`https://shape-360.com/blog/${slug}`} />
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
 
       {/* Hero */}

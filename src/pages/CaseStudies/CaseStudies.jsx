@@ -56,6 +56,28 @@ const caseStudies = [
     },
   },
   {
+    id: "aksharamayurved",
+    title: "Aksharam Ayurved",
+    category: "Ayurvedic Healthcare Platform",
+    link: "https://aksharamayurved.com",
+    img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
+    desc: "Authentic Ayurveda clinic from Ahmedabad — built for Vaidya Dolly's 9+ year practice with 5000+ patients treated, 2000+ Panchakarma therapies, and a global tele-consultation footprint across UK, USA, Canada and UAE.",
+    challenge: "Aksharam Ayurved is led by Vaidya Dolly, an authentic Ayurvedic practitioner with 9+ years of clinical experience and 5000+ patients treated across India and abroad. The clinic offers deeply traditional treatments — Panchakarma (Vamana, Virechana, Basti, Nasya, Raktamokshana), Beij Shuddhi & Garbhadhana Sanskar fertility programs, seasonal therapies like Sharadiya Virechan and Vasantik Vaman, and chronic-condition care for PCOD, hypertension, diabetes and obesity. The website needed to communicate centuries of Ayurvedic tradition while serving a modern, international audience that books tele-consultations across time zones and receives medicine deliveries globally. Healthcare trust signals had to be unmistakable, and the visual language had to feel sacred, serene and grounded — not commercial.",
+    solution: "We built a warm, editorial-grade clinic website that honors Ayurvedic philosophy and converts visitors into bookings. The homepage opens with Vaidya Dolly's authority — 9+ years, 2000+ Panchakarma therapies, 170+ five-star reviews, 5000+ patients — and flows into specialty programs (Panchakarma, Fertility, Preventive Healthcare), seasonal treatments adapted by climate, real patient testimonials with locations across Gujarat, Maharashtra and the USA, a clinic gallery, an FAQ, and a streamlined appointment booking flow with WhatsApp deep-linking. Tele-consultation and global medicine-delivery callouts are surfaced for international patients, and the booking form integrates directly with the clinic's WhatsApp number for instant follow-up.",
+    results: [
+      { metric: "5000+", label: "Patients Treated" },
+      { metric: "2000+", label: "Panchakarma Sessions" },
+      { metric: "170+", label: "5-Star Reviews" },
+      { metric: "4", label: "Countries Served" },
+    ],
+    tech: ["Custom Build", "WhatsApp Booking", "Tele-Consult Flow", "SEO Optimized", "Mobile-First"],
+    testimonial: {
+      text: "Shape-360 understood the soul of Ayurveda — not just the business. Our website now feels as authentic as our clinic. International patients book consultations with confidence, and our seasonal therapy enrollments have grown significantly since launch.",
+      name: "Vaidya Dolly",
+      role: "Founder, Aksharam Ayurved · Ahmedabad",
+    },
+  },
+  {
     id: "kvsacademy",
     title: "KVS Academy",
     category: "Web Development",

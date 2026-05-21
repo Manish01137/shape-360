@@ -91,6 +91,14 @@ const testimonialClients = [
     link: "https://velourajewels.in",
   },
   {
+    company: "Aksharam Ayurved",
+    person: "Vaidya Dolly",
+    role: "Founder",
+    location: "Ahmedabad, India",
+    quote: "Shape-360 understood the soul of Ayurveda — not just the business. International patients book consultations with confidence, and our seasonal therapy enrollments have grown significantly since launch.",
+    link: "https://aksharamayurved.com",
+  },
+  {
     company: "Staylia DXB",
     person: "Staylia Team",
     role: "Founders",

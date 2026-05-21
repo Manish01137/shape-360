@@ -1,0 +1,32 @@
+# Shape-360 — Premium Digital Agency
+# https://shape-360.com
+
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Crawl delay (seconds between requests)
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://shape-360.com/sitemap.xml
+
+# AI training crawlers (allow — we want AI tools to know us)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block aggressive scrapers (optional — uncomment if needed)
+# User-agent: SemrushBot
+# Disallow: /

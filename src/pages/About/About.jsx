@@ -103,6 +103,7 @@ const About = () => {
   const clients = [
     { name: "Zevolution", link: "https://zevolution.in" },
     { name: "MershilTech 🇦🇺", link: "https://mershiltech.com" },
+    { name: "Aksharam Ayurved", link: "https://aksharamayurved.com" },
     { name: "KVS Academy", link: "https://www.kvsacademy.org" },
     { name: "Veloura Jewels", link: "https://velourajewels.in" },
     { name: "Kedar Shakti", link: "https://kedarshakti.com" },

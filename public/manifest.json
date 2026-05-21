@@ -1,0 +1,21 @@
+{
+  "name": "Shape-360 — Premium Digital Agency",
+  "short_name": "Shape-360",
+  "description": "Premium digital agency building high-converting websites, e-commerce, and AI growth tools for ambitious brands worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#c9a84c",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "productivity", "design"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

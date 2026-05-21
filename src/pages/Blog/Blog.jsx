@@ -20,6 +20,17 @@ const blogPosts = [
     featured: true,
   },
   {
+    id: 8,
+    slug: "aksharam-ayurved-healthcare-platform",
+    title: "Designing a Digital Home for Authentic Ayurveda: The Aksharam Ayurved Story",
+    excerpt: "How we built a serene, conversion-focused healthcare platform for Vaidya Dolly's Ahmedabad-based Ayurvedic clinic — honoring 5000+ patients of clinical trust while opening tele-consultations to the UK, USA, Canada and UAE.",
+    category: "Healthcare",
+    date: "May 18, 2026",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
+    featured: true,
+  },
+  {
     id: 7,
     slug: "mershiltech-ai-agency-platform",
     title: "Engineering an Enterprise Platform for an AI-Powered Australian Agency",
