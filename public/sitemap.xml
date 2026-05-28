@@ -96,6 +96,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shape-360.com/blog/worksaura-creative-designer-portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://shape-360.com/blog/aksharam-ayurved-healthcare-platform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

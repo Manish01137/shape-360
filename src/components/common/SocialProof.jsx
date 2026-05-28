@@ -5,6 +5,7 @@ const notifications = [
   { city: "Dubai", project: "Staylia DXB", time: "2 min ago" },
   { city: "New Delhi", project: "Kedar Shakti", time: "5 min ago" },
   { city: "Ahmedabad", project: "Aksharam Ayurved", time: "6 min ago" },
+  { city: "New Delhi", project: "WorkSaura", time: "9 min ago" },
   { city: "Mumbai", project: "Veloura Jewels", time: "8 min ago" },
   { city: "Bangalore", project: "KVS Academy", time: "12 min ago" },
   { city: "San Francisco", project: "Zeqon", time: "15 min ago" },

@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const shipped = [
   { date: "April 2026", title: "AutoFlow Beta Architecture", desc: "Designed and prototyped the AI automation platform — lead scraper, email engine, multi-platform scheduler." },
+  { date: "May 2026", title: "WorkSaura Launch", desc: "Shipped WorkSaura — a cinematic GSAP-powered portfolio for Rahul, a New Delhi-based graphic & 3D designer serving brands across healthcare, e-commerce, sports and IT." },
   { date: "May 2026", title: "Aksharam Ayurved Launch", desc: "Shipped Aksharam Ayurved — authentic Ayurvedic clinic platform for Vaidya Dolly, with tele-consultations across UK, USA, Canada and UAE." },
   { date: "April 2026", title: "International Client #1", desc: "Shipped MershilTech (Australia 🇦🇺) — Shape-360's first major international engagement, fully async-delivered." },
   { date: "March 2026", title: "AI Project Brief Generator", desc: "Visitors can now generate a 10-section professional project brief in 60 seconds, exportable as branded PDF." },
@@ -20,7 +21,7 @@ const shipped = [
 
 const inProgress = [
   { eta: "Mid-May 2026", title: "AutoFlow Public Launch", desc: "AI automation platform goes live. Lead scraping, cold emails, multi-platform social posting — all in one tool." },
-  { eta: "Late May 2026", title: "Real Video Testimonials", desc: "Recording 30-second video testimonials with founders of Zevolution, Veloura, Kedar Shakti, MershilTech, Staylia, and Aksharam Ayurved." },
+  { eta: "Late May 2026", title: "Real Video Testimonials", desc: "Recording 30-second video testimonials with founders of Zevolution, Veloura, Kedar Shakti, MershilTech, Staylia, Aksharam Ayurved, and WorkSaura." },
   { eta: "June 2026", title: "Multi-Language Support", desc: "Adding Arabic (RTL) and Hindi to expand reach across MENA and India tier-2 markets." },
   { eta: "June 2026", title: "Public Newsletter", desc: "Weekly behind-the-scenes founder newsletter — case studies, lessons learned, agency-building insights." },
 ];

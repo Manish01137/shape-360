@@ -20,6 +20,17 @@ const blogPosts = [
     featured: true,
   },
   {
+    id: 9,
+    slug: "worksaura-creative-designer-portfolio",
+    title: "Building a Cinematic Portfolio for a 3D & Graphic Designer: The WorkSaura Story",
+    excerpt: "How we turned Rahul's multi-disciplinary design practice into a scroll-driven single-page experience — with showreel hero, brand-identity case studies, tool mastery bars, and a career timeline, all powered by GSAP ScrollSmoother and Framer Motion.",
+    category: "Portfolio",
+    date: "May 26, 2026",
+    readTime: "7 min read",
+    img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    featured: true,
+  },
+  {
     id: 8,
     slug: "aksharam-ayurved-healthcare-platform",
     title: "Designing a Digital Home for Authentic Ayurveda: The Aksharam Ayurved Story",

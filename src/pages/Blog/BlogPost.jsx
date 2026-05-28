@@ -5,6 +5,48 @@ import { Helmet } from "react-helmet-async";
 import "./BlogPost.css";
 
 const blogData = {
+  "worksaura-creative-designer-portfolio": {
+    title: "Building a Cinematic Portfolio for a 3D & Graphic Designer: The WorkSaura Story",
+    category: "Portfolio",
+    date: "May 26, 2026",
+    readTime: "7 min read",
+    img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80",
+    client: "WorkSaura · New Delhi",
+    clientLink: "https://worksaura.com",
+    content: [
+      { type: "paragraph", text: "Rahul is a New Delhi-based graphic and 3D designer with an unusually wide client base — DLF Healthcare, Omnist Techhub Solutions, VINR Skincare, Crew Solutions, Webslogin IT Services, Global Sports, APPSDIARY Technologies, Fashion Comfartz, Digital Python, and London Camera & Antique Auction. His work spans logo design, brand identity systems, packaging, marketing collateral, social media creatives, web and app UI, photo retouching, and video editing with 3D motion. When he came to Shape-360, the brief was disarmingly simple: 'build me a portfolio that does justice to all of it'. The execution was anything but simple — that's a half-dozen disciplines and a dozen industries, packed into one site." },
+      { type: "heading", text: "The Challenge" },
+      { type: "paragraph", text: "Most freelance designer portfolios fail in one of two predictable ways. The first is the Instagram grid — a wall of square thumbnails that flattens craft into uniform tiles and tells you nothing about the thinking behind any one project. The second is the Behance dump — endless scrolling case studies that all open with the same 'The Brief / The Process / The Result' template, leaving the viewer numb by project three. Rahul's work deserved neither. His brand identity for VINR Skincare, his packaging for Fashion Comfartz, and his motion reels for Token were each conceptually distinct — and the portfolio had to surface that distinction, not bury it under template parity." },
+      { type: "paragraph", text: "There was also a positioning problem. Rahul charges premium rates for serious brand work, but his old site read like a beginner's marketplace profile — small thumbnails, generic copy, no signal of craft. Prospects were either bouncing or asking for hourly rates instead of project fees. The new site had to immediately reset the perceived tier, before a single project tile was clicked." },
+      { type: "heading", text: "Our Approach" },
+      { type: "list", items: [
+        "Anchored the entire site in a cinematic Showcase Reel that auto-plays at the top — the moment a visitor lands, they're watching the work, not reading about it",
+        "Built scroll-locked 'Behind The Work' sections where each major brand identity case unfolds as the user scrolls — DLF Healthcare, Omnist Techhub, VINR Skincare each get their own chapter",
+        "Designed a 'Tools I Use Daily' module with proficiency bars across Photoshop, Illustrator, After Effects, Premiere Pro, Lightroom, Autodesk 3ds Max, Maya, KeyShot, and Movavi — proving range without listing it",
+        "Crafted a 'Career Journey' timeline that grounds Rahul's craft in lived experience — education, early agency work, freelance growth, current premium engagements",
+        "Curated a real client testimonials section quoting actual outcomes — modern, premium, on-time, on-brand",
+        "Closed with a focused 'Work With Me' contact form that routes directly to email — no funnel, no qualification quiz, just a clean ask",
+      ]},
+      { type: "heading", text: "Design Philosophy" },
+      { type: "paragraph", text: "We pushed hard on typography to do the heavy lifting. Bebas Neue and Bowlby One for impact moments — section headlines and reel titles. Inter for body, JetBrains Mono for tool labels. That pairing alone separates the site from every templated portfolio: the moment you scroll, the type system tells you this designer reads, this designer thinks. The color palette stays restrained — deep blacks with calibrated accent colors per case study — letting the work breathe instead of fighting it. Every section transitions with intent: nothing animates because it can; everything animates because it should." },
+      { type: "heading", text: "Technical Foundations" },
+      { type: "list", items: [
+        "React + Vite for instant route transitions and sub-2-second initial load on broadband, sub-3.5 on 4G",
+        "GSAP ScrollSmoother for cinematic scroll inertia — the foundation of the 'film, not folder' feel",
+        "Framer Motion for component-level entry choreography — case study cards, tool bars, testimonial rotation",
+        "Optimized asset pipeline: AVIF/WebP for stills, MP4/H.265 for reels with poster-frame previews, lazy-loaded below the fold",
+        "Single-page architecture with sectioned anchors — every prospect link lands them on the exact case study, not a redirect chain",
+        "Premium font stack — Bebas Neue, Bowlby One, Inter, JetBrains Mono — with proper font-display:swap to avoid layout shift",
+      ]},
+      { type: "heading", text: "Repositioning a Freelancer as a Studio" },
+      { type: "paragraph", text: "The single biggest unlock wasn't a feature — it was perceived tier. The old site looked like a marketplace gig profile. The new site looks like a small premium studio. Same designer, same work, completely different first impression. The reel sets the tone in under three seconds. The typography reinforces it. The case study depth confirms it. By the time a prospect reaches the contact form, the question they're asking themselves has changed from 'how much per hour?' to 'is he available for our project?'. That shift is worth more than any animation." },
+      { type: "heading", text: "The Results" },
+      { type: "paragraph", text: "Inbound inquiries have changed both in volume and in quality. Casual rate-shoppers have largely dropped off — replaced by serious brand owners arriving with defined scopes and realistic budgets. The portfolio's tool-mastery section has organically become a hiring filter: founders who scroll past it without reading aren't typically the right fit, and the ones who pause on it usually arrive at the contact form ready to move. For Rahul, the operational change is simple but real — fewer wasted discovery calls, more aligned briefs, higher project values. The site is doing the qualifying he used to do manually." },
+      { type: "quote", text: "Shape-360 turned my portfolio into a cinematic experience. The scroll animations, the showreel integration, and the way each client case is presented — it now feels like a film, not a folder. Client inquiries have changed from 'are you available?' to 'when can we start?'.", author: "Rahul, Founder · WorkSaura · New Delhi" },
+      { type: "heading", text: "Key Takeaway" },
+      { type: "paragraph", text: "For multi-disciplinary creatives — designers who do brand, motion, and 3D, or photographers who shoot fashion, food, and architecture — the portfolio's job is not to show everything. It's to show enough that the visitor stops asking 'can he do this?' and starts asking 'when can he start?'. That shift requires three things: a hero that asserts tier in the first three seconds, depth that rewards the visitors who care, and a contact path that respects the ones who are ready. WorkSaura is the proof — and it's the playbook for the next premium creative portfolio Shape-360 builds." },
+    ],
+  },
   "aksharam-ayurved-healthcare-platform": {
     title: "Designing a Digital Home for Authentic Ayurveda: The Aksharam Ayurved Story",
     category: "Healthcare",

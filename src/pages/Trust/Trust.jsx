@@ -99,6 +99,14 @@ const testimonialClients = [
     link: "https://aksharamayurved.com",
   },
   {
+    company: "WorkSaura",
+    person: "Rahul",
+    role: "Founder · Graphic & 3D Designer",
+    location: "New Delhi, India",
+    quote: "Shape-360 turned my portfolio into a cinematic experience. Client inquiries have changed from 'are you available?' to 'when can we start?'.",
+    link: "https://worksaura.com",
+  },
+  {
     company: "Staylia DXB",
     person: "Staylia Team",
     role: "Founders",

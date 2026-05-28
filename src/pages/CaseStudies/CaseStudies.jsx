@@ -78,6 +78,28 @@ const caseStudies = [
     },
   },
   {
+    id: "worksaura",
+    title: "WorkSaura",
+    category: "Creative Designer Portfolio · GSAP / ScrollSmoother",
+    link: "https://worksaura.com",
+    img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    desc: "Cinematic scroll-driven portfolio for Rahul — a New Delhi-based graphic and 3D designer serving brands across healthcare, e-commerce, sports, and IT services. Showcase reel, brand identity case studies, design-tool stack, and a career timeline, built on React + GSAP + ScrollSmoother.",
+    challenge: "Rahul is a graphic and 3D designer with a deep, multi-disciplinary client list — DLF Healthcare, Omnist Techhub Solutions, VINR Skincare, Crew Solutions, Webslogin IT Services, Global Sports, APPSDIARY Technologies, Fashion Comfartz, Digital Python, London Camera & Antique Auction — spanning logo design, brand identity, packaging, marketing collateral, social media creatives, web/UI design, and video editing & VFX. His existing online presence didn't reflect that range. Most designer portfolios fall into one of two traps: an Instagram-style image grid that flattens the craft, or a Behance dump where every project looks the same. Rahul needed a third option — a portfolio that felt like a film, where each scroll move surfaces a new chapter of the work.",
+    solution: "We built a single-page cinematic experience powered by React + Vite + GSAP ScrollSmoother + Framer Motion. The hero opens with a Showcase Reel auto-playing across the viewport. 'Behind The Work' shows the craft process — Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Lightroom, Autodesk 3ds Max, Maya, KeyShot 3D Render — each with proficiency ratings. Brand identity case studies for clients like Podiatry, Fashion Comfartz, and VINR Skincare get their own scroll-locked sections. A 'Career Journey' timeline anchors the personal story. Real client testimonials sit before the 'Work With Me' contact form, which routes inquiries directly to email. Premium typography pairing — Bebas Neue for impact, Bowlby One for accent, Inter for body, JetBrains Mono for tools — separates the site from every generic creative template.",
+    results: [
+      { metric: "10+", label: "Client Brands" },
+      { metric: "50+", label: "Design Projects" },
+      { metric: "1.8s", label: "Load Time" },
+      { metric: "8+", label: "Design Tools Mastered" },
+    ],
+    tech: ["React", "Vite", "GSAP", "ScrollSmoother", "Framer Motion", "Premium Typography"],
+    testimonial: {
+      text: "Shape-360 turned my portfolio into a cinematic experience. The scroll animations, the showreel integration, and the way each client case is presented — it now feels like a film, not a folder. Client inquiries have changed from 'are you available?' to 'when can we start?'.",
+      name: "Rahul",
+      role: "Founder, WorkSaura · New Delhi",
+    },
+  },
+  {
     id: "kvsacademy",
     title: "KVS Academy",
     category: "Web Development",
