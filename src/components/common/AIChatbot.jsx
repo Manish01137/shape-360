@@ -63,6 +63,7 @@ CASE STUDIES / PORTFOLIO (REAL PROJECTS):
 • Staylia DXB (stayliadxb.com) — Dubai short-term rental management platform, 85%+ occupancy rates, investor dashboards, multi-platform booking
 
 LANDING PAGE PROJECTS:
+• Biospire Lifesciences (biospirelifesciences.com) — Pharmaceutical brand landing page for a Nagpur-based company (est. June 2025). WHO-GMP certified, ISO 9001:2015 compliant. Built around the 'Partner in Progressive Healthcare' philosophy with the Biospire Promise framework (trust to doctors, reliability to pharmacists, hope to patients) and a WhatsApp-driven partner-inquiry flow across Bharat
 • JaldiRide Connect (jaldirideconnect.com) — Smart local transport landing page for autos/cars/buses, 10K+ monthly visits, 50+ cities targeted, 3 vehicle categories
 • MindMint Media (mindmintmedia.in) — Digital marketing agency landing page with service showcases and lead capture
 • SkillOwl (skillowl.in) — EdTech platform landing page with course highlights and signup flow

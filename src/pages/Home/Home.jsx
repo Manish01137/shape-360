@@ -303,7 +303,7 @@ const Home = () => {
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
+  const brands = ["Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
 
   return (
     <div className="home">
@@ -543,6 +543,7 @@ const Home = () => {
           </div>
           <div className="landing-grid">
             {[
+              { title: "Biospire Lifesciences", category: "Pharmaceutical Brand · 🇮🇳 Bharat", link: "https://biospirelifesciences.com", img: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80", desc: "WHO-GMP & ISO 9001:2015 certified pharmaceutical brand from Nagpur, est. June 2025. Single-page landing built around the 'Partner in Progressive Healthcare' philosophy — surfacing the Biospire promise to doctors, pharmacists, and patients across Bharat." },
               { title: "JaldiRide Connect", category: "Smart Transport Platform", link: "https://www.jaldirideconnect.com", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80", desc: "Smart local transport landing page connecting riders with autos, cars, and buses across 50+ cities." },
               { title: "MindMint Media", category: "Digital Marketing Agency", link: "https://mindmintmedia.in", img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=80", desc: "Bold agency landing page with service showcases and lead capture." },
               { title: "SkillOwl", category: "EdTech Platform", link: "https://skillowl.in", img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80", desc: "Clean educational platform landing page with course highlights and CTAs." },
