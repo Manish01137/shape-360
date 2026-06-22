@@ -123,10 +123,6 @@ const PAGE_CONTEXT = {
     nudge: "Reading our case studies? I can summarize any of them.",
     starters: ["Summarize the latest post", "Show me Aksharam case study", "How was MershilTech built?", "Pricing for similar work"],
   },
-  "/automate": {
-    nudge: "Curious about AutoFlow? I can walk you through it.",
-    starters: ["What does AutoFlow do?", "How much does AutoFlow cost?", "When does it launch?", "Can I join the waitlist?"],
-  },
   "/about": {
     nudge: "Want to know who you'd be working with? Just ask.",
     starters: ["Who founded Shape-360?", "Where is the team based?", "How big is the team?", "What's your process?"],

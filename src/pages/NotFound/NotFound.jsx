@@ -8,7 +8,6 @@ const quickLinks = [
   { to: "/", label: "Home", desc: "Back to the start" },
   { to: "/services", label: "Services", desc: "What we build" },
   { to: "/case-studies", label: "Portfolio", desc: "Live work" },
-  { to: "/automate", label: "AutoFlow", desc: "Our AI tool · NEW" },
   { to: "/trust", label: "Trust", desc: "Why founders choose us" },
   { to: "/pricing", label: "Pricing", desc: "Real numbers" },
   { to: "/contact", label: "Contact", desc: "Talk to founder" },

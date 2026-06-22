@@ -182,7 +182,6 @@ const Roadmap = () => {
           <p>Tell us what you'd ship if you ran Shape-360. We read every reply.</p>
           <div className="rd-cta-actions">
             <Link to="/contact" className="thm-btn">Send Feedback <span>&#8594;</span></Link>
-            <Link to="/automate" className="rd-cta-secondary">Join AutoFlow Waitlist</Link>
           </div>
         </section>
       </div>

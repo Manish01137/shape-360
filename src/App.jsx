@@ -40,7 +40,8 @@ const ROICalculator = lazy(() => import("./pages/Tools/ROICalculator"));
 const AIDesignGenerator = lazy(() => import("./pages/Tools/AIDesignGenerator"));
 const ClientPortal = lazy(() => import("./pages/Tools/ClientPortal"));
 const ProjectBrief = lazy(() => import("./pages/Tools/ProjectBrief"));
-const Automate = lazy(() => import("./pages/Automate/Automate"));
+// AutoFlow temporarily unpublished — re-enable when ready
+// const Automate = lazy(() => import("./pages/Automate/Automate"));
 const Trust = lazy(() => import("./pages/Trust/Trust"));
 const Roadmap = lazy(() => import("./pages/Roadmap/Roadmap"));
 const DynamicLanding = lazy(() => import("./pages/Landing/DynamicLanding"));
@@ -79,7 +80,8 @@ const AnimatedRoutes = () => {
           <Route path="/ai-design-generator" element={<PageTransition><AIDesignGenerator /></PageTransition>} />
           <Route path="/client-portal" element={<PageTransition><ClientPortal /></PageTransition>} />
           <Route path="/project-brief" element={<PageTransition><ProjectBrief /></PageTransition>} />
-          <Route path="/automate" element={<PageTransition><Automate /></PageTransition>} />
+          {/* AutoFlow temporarily unpublished — re-enable when ready
+          <Route path="/automate" element={<PageTransition><Automate /></PageTransition>} /> */}
           <Route path="/trust" element={<PageTransition><Trust /></PageTransition>} />
           <Route path="/roadmap" element={<PageTransition><Roadmap /></PageTransition>} />
           <Route path="/landing" element={<PageTransition><DynamicLanding /></PageTransition>} />
