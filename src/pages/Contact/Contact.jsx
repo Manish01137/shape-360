@@ -150,7 +150,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4>Email Us</h4>
-                <a href="mailto:shape360official@gmail.com">shape360official@gmail.com</a>
+                <a href="mailto:manish@shape360ai.com">manish@shape360ai.com</a>
                 <span>Response within 2 hours</span>
               </div>
             </div>

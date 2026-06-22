@@ -21,7 +21,7 @@ COMPANY INFORMATION:
 - Mission: "To empower businesses with digital solutions that drive growth, build trust, and deliver measurable impact."
 - Team: 6+ members including developers, designers, marketers
 - Stats: 70+ projects delivered, 20+ happy clients, 2+ years experience, 98% client satisfaction
-- Contact: Email: shape360official@gmail.com | Phone: +91 8209978891 | Location: Bangalore, India
+- Contact: Email: manish@shape360ai.com | Phone: +91 8209978891 | Location: Bangalore, India
 - Social: Instagram @shape360official, Facebook
 
 SERVICES OFFERED:
@@ -52,6 +52,7 @@ PROCESS:
 4. Scale — Continuous improvement & growth strategies
 
 CASE STUDIES / PORTFOLIO (REAL PROJECTS):
+• IndiColas (indicolas.com) — 🇺🇸 Heritage-inspired craft soda brand bringing India's iconic Goli Soda (Codd-neck marble bottle) culture to the US market. 12 bold flavors (Cherry Cola, Ginger Lime, Coco Berry, Cotton Candy and more). Cinematic, video-first D2C storefront with a full-screen flavor carousel, a 'Fizz With History' heritage section, tastemaker/creator testimonials, eco-friendly packaging storytelling, and newsletter flavor drops — all under the 'Pop The Fizz' banner. Built with React + Vite, performance-tuned for mobile
 • Zevolution (zevolution.in) — Premium architectural materials platform uniting 5 luxury surface brands (Crest Stone, FCC Boards, Formiq, Dolomitic, etc.) with 94+ products. Editorial-grade B2B platform for architects with CAD library, spec sheets, and finish explorers
 • MershilTech (mershiltech.com) — 🇦🇺 INTERNATIONAL CLIENT FROM AUSTRALIA. Enterprise AI-powered agency platform serving 500+ clients across 70+ countries. Multi-page architecture covering AI services, mobile apps, web platforms, AR/VR, cybersecurity, cloud — built for global scale with 2-week sprint delivery and 24/7 operations. Shape-360's first major international engagement — delivered async-first across a 4.5-hour timezone gap from Bangalore to Sydney
 • Aksharam Ayurved (aksharamayurved.com) — Authentic Ayurveda clinic platform led by Vaidya Dolly (9+ years experience). 5000+ patients treated, 2000+ Panchakarma therapies, 170+ five-star reviews. Features tele-consultations, seasonal therapy programs (Sharadiya Virechan, Vasantik Vaman), fertility programs (Beij Shuddhi & Garbhadhana Sanskar), and global medicine delivery across UK, USA, Canada, UAE. Based in Ahmedabad, India
@@ -97,7 +98,7 @@ const fallbackResponses = [
   { keywords: ["hi", "hello", "hey", "hii"], response: "Hello! 👋 Welcome to Shape-360. I'm Shape AI, your digital assistant. How can I help you today?\n\nYou can ask about our services, pricing, portfolio, or anything else!" },
   { keywords: ["service", "services", "what do you do", "offer"], response: "We offer a full suite of digital services:\n\n• Website Development (Custom, Shopify, WordPress)\n• Meta Ads (Facebook & Instagram)\n• Google Ads Management\n• SEO Optimization\n• Branding & Graphic Design\n• Video Editing\n• Account Management\n\nWhich service interests you?" },
   { keywords: ["price", "pricing", "cost", "how much", "budget"], response: "Our pricing:\n\n🌐 Web Development:\n• Starter — $499\n• Professional — $999\n• Enterprise — $2,499\n\n📈 Ad Management:\n• Meta Ads — $349/mo\n• Google Ads — $449/mo\n• Full Marketing — $899/mo\n\nAll packages are customizable. Want a personalized quote?" },
-  { keywords: ["contact", "reach", "call", "email", "phone"], response: "You can reach us:\n\n📧 shape360official@gmail.com\n📞 +91 8209978891\n📍 Bangalore, India\n\nOr visit our Contact page — we respond within 2 hours!" },
+  { keywords: ["contact", "reach", "call", "email", "phone"], response: "You can reach us:\n\n📧 manish@shape360ai.com\n📞 +91 8209978891\n📍 Bangalore, India\n\nOr visit our Contact page — we respond within 2 hours!" },
 ];
 
 /* Route-aware proactive nudges + starter prompts */
@@ -163,7 +164,7 @@ const getFallbackResponse = (input) => {
   for (const item of fallbackResponses) {
     if (item.keywords.some((kw) => lower.includes(kw))) return item.response;
   }
-  return "Thanks for your message! For the best assistance, please reach out to our team directly:\n\n📧 shape360official@gmail.com\n📞 +91 8209978891\n\nOr visit our Contact page. We'd love to help!";
+  return "Thanks for your message! For the best assistance, please reach out to our team directly:\n\n📧 manish@shape360ai.com\n📞 +91 8209978891\n\nOr visit our Contact page. We'd love to help!";
 };
 
 const AIChatbot = () => {

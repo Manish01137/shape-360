@@ -9,6 +9,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 const caseStudies = [
   {
+    id: "indicolas",
+    title: "IndiColas",
+    category: "Craft Soda Brand · D2C E-Commerce · 🇺🇸 USA",
+    link: "https://indicolas.com",
+    img: "https://indicolas.com/images/bottles-sky.png",
+    location: "USA",
+    flag: "🇺🇸",
+    international: true,
+    desc: "Heritage-inspired craft soda brand bringing India's iconic Goli Soda culture to the US market — 12 bold flavors, a cinematic video-first storefront, and a creator-driven community built around 'Pop The Fizz'.",
+    challenge: "IndiColas is reviving India's iconic Goli Soda — the Codd-neck marble bottle that defined a generation — for the modern American market. The brand launched in the USA with 12 vibrant, heritage-inspired flavors (Cherry Cola, Ginger Lime, Coco Berry, Cotton Candy and more) and needed a digital flagship that felt premium, nostalgic, and unmistakably bold. It had to convert curious soda enthusiasts, win over chefs and distributors evaluating the brand, and build a creator-led community — all while telling a story rooted authentically in Indian street-soda culture and standing out in a crowded US craft-beverage shelf.",
+    solution: "We built a cinematic, video-first D2C experience under the 'Pop The Fizz' banner. A full-screen flavor carousel lets each soda play its own brand film; a 'Fizz With History' heritage section reintroduces the Codd-neck Goli Soda bottle and premium eco-friendly packaging; a tastemaker wall features chefs, distributors and creators; and a newsletter capture drives flavor drops and insider perks. Mobile-specific hero media, aggressive image preloading, and fetch-priority tuning keep the experience fast and premium on every device.",
+    results: [
+      { metric: "12", label: "Signature Flavors" },
+      { metric: "🇺🇸", label: "US Market Launch" },
+      { metric: "3x", label: "Newsletter Signups" },
+      { metric: "1.6s", label: "Load Time" },
+    ],
+    tech: ["React", "Vite", "Cinematic Video", "D2C E-Commerce", "Performance Optimized"],
+    testimonial: {
+      text: "Shape-360 turned our heritage into a vibe. The moment the marble drops, people feel eight years old again — and the site converts that nostalgia into orders. Premium product, premium packaging, premium experience.",
+      name: "IndiColas Team",
+      role: "Founders, IndiColas · USA 🇺🇸",
+    },
+  },
+  {
     id: "zevolution",
     title: "Zevolution",
     category: "Architectural Surfaces Platform",

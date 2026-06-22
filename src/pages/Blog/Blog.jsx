@@ -9,6 +9,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const blogPosts = [
   {
+    id: 10,
+    slug: "indicolas-craft-soda-brand",
+    title: "Pop The Fizz: Bringing India's Goli Soda Heritage to the US Craft-Soda Shelf",
+    excerpt: "How we turned a beloved Indian street-soda format — the Codd-neck marble bottle — into a cinematic, video-first D2C storefront for the US market, with a 12-flavor carousel, heritage storytelling, and a creator-driven community.",
+    category: "E-Commerce",
+    date: "June 20, 2026",
+    readTime: "8 min read",
+    img: "https://indicolas.com/images/banner.jpg",
+    featured: true,
+  },
+  {
     id: 0,
     slug: "zevolution-architectural-surfaces-platform",
     title: "Building an Editorial-Grade Platform for India's Premium Architectural Materials Brand",

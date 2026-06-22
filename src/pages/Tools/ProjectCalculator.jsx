@@ -156,7 +156,7 @@ const ProjectCalculator = () => {
     doc.setFontSize(10);
     doc.setTextColor(220, 220, 220);
     doc.text("Premium Digital Agency", margin, 76);
-    doc.text("company@stayliadxb.com  |  shape-360.com", margin, 92);
+    doc.text("manish@shape360ai.com  |  shape-360.com", margin, 92);
 
     doc.setTextColor(...gold);
     doc.setFontSize(9);

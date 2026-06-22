@@ -61,7 +61,7 @@ const TermsOfService = () => (
 
           <h2>12. Contact</h2>
           <p>For questions about these Terms, contact us at:</p>
-          <p><strong>Email:</strong> shape360official@gmail.com<br /><strong>Phone:</strong> +91 8209978891<br /><strong>Location:</strong> Bangalore, India</p>
+          <p><strong>Email:</strong> manish@shape360ai.com<br /><strong>Phone:</strong> +91 8209978891<br /><strong>Location:</strong> Bangalore, India</p>
         </article>
       </div>
     </section>

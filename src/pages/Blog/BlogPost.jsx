@@ -5,6 +5,44 @@ import { Helmet } from "react-helmet-async";
 import "./BlogPost.css";
 
 const blogData = {
+  "indicolas-craft-soda-brand": {
+    title: "Pop The Fizz: Bringing India's Goli Soda Heritage to the US Craft-Soda Shelf",
+    category: "E-Commerce",
+    date: "June 20, 2026",
+    readTime: "8 min read",
+    img: "https://indicolas.com/images/banner.jpg",
+    client: "IndiColas · USA",
+    clientLink: "https://indicolas.com",
+    content: [
+      { type: "paragraph", text: "IndiColas is a craft-soda brand on a mission: take the Goli Soda — the Codd-neck marble bottle that defined Indian street-soda culture for generations — and reintroduce it to the modern American market with premium ingredients, eco-friendly packaging, and twelve bold, heritage-inspired flavors. When the founders came to Shape-360, they didn't want a brochure with an 'Add to Cart' button bolted on. They wanted a digital flagship that made people feel something — that captured the exact pop of nostalgia of the marble dropping into the neck of the bottle, and turned it into orders." },
+      { type: "heading", text: "The Challenge" },
+      { type: "paragraph", text: "The US craft-beverage shelf is brutally crowded. Every new soda claims to be bolder, cleaner, or more authentic than the last. IndiColas had a genuinely differentiated story — a beloved Indian heritage format that almost no American consumer had seen — but a story is only an asset if the site can tell it in seconds. The brand had to convert three very different audiences at once: curious soda enthusiasts scrolling on their phones, chefs and distributors evaluating whether to stock it, and creators deciding whether it was worth posting about. Each needed a different proof point, and all of them needed it fast." },
+      { type: "paragraph", text: "There was also a positioning tightrope. Lean too hard into heritage and the brand reads as a novelty import; lean too hard into modern minimalism and you erase the very nostalgia that makes IndiColas special. The site had to feel premium and contemporary while staying unmistakably rooted in the Goli Soda story." },
+      { type: "heading", text: "Our Approach" },
+      { type: "list", items: [
+        "Built a cinematic, video-first homepage where each of the twelve flavors plays its own short brand film inside a full-screen carousel — visitors watch the work before they read a word",
+        "Designed a 'Fizz With History' heritage section that reintroduces the Codd-neck Goli Soda bottle and the marble-pop ritual, anchoring the brand in real cultural memory",
+        "Created a tastemaker wall featuring chefs, distributors, and creators — social proof tuned for both retail buyers and the algorithm",
+        "Surfaced premium, eco-friendly packaging storytelling as a first-class section rather than a footnote",
+        "Added a newsletter capture engineered around flavor drops and insider perks — turning first-time visitors into a returning community",
+      ]},
+      { type: "heading", text: "Design Philosophy" },
+      { type: "paragraph", text: "Everything serves the pop. The flavor carousel is the hero because soda is a sensory product — you sell the fizz, the color, the marble, not a spec sheet. We let vibrant per-flavor color do the talking against restrained dark backgrounds, so each soda owns its moment in the carousel. Motion is deliberate: video leads, type supports, and nothing animates just because it can. The result feels like a brand campaign you can shop, not a store with a campaign stapled on." },
+      { type: "heading", text: "Technical Foundations" },
+      { type: "list", items: [
+        "React + Vite for instant transitions and a sub-2-second initial load",
+        "A video-first carousel with full-screen playback, poster frames, and lazy-loaded media below the fold",
+        "Mobile-specific hero media so phone visitors get art-directed creative instead of cropped desktop video",
+        "Aggressive image preloading and fetch-priority tuning on the hero so the first flavor lands instantly",
+        "Eco-conscious, performance-minded asset pipeline — modern image formats, compressed video, minimal blocking scripts",
+      ]},
+      { type: "heading", text: "Turning Nostalgia Into Orders" },
+      { type: "paragraph", text: "The biggest unlock wasn't a feature — it was emotional sequencing. The marble-pop moment hits in the first few seconds, the heritage section explains why it matters, the tastemaker wall proves other people already love it, and only then does the site ask for the email or the order. By the time a visitor reaches the newsletter capture, they're not signing up for a discount — they're joining a community built around a feeling. That sequence is what converts a curious scroll into a returning customer." },
+      { type: "quote", text: "Shape-360 turned our heritage into a vibe. The moment the marble drops, people feel eight years old again — and the site converts that nostalgia into orders. Premium product, premium packaging, premium experience.", author: "IndiColas Team, Founders · USA" },
+      { type: "heading", text: "Key Takeaway" },
+      { type: "paragraph", text: "For sensory CPG brands — soda, snacks, fragrance, anything bought on feeling — the storefront's job is not to list SKUs. It's to make the visitor feel the product before they ever taste it, then make ordering the obvious next step. Lead with motion, anchor in story, prove it with people, and only then ask for the sale. IndiColas is the proof, and it's the playbook for the next consumer brand Shape-360 launches." },
+    ],
+  },
   "worksaura-creative-designer-portfolio": {
     title: "Building a Cinematic Portfolio for a 3D & Graphic Designer: The WorkSaura Story",
     category: "Portfolio",

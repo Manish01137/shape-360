@@ -66,6 +66,15 @@ const transparency = [
 
 const testimonialClients = [
   {
+    company: "IndiColas",
+    person: "IndiColas Team",
+    role: "Founders",
+    location: "USA",
+    quote: "Shape-360 turned our heritage into a vibe. The moment the marble drops, people feel eight years old again — and the site converts that nostalgia into orders.",
+    link: "https://indicolas.com",
+    flag: "🇺🇸",
+  },
+  {
     company: "Zevolution",
     person: "Dheeraj",
     role: "Co-Founder",

@@ -381,7 +381,7 @@ Return JSON in this exact structure:
     doc.text("Ready to start?", margin + 20, y + 28);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
-    doc.text("company@stayliadxb.com  |  +91 8209978891  |  shape-360.com", margin + 20, y + 50);
+    doc.text("manish@shape360ai.com  |  +91 8209978891  |  shape-360.com", margin + 20, y + 50);
 
     doc.save(`Shape-360-Brief-${form.company.replace(/\s+/g, "-")}.pdf`);
   };

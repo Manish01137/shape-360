@@ -224,8 +224,8 @@ const Services = () => {
             <Link to="/contact" className="thm-btn">
               Get Free Consultation <span>&#8594;</span>
             </Link>
-            <a href="mailto:shape360official@gmail.com" className="svc-cta-email">
-              shape360official@gmail.com
+            <a href="mailto:manish@shape360ai.com" className="svc-cta-email">
+              manish@shape360ai.com
             </a>
           </div>
         </div>
