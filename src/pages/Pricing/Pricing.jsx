@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet-async";
+import { useGeoPersonalization } from "../../hooks/useGeoPersonalization";
 import "./Pricing.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +12,7 @@ const packages = [
   {
     name: "Starter",
     tagline: "Perfect for small businesses getting started online",
-    price: "499",
+    price: 499,
     period: "starting from",
     features: [
       "5-Page Responsive Website",
@@ -27,7 +28,7 @@ const packages = [
   {
     name: "Professional",
     tagline: "Ideal for growing businesses that need more power",
-    price: "999",
+    price: 999,
     period: "starting from",
     features: [
       "10-Page Custom Website",
@@ -45,7 +46,7 @@ const packages = [
   {
     name: "Enterprise",
     tagline: "For ambitious brands ready to dominate their market",
-    price: "2,499",
+    price: 2499,
     period: "starting from",
     features: [
       "Unlimited Pages",
@@ -66,7 +67,7 @@ const packages = [
 const adPackages = [
   {
     name: "Meta Ads Starter",
-    price: "349",
+    price: 349,
     period: "/month",
     features: [
       "Campaign Strategy & Setup",
@@ -79,7 +80,7 @@ const adPackages = [
   },
   {
     name: "Google Ads Starter",
-    price: "449",
+    price: 449,
     period: "/month",
     features: [
       "Search Campaign Setup",
@@ -92,7 +93,7 @@ const adPackages = [
   },
   {
     name: "Full Digital Marketing",
-    price: "899",
+    price: 899,
     period: "/month",
     features: [
       "Meta + Google Ads",
@@ -107,6 +108,9 @@ const adPackages = [
 ];
 
 const Pricing = () => {
+  const { formatPrice, currency, region, loading } = useGeoPersonalization();
+  const isLocalized = !loading && currency !== "USD";
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -157,6 +161,13 @@ const Pricing = () => {
             No hidden fees, no surprises. Choose the package that fits
             your business goals and budget.
           </p>
+          {isLocalized && (
+            <div className="pricing-geo-badge">
+              <span className="pricing-geo-dot"></span>
+              Showing estimated prices in {currency}
+              {region && region !== "Global" ? ` for ${region}` : ""} · indicative conversion
+            </div>
+          )}
         </div>
       </section>
 
@@ -183,8 +194,7 @@ const Pricing = () => {
                   <h3>{pkg.name}</h3>
                   <p className="pricing-tagline">{pkg.tagline}</p>
                   <div className="pricing-price">
-                    <span className="pricing-currency">$</span>
-                    <span className="pricing-amount">{pkg.price}</span>
+                    <span className="pricing-amount">{formatPrice(pkg.price)}</span>
                   </div>
                   <span className="pricing-period">{pkg.period}</span>
                 </div>
@@ -229,8 +239,7 @@ const Pricing = () => {
               <div className="ad-pricing-card" key={i}>
                 <h3>{pkg.name}</h3>
                 <div className="ad-pricing-price">
-                  <span className="pricing-currency">$</span>
-                  <span className="pricing-amount">{pkg.price}</span>
+                  <span className="pricing-amount">{formatPrice(pkg.price)}</span>
                   <span className="ad-period">{pkg.period}</span>
                 </div>
                 <ul>
@@ -254,7 +263,9 @@ const Pricing = () => {
       <section className="pricing-note">
         <div className="container text-center">
           <p className="pricing-note-text">
-            <strong>*</strong> All prices are in USD. Ad spend is billed separately.
+            <strong>*</strong> {isLocalized
+              ? `Prices are auto-converted to ${currency} from USD as an indicative estimate — final quotes are confirmed in USD or your local currency.`
+              : "All prices are in USD."} Ad spend is billed separately.
             Custom packages available for specific requirements.
             <Link to="/contact"> Contact us</Link> for a personalized quote.
           </p>

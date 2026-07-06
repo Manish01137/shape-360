@@ -32,6 +32,40 @@
   line-height: 1.7;
 }
 
+.pricing-geo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px auto 0;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.pricing-geo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 0 var(--color-accent);
+  animation: pricing-geo-pulse 2s infinite;
+}
+
+@keyframes pricing-geo-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.5); }
+  70% { box-shadow: 0 0 0 6px rgba(201, 168, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-geo-dot { animation: none; }
+}
+
 .pricing-subtitle {
   color: var(--color-text-muted);
   font-size: 17px;
