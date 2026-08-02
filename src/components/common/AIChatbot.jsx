@@ -62,6 +62,7 @@ CASE STUDIES / PORTFOLIO (REAL PROJECTS):
 • Kedar Shakti (kedarshakti.com) — Spiritual e-commerce Shopify store for incense, crystals & puja essentials, 3x online orders, corporate bulk ordering
 • Zeqon (zeqon.co) — Modern SaaS website with animations, 5x lead generation, 180% traffic growth
 • Staylia DXB (stayliadxb.com) — Dubai short-term rental management platform, 85%+ occupancy rates, investor dashboards, multi-platform booking
+• Ethereal Artisan (etherealartisan.co.in) — Organic bath & body brand from Vadodara, Gujarat. Small-batch (60-unit) cold-pressed soaps, face washes, bath salts and travel kits with a 4-week curing process and zero SLS/parabens/synthetic fillers. Editorial Next.js storefront (Tailwind, custom Fraunces/Manrope typography) with a 'Choose Your Path' split routing consumers to Shop and boutiques/hotels to a wholesale inquiry flow
 
 LANDING PAGE PROJECTS:
 • Biospire Lifesciences (biospirelifesciences.com) — Pharmaceutical brand landing page for a Nagpur-based company (est. June 2025). WHO-GMP certified, ISO 9001:2015 compliant. Built around the 'Partner in Progressive Healthcare' philosophy with the Biospire Promise framework (trust to doctors, reliability to pharmacists, hope to patients) and a WhatsApp-driven partner-inquiry flow across Bharat

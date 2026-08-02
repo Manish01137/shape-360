@@ -101,6 +101,7 @@ const About = () => {
   ];
 
   const clients = [
+    { name: "Ethereal Artisan", link: "https://etherealartisan.co.in" },
     { name: "IndiColas 🇺🇸", link: "https://indicolas.com" },
     { name: "Zevolution", link: "https://zevolution.in" },
     { name: "MershilTech 🇦🇺", link: "https://mershiltech.com" },

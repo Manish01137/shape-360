@@ -13,7 +13,7 @@ const REGION_MESSAGES = {
   IN: {
     headline: "Serving clients across India",
     line: "We've shipped 8+ projects for Indian brands — from Delhi to Mumbai to Bangalore.",
-    proof: "Veloura, KVS, Kedar Shakti, MindMint & more",
+    proof: "Ethereal Artisan, Veloura, KVS, Kedar Shakti & more",
     cta: "See India Case Studies",
   },
   AE: {

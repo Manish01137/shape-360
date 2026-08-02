@@ -274,6 +274,7 @@ const Home = () => {
   ];
 
   const projects = [
+    { title: "Ethereal Artisan", category: "Organic Bath & Body · D2C", link: "https://etherealartisan.co.in", img: "https://etherealartisan.co.in/products/goat-milk-strawberry-soap.jpg", desc: "Small-batch organic soaps, face washes and bath salts from Vadodara — cold-cure process, zero synthetic fillers, and a dedicated wholesale path for boutiques and hotels." },
     { title: "IndiColas", category: "Craft Soda Brand · 🇺🇸 USA", link: "https://indicolas.com", img: "https://indicolas.com/images/bottles-sky.png", desc: "Heritage-inspired craft soda brand bringing India's iconic Goli Soda culture to the US market — 12 bold flavors, a cinematic video-first storefront, creator testimonials, and a 'Pop The Fizz' community." },
     { title: "Zevolution", category: "Architectural Surfaces Platform", link: "https://zevolution.in", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", desc: "Premium architectural materials brand uniting five luxury surface collections — Crest Stone, FCC Boards, Formiq, Dolomitic and more — for India's top architects." },
     { title: "MershilTech", category: "AI Agency Platform · 🇦🇺 Australia", link: "https://mershiltech.com", img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80", desc: "International client from Australia. Enterprise AI-powered agency platform serving 500+ clients across 70+ countries — featuring AI services, mobile apps, web platforms, and 2-week sprint deliveries." },
@@ -304,7 +305,7 @@ const Home = () => {
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
+  const brands = ["Ethereal Artisan", "Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
 
   return (
     <div className="home">

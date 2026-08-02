@@ -9,6 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 const caseStudies = [
   {
+    id: "etherealartisan",
+    title: "Ethereal Artisan",
+    category: "Organic Bath & Body Brand · D2C E-Commerce",
+    link: "https://etherealartisan.co.in",
+    img: "https://etherealartisan.co.in/products/goat-milk-strawberry-soap.jpg",
+    desc: "Small-batch organic bath & body brand out of Vadodara, Gujarat — hand-poured artisan soaps, amino-acid face washes, bath salts and travel kits, built around a 'nothing added that the garden didn't grow' philosophy.",
+    challenge: "Ethereal Artisan makes genuinely small-batch skincare — cold-pressed oils, 60-unit batches, a 4-week curing period, zero SLS, parabens, silicones or synthetic fillers. That kind of craft is easy to claim and hard to prove online; most 'natural' skincare sites lean on stock photography and vague buzzwords that blur together. The brand needed a site that made its slow, deliberate production process the actual selling point, while serving two very different visitors in one place — retail shoppers picking a soap for themselves, and boutiques or hotels evaluating a wholesale partner.",
+    solution: "We built an editorial-toned storefront on Next.js with a custom Fraunces/Manrope typography pairing and an earthy moss-and-almond palette that echoes the product photography. Philosophy and Mission sections walk visitors through the cold-cure process and ingredient sourcing before a single 'Add to Cart' button appears, product pages carry full ingredient transparency, and a 'Choose Your Path' split routes consumers to Shop and businesses to a dedicated wholesale/bulk inquiry flow — so a boutique buyer and a weekend shopper both land on the right page in one click.",
+    results: [
+      { metric: "60", label: "Units Per Small Batch" },
+      { metric: "4-Week", label: "Cold-Cure Process" },
+      { metric: "0", label: "SLS, Parabens or Fillers" },
+      { metric: "2", label: "Consumer + Wholesale Paths" },
+    ],
+    tech: ["Next.js", "Tailwind CSS", "Netlify", "Editorial Typography"],
+  },
+  {
     id: "indicolas",
     title: "IndiColas",
     category: "Craft Soda Brand · D2C E-Commerce · 🇺🇸 USA",

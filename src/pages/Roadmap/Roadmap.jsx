@@ -8,6 +8,7 @@ import "./Roadmap.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const shipped = [
+  { date: "August 2026", title: "Ethereal Artisan Launch", desc: "Shipped Ethereal Artisan — organic bath & body brand from Vadodara with small-batch, cold-cure soaps, face washes and bath salts, plus a dedicated wholesale path for boutiques and hotels." },
   { date: "April 2026", title: "AutoFlow Beta Architecture", desc: "Designed and prototyped the AI automation platform — lead scraper, email engine, multi-platform scheduler." },
   { date: "May 2026", title: "WorkSaura Launch", desc: "Shipped WorkSaura — a cinematic GSAP-powered portfolio for Rahul, a New Delhi-based graphic & 3D designer serving brands across healthcare, e-commerce, sports and IT." },
   { date: "May 2026", title: "Aksharam Ayurved Launch", desc: "Shipped Aksharam Ayurved — authentic Ayurvedic clinic platform for Vaidya Dolly, with tele-consultations across UK, USA, Canada and UAE." },
@@ -21,7 +22,7 @@ const shipped = [
 
 const inProgress = [
   { eta: "Mid-May 2026", title: "AutoFlow Public Launch", desc: "AI automation platform goes live. Lead scraping, cold emails, multi-platform social posting — all in one tool." },
-  { eta: "Late May 2026", title: "Real Video Testimonials", desc: "Recording 30-second video testimonials with founders of Zevolution, Veloura, Kedar Shakti, MershilTech, Staylia, Aksharam Ayurved, and WorkSaura." },
+  { eta: "Late May 2026", title: "Real Video Testimonials", desc: "Recording 30-second video testimonials with founders of Ethereal Artisan, Zevolution, Veloura, Kedar Shakti, MershilTech, Staylia, Aksharam Ayurved, and WorkSaura." },
   { eta: "June 2026", title: "Multi-Language Support", desc: "Adding Arabic (RTL) and Hindi to expand reach across MENA and India tier-2 markets." },
   { eta: "June 2026", title: "Public Newsletter", desc: "Weekly behind-the-scenes founder newsletter — case studies, lessons learned, agency-building insights." },
 ];
