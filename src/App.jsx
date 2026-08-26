@@ -10,6 +10,7 @@ import Preloader from "./components/common/Preloader";
 import CustomCursor from "./components/common/CustomCursor";
 import SmoothScroll from "./components/common/SmoothScroll";
 import AIChatbot from "./components/common/AIChatbot";
+import WhatsAppButton from "./components/common/WhatsAppButton";
 import PageTransition from "./components/common/PageTransition";
 import ScrollProgress from "./components/common/ScrollProgress";
 import ScrollToTopBtn from "./components/common/ScrollToTopBtn";
@@ -118,6 +119,7 @@ function App() {
           <Footer />
           <ScrollToTopBtn />
           <AIChatbot />
+          <WhatsAppButton />
           <MobileCTA />
           <RippleButton />
           <MagneticWrap />
