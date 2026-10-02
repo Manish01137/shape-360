@@ -9,6 +9,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const blogPosts = [
   {
+    id: 11,
+    slug: "joinetra-travel-agency-crm",
+    title: "Building Joinetra: A Multi-Tenant CRM Made for Travel Agencies",
+    excerpt: "How we turned scattered WhatsApp chats, Word-doc itineraries and booking spreadsheets into one product — a shared inbox, lead pipeline, AI-drafted packages, brochure PDFs, departures and tax invoices for every agency.",
+    category: "SaaS",
+    date: "October 2, 2026",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
+    featured: true,
+  },
+  {
     id: 10,
     slug: "indicolas-craft-soda-brand",
     title: "Pop The Fizz: Bringing India's Goli Soda Heritage to the US Craft-Soda Shelf",

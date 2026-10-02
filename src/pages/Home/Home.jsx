@@ -274,6 +274,7 @@ const Home = () => {
   ];
 
   const projects = [
+    { title: "Joinetra", category: "Travel Agency CRM · SaaS", link: "https://joinetra.com", img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80", desc: "Premium multi-tenant CRM for travel agencies — WhatsApp, Instagram and email inbox tied to every lead, AI-drafted packages, brochure PDFs, bookings with dated departures, and tax invoices in one clean dashboard." },
     { title: "Ethereal Artisan", category: "Organic Bath & Body · D2C", link: "https://etherealartisan.co.in", img: "https://etherealartisan.co.in/products/goat-milk-strawberry-soap.jpg", desc: "Small-batch organic soaps, face washes and bath salts from Vadodara — cold-cure process, zero synthetic fillers, and a dedicated wholesale path for boutiques and hotels." },
     { title: "IndiColas", category: "Craft Soda Brand · 🇺🇸 USA", link: "https://indicolas.com", img: "https://indicolas.com/images/bottles-sky.png", desc: "Heritage-inspired craft soda brand bringing India's iconic Goli Soda culture to the US market — 12 bold flavors, a cinematic video-first storefront, creator testimonials, and a 'Pop The Fizz' community." },
     { title: "Zevolution", category: "Architectural Surfaces Platform", link: "https://zevolution.in", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", desc: "Premium architectural materials brand uniting five luxury surface collections — Crest Stone, FCC Boards, Formiq, Dolomitic and more — for India's top architects." },
@@ -305,7 +306,7 @@ const Home = () => {
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["Ethereal Artisan", "Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
+  const brands = ["Joinetra", "Ethereal Artisan", "Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
 
   return (
     <div className="home">

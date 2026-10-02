@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./SocialProof.css";
 
 const notifications = [
+  { city: "India", project: "Joinetra", time: "just now" },
   { city: "Vadodara", project: "Ethereal Artisan", time: "1 min ago" },
   { city: "Dubai", project: "Staylia DXB", time: "2 min ago" },
   { city: "New Delhi", project: "Kedar Shakti", time: "5 min ago" },

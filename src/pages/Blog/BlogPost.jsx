@@ -5,6 +5,34 @@ import { Helmet } from "react-helmet-async";
 import "./BlogPost.css";
 
 const blogData = {
+  "joinetra-travel-agency-crm": {
+    title: "Building Joinetra: A Multi-Tenant CRM Made for Travel Agencies",
+    category: "SaaS",
+    date: "October 2, 2026",
+    readTime: "8 min read",
+    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
+    client: "Joinetra",
+    clientLink: "https://joinetra.com",
+    content: [
+      { type: "paragraph", text: "Most travel agencies don't run on software — they run on phones. Enquiries arrive as Instagram DMs and WhatsApp messages on whoever's handset the customer found first, itineraries are rebuilt in Word for every quote, and bookings live in a spreadsheet only one person understands. Joinetra set out to replace all of that with a single, premium CRM built with travel agencies, for travel agencies." },
+      { type: "heading", text: "The Challenge" },
+      { type: "paragraph", text: "Generic CRMs don't fit travel. They don't know what a package, a day plan or a departure is, and they assume a sales team living in email — not agents answering WhatsApp at 11pm. Joinetra had to model the real agency workflow end to end, serve many agencies from one platform with their data fully separated, and stay simple enough that anyone who can use Instagram and WhatsApp is productive on day one, with no training." },
+      { type: "heading", text: "What We Built" },
+      { type: "list", items: [
+        "Multi-tenant workspaces — every agency connects its own WhatsApp, Instagram and email accounts",
+        "A shared inbox where every conversation is attached to the right lead, with a visual pipeline",
+        "A day-by-day package builder with reusable activities, photos and stays — or let AI draft the package",
+        "Themed brochure PDF export and WhatsApp sharing for every package",
+        "A public LinkTree-style agency page where packages appear automatically, grouped by category",
+        "Lead-to-booking conversion, dated departures with seat tracking, and Tax Invoices with bank, tax and signature details",
+        "Bot flows that capture enquiries around the clock, auto follow-ups for quiet leads, and AI-drafted replies in the agency's tone"
+      ]},
+      { type: "heading", text: "Design Principles" },
+      { type: "paragraph", text: "We kept the interface calm and familiar: one clean dashboard, plain language instead of CRM jargon, and empty states that tell agents exactly what to do next. Heavy lifting — PDF layouts, invoice formatting, follow-up timing — happens behind the scenes so the agent's attention stays on the traveller." },
+      { type: "heading", text: "Why Vertical SaaS Wins" },
+      { type: "paragraph", text: "A tool that speaks an industry's language beats a generic one bent into shape. When the software already knows what a departure, a package and a GST invoice are, agencies spend their time selling trips instead of fighting their tools." },
+    ],
+  },
   "indicolas-craft-soda-brand": {
     title: "Pop The Fizz: Bringing India's Goli Soda Heritage to the US Craft-Soda Shelf",
     category: "E-Commerce",

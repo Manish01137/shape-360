@@ -9,6 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 const caseStudies = [
   {
+    id: "joinetra",
+    title: "Joinetra",
+    category: "Travel Agency CRM · Multi-Tenant SaaS",
+    link: "https://joinetra.com",
+    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
+    desc: "A premium, multi-tenant CRM built with travel agencies — leads, conversations, packages, bookings and invoices in one clean dashboard.",
+    challenge: "Travel agencies run on WhatsApp and Instagram DMs scattered across personal phones, packages rebuilt from scratch in Word for every enquiry, and bookings tracked in spreadsheets. Leads go quiet with no follow-up, nobody knows which teammate replied to whom, and turning a quote into a polished brochure or a GST-ready invoice eats hours. The product had to replace all of that — while staying simple enough that anyone who can use Instagram and WhatsApp is productive on day one.",
+    solution: "We built a multi-tenant SaaS where each agency gets its own workspace and connects its own WhatsApp, Instagram and email accounts. Every message lands in a shared inbox attached to the right lead in a visual pipeline. Agents build trip packages day by day — or let AI draft one — then export themed brochure PDFs, share them on WhatsApp, and publish them to a public LinkTree-style agency page. Won leads convert into bookings assigned to dated departures with seat tracking, and Tax Invoices print with bank, tax and signature details. Bot flows capture enquiries around the clock, and auto follow-ups nudge leads that have gone quiet.",
+    results: [
+      { metric: "3", label: "Channels in One Inbox" },
+      { metric: "AI", label: "Drafted Packages & Replies" },
+      { metric: "1-Click", label: "Brochure PDFs & Invoices" },
+      { metric: "Day 1", label: "Team Productivity" },
+    ],
+    tech: ["React", "Vite", "Multi-Tenant SaaS", "WhatsApp & Instagram APIs", "AI Drafting", "PDF Generation"],
+  },
+  {
     id: "etherealartisan",
     title: "Ethereal Artisan",
     category: "Organic Bath & Body Brand · D2C E-Commerce",
