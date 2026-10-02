@@ -6,20 +6,22 @@ import "./BlogPost.css";
 
 const blogData = {
   "joinetra-travel-agency-crm": {
-    title: "Building Joinetra: A Multi-Tenant CRM Made for Travel Agencies",
+    title: "Building Joinetra: Our Own SaaS CRM for Travel Agencies — and Becoming a Meta Tech Provider",
     category: "SaaS",
     date: "October 2, 2026",
     readTime: "8 min read",
-    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
-    client: "Joinetra",
+    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80",
+    client: "Joinetra · Our SaaS Product",
     clientLink: "https://joinetra.com",
     content: [
-      { type: "paragraph", text: "Most travel agencies don't run on software — they run on phones. Enquiries arrive as Instagram DMs and WhatsApp messages on whoever's handset the customer found first, itineraries are rebuilt in Word for every quote, and bookings live in a spreadsheet only one person understands. Joinetra set out to replace all of that with a single, premium CRM built with travel agencies, for travel agencies." },
+      { type: "paragraph", text: "Most travel agencies don't run on software — they run on phones. Enquiries arrive as Instagram DMs and WhatsApp messages on whoever's handset the customer found first, itineraries are rebuilt in Word for every quote, and bookings live in a spreadsheet only one person understands. So we built Joinetra, Shape-360's own SaaS product: a single, premium CRM built with travel agencies, for travel agencies." },
       { type: "heading", text: "The Challenge" },
-      { type: "paragraph", text: "Generic CRMs don't fit travel. They don't know what a package, a day plan or a departure is, and they assume a sales team living in email — not agents answering WhatsApp at 11pm. Joinetra had to model the real agency workflow end to end, serve many agencies from one platform with their data fully separated, and stay simple enough that anyone who can use Instagram and WhatsApp is productive on day one, with no training." },
+      { type: "paragraph", text: "Generic CRMs don't fit travel. They don't know what a package, a day plan or a departure is, and they assume a sales team living in email — not agents answering WhatsApp at 11pm. Our product had to model the real agency workflow end to end, serve many agencies from one platform with their data fully separated, and stay simple enough that anyone who can use Instagram and WhatsApp is productive on day one, with no training." },
+      { type: "heading", text: "Becoming a Meta Tech Provider" },
+      { type: "paragraph", text: "WhatsApp and Instagram are where travel enquiries actually happen, so official access was non-negotiable. Joinetra is a Meta Tech Provider: agencies connect their own WhatsApp Business numbers and Instagram accounts through Meta's official APIs in a few clicks, with no third-party BSP in between. Each agency's messages stay in its own workspace, and WhatsApp message templates can be created and submitted for Meta review right from the dashboard — no manual setup for every new agency." },
       { type: "heading", text: "What We Built" },
       { type: "list", items: [
-        "Multi-tenant workspaces — every agency connects its own WhatsApp, Instagram and email accounts",
+        "Multi-tenant workspaces — through Meta's official APIs, every agency connects its own WhatsApp, Instagram and email accounts",
         "A shared inbox where every conversation is attached to the right lead, with a visual pipeline",
         "A day-by-day package builder with reusable activities, photos and stays — or let AI draft the package",
         "Themed brochure PDF export and WhatsApp sharing for every package",
@@ -305,6 +307,8 @@ const blogData = {
       { type: "paragraph", text: "Dubai's short-term rental market is booming — but most rental management companies look identical online. Staylia DXB came to us with a clear differentiator: they're investors themselves, with 8-figure real estate equity and nearly 100 years of family investment experience. They needed a website that would make high-net-worth property investors trust them immediately." },
       { type: "heading", text: "The Challenge" },
       { type: "paragraph", text: "Staylia DXB manages holiday homes across Airbnb, Booking.com, VRBO, and Expedia. Their target audience isn't casual tourists — it's property investors seeking maximum rental income from their Dubai Marina, Palm Jumeirah, Downtown, and Business Bay apartments. The website needed to speak investor language: ROI, occupancy rates, transparency, data." },
+      { type: "heading", text: "Becoming a Meta Tech Provider" },
+      { type: "paragraph", text: "WhatsApp and Instagram are where travel enquiries actually happen, so official access was non-negotiable. Joinetra is a Meta Tech Provider: agencies connect their own WhatsApp Business numbers and Instagram accounts through Meta's official APIs in a few clicks, with no third-party BSP in between. Each agency's messages stay in its own workspace, and WhatsApp message templates can be created and submitted for Meta review right from the dashboard — no manual setup for every new agency." },
       { type: "heading", text: "What We Built" },
       { type: "list", items: [
         "A data-driven homepage showcasing 85%+ occupancy rates and 4.9-star guest ratings upfront",

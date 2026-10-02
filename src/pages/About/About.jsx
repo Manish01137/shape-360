@@ -101,7 +101,7 @@ const About = () => {
   ];
 
   const clients = [
-    { name: "Joinetra", link: "https://joinetra.com" },
+    { name: "Joinetra (Our SaaS)", link: "https://joinetra.com" },
     { name: "Ethereal Artisan", link: "https://etherealartisan.co.in" },
     { name: "IndiColas 🇺🇸", link: "https://indicolas.com" },
     { name: "Zevolution", link: "https://zevolution.in" },

@@ -11,12 +11,12 @@ const blogPosts = [
   {
     id: 11,
     slug: "joinetra-travel-agency-crm",
-    title: "Building Joinetra: A Multi-Tenant CRM Made for Travel Agencies",
-    excerpt: "How we turned scattered WhatsApp chats, Word-doc itineraries and booking spreadsheets into one product — a shared inbox, lead pipeline, AI-drafted packages, brochure PDFs, departures and tax invoices for every agency.",
+    title: "Building Joinetra: Our Own SaaS CRM for Travel Agencies — and Becoming a Meta Tech Provider",
+    excerpt: "The story of our own SaaS product, and how becoming a Meta Tech Provider let us turn scattered WhatsApp chats, Word-doc itineraries and booking spreadsheets into one product — a shared inbox, lead pipeline, AI-drafted packages, brochure PDFs, departures and tax invoices for every agency.",
     category: "SaaS",
     date: "October 2, 2026",
     readTime: "8 min read",
-    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
     featured: true,
   },
   {
