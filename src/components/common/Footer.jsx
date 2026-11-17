@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import logo from "../../assets/images/shapee360.png";
 
 const Footer = () => {
   return (
@@ -21,9 +20,6 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Brand */}
           <div className="footer-brand">
-            <Link to="/" className="footer-logo">
-              <img src={logo} alt="Shape-360" />
-            </Link>
             <p>
               360° Digital Solutions That Shape Business Growth.
               We build, market, and scale your digital presence.

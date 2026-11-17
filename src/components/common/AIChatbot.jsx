@@ -63,6 +63,10 @@ CASE STUDIES / PORTFOLIO (REAL PROJECTS):
 • Kedar Shakti (kedarshakti.com) — Spiritual e-commerce Shopify store for incense, crystals & puja essentials, 3x online orders, corporate bulk ordering
 • Zeqon (zeqon.co) — Modern SaaS website with animations, 5x lead generation, 180% traffic growth
 • Staylia DXB (stayliadxb.com) — Dubai short-term rental management platform, 85%+ occupancy rates, investor dashboards, multi-platform booking
+• Go Everywhere Trips (goeverywheretrips.com) — Dehradun-based travel brand offering treks, group tours and yatras (pilgrimages). Trip-first website for browsing and booking departures.
+• Quick Solutions (quick-solutions.in) — Ahmedabad IT infrastructure support provider with 500+ engineers across India and 100+ countries: smart hands, hardware maintenance, data center support, project rollouts.
+• Shanta Samanta (shantasamanta.com) — Website built by Shape-360.
+• Glowrithm Media (glowrithmmedia.com) — Gwalior-based social media growth agency: content production, Meta & Google Ads, SEO, web/app development.
 • Ethereal Artisan (etherealartisan.co.in) — Organic bath & body brand from Vadodara, Gujarat. Small-batch (60-unit) cold-pressed soaps, face washes, bath salts and travel kits with a 4-week curing process and zero SLS/parabens/synthetic fillers. Editorial Next.js storefront (Tailwind, custom Fraunces/Manrope typography) with a 'Choose Your Path' split routing consumers to Shop and boutiques/hotels to a wholesale inquiry flow
 
 LANDING PAGE PROJECTS:

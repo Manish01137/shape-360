@@ -113,6 +113,10 @@ const About = () => {
     { name: "Kedar Shakti", link: "https://kedarshakti.com" },
     { name: "Zeqon", link: "https://zeqon.co" },
     { name: "Staylia DXB 🇦🇪", link: "https://stayliadxb.com" },
+    { name: "Go Everywhere Trips", link: "https://goeverywheretrips.com" },
+    { name: "Quick Solutions", link: "https://quick-solutions.in" },
+    { name: "Shanta Samanta", link: "https://shantasamanta.com" },
+    { name: "Glowrithm Media", link: "https://glowrithmmedia.com" },
   ];
 
   return (

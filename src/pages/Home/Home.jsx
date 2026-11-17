@@ -286,6 +286,10 @@ const Home = () => {
     { title: "Kedar Shakti", category: "Shopify Store", link: "https://kedarshakti.com", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", desc: "Spiritual e-commerce brand with Shopify store, product categorization, and optimized checkout flow." },
     { title: "Zeqon", category: "SaaS Website", link: "https://zeqon.co", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", desc: "Modern SaaS company website with sleek design, feature showcases, and lead generation funnel." },
     { title: "Staylia DXB", category: "Web Development", link: "https://stayliadxb.com", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80", desc: "Dubai-based rental management platform with property listings, investor dashboards, and booking system." },
+    { title: "Go Everywhere Trips", category: "Travel & Tourism · Dehradun", link: "https://goeverywheretrips.com", img: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80", desc: "Travel brand from Dehradun organizing treks, group tours and yatras — a clean, trip-first website that makes departures easy to browse and book." },
+    { title: "Quick Solutions", category: "IT Infrastructure Support · Ahmedabad", link: "https://quick-solutions.in", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", desc: "IT infrastructure support provider backed by 500+ engineers across India and 100+ countries — smart hands, hardware maintenance, data center support and project rollouts." },
+    { title: "Shanta Samanta", category: "Website", link: "https://shantasamanta.com", img: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80", desc: "A polished, fast and mobile-first website built by Shape-360." },
+    { title: "Glowrithm Media", category: "Social Media Growth Agency · Gwalior", link: "https://glowrithmmedia.com", img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80", desc: "Social media growth agency combining creative content with growth tech — content production, Meta & Google Ads, SEO and web development under one team." },
   ];
 
   const whyUs = [
@@ -306,7 +310,7 @@ const Home = () => {
     { text: "Our academy website now drives 3x more student inquiries. Shape-360 understood our vision and delivered a fast, mobile-friendly platform.", name: "KVS Academy Team", role: "Management, KVS Academy", stars: 5 },
   ];
 
-  const brands = ["Joinetra", "Ethereal Artisan", "Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
+  const brands = ["Joinetra", "Ethereal Artisan", "Zevolution", "MershilTech", "Aksharam Ayurved", "WorkSaura", "Biospire Lifesciences", "KVS Academy", "Veloura Jewels", "Kedar Shakti", "Zeqon", "Staylia DXB", "Go Everywhere Trips", "Quick Solutions", "Shanta Samanta", "Glowrithm Media", "JaldiRide", "MindMint Media", "SkillOwl", "FolkLane", "Pawan Hardu", "Krishi Global", "Biospire Lifesciences", "WorkSaura", "Aksharam Ayurved", "Zevolution", "MershilTech"];
 
   return (
     <div className="home">
